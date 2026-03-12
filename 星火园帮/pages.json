@@ -1,0 +1,541 @@
+{
+  "pages": [
+    {
+      "path": "pages/splash/splash",
+      "style": {
+        "navigationBarTitleText": "星火园帮",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "星火园帮",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/resources/resources",
+      "style": {
+        "navigationBarTitleText": "资源",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/chat/chat",
+      "style": {
+        "navigationBarTitleText": "聊天",
+        "disableScroll": true,
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": 0
+      }
+    },
+    {
+      "path": "pages/after_sales/after_sales",
+      "style": {
+        "navigationBarTitleText": "售后申请"
+      }
+    },
+    {
+      "path": "pages/tasks",
+      "style": {
+        "navigationBarTitleText": "任务大厅",
+        "navigationStyle": "default",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "subpages/campus-interact",
+      "pages": [
+        {
+          "path": "main",
+          "style": {
+            "navigationBarTitleText": "校园论坛",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "publish-ask",
+          "style": {
+            "navigationBarTitleText": "发布问答"
+          }
+        },
+        {
+          "path": "publish-lost",
+          "style": {
+            "navigationBarTitleText": "发布寻物"
+          }
+        },
+        {
+          "path": "publish-salvage",
+          "style": {
+            "navigationBarTitleText": "发布捞一捞"
+          }
+        },
+        {
+          "path": "publish-complaint",
+          "style": {
+            "navigationBarTitleText": "发布吐槽"
+          }
+        },
+        {
+          "path": "publish-share",
+          "style": {
+            "navigationBarTitleText": "发布分享"
+          }
+        },
+        {
+          "path": "publish-partner",
+          "style": {
+            "navigationBarTitleText": "发布学习伙伴"
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "详情"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/resources",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "资源列表",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "资源详情"
+          }
+        },
+        {
+          "path": "hot",
+          "style": {
+            "navigationBarTitleText": "热门资源",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "search",
+          "style": {
+            "navigationBarTitleText": "搜索资源"
+          }
+        },
+        {
+          "path": "publish",
+          "style": {
+            "navigationBarTitleText": "发布资源"
+          }
+        },
+        {
+          "path": "exam/list",
+          "style": {
+            "navigationBarTitleText": "考试资料列表",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "exam/publish",
+          "style": {
+            "navigationBarTitleText": "发布考试资料"
+          }
+        },
+        {
+          "path": "exam/detail",
+          "style": {
+            "navigationBarTitleText": "考试资料详情"
+          }
+        },
+        {
+          "path": "book/list",
+          "style": {
+            "navigationBarTitleText": "图书资源列表",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "book/detail",
+          "style": {
+            "navigationBarTitleText": "图书详情"
+          }
+        },
+        {
+          "path": "book/favorites",
+          "style": {
+            "navigationBarTitleText": "我的收藏"
+          }
+        },
+        {
+          "path": "exam/favorites",
+          "style": {
+            "navigationBarTitleText": "我的收藏"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/market",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "二手市集",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "商品详情"
+          }
+        },
+        {
+          "path": "publish",
+          "style": {
+            "navigationBarTitleText": "发布商品"
+          }
+        },
+        {
+          "path": "seller",
+          "style": {
+            "navigationBarTitleText": "卖家信息"
+          }
+        },
+        {
+          "path": "favorites",
+          "style": {
+            "navigationBarTitleText": "我的收藏",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "purchased",
+          "style": {
+            "navigationBarTitleText": "已购商品",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "my",
+          "style": {
+            "navigationBarTitleText": "个人中心",
+            "enablePullDownRefresh": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/publish",
+      "pages": [
+        {
+          "path": "publish-express",
+          "style": {
+            "navigationBarTitleText": "发布取快递"
+          }
+        },
+        {
+          "path": "publish-takeaway",
+          "style": {
+            "navigationBarTitleText": "发布取外卖"
+          }
+        },
+        {
+          "path": "publish-buy",
+          "style": {
+            "navigationBarTitleText": "发布帮我买"
+          }
+        },
+        {
+          "path": "publish-course-sub",
+          "style": {
+            "navigationBarTitleText": "发布学习互助"
+          }
+        },
+        {
+          "path": "publish-borrow",
+          "style": {
+            "navigationBarTitleText": "发布借物品"
+          }
+        },
+        {
+          "path": "publish-game",
+          "style": {
+            "navigationBarTitleText": "发布倒垃圾"
+          }
+        },
+        {
+          "path": "publish-writing",
+          "style": {
+            "navigationBarTitleText": "发布作业辅助"
+          }
+        },
+        {
+          "path": "publish-moving",
+          "style": {
+            "navigationBarTitleText": "发布搬运服务"
+          }
+        },
+        {
+          "path": "publish-mutual-help",
+          "style": {
+            "navigationBarTitleText": "发布其他服务"
+          }
+        },
+        {
+          "path": "publish-paperwork",
+          "style": {
+            "navigationBarTitleText": "求资料"
+          }
+        },
+        {
+          "path": "publish-confirm",
+          "style": {
+            "navigationBarTitleText": "发布确认"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/profile",
+      "pages": [
+        {
+          "path": "apply-rider",
+          "style": {
+            "navigationBarTitleText": "申请接单员"
+          }
+        },
+        {
+          "path": "my-published",
+          "style": {
+            "navigationBarTitleText": "我发布的"
+          }
+        },
+        {
+          "path": "my-accepted",
+          "style": {
+            "navigationBarTitleText": "我接受的"
+          }
+        },
+        {
+          "path": "wallet",
+          "style": {
+            "navigationBarTitleText": "我的钱包"
+          }
+        },
+        {
+          "path": "edit-info",
+          "style": {
+            "navigationBarTitleText": "编辑资料"
+          }
+        },
+        {
+          "path": "settings",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        },
+        {
+          "path": "messages",
+          "style": {
+            "navigationBarTitleText": "消息中心",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "address",
+          "style": {
+            "navigationBarTitleText": "我的地址"
+          }
+        },
+        {
+          "path": "service",
+          "style": {
+            "navigationBarTitleText": "联系客服"
+          }
+        },
+        {
+          "path": "add-address",
+          "style": {
+            "navigationBarTitleText": "添加新地址"
+          }
+        },
+        {
+          "path": "select-address",
+          "style": {
+            "navigationBarTitleText": "选择常用地址"
+          }
+        },
+        {
+          "path": "feedback",
+          "style": {
+            "navigationBarTitleText": "意见反馈"
+          }
+        },
+        {
+          "path": "withdraw",
+          "style": {
+            "navigationBarTitleText": "提现"
+          }
+        },
+        {
+          "path": "withdraw-records",
+          "style": {
+            "navigationBarTitleText": "提现记录"
+          }
+        },
+        {
+          "path": "rider-center",
+          "style": {
+            "navigationBarTitleText": "接单员中心"
+          }
+        },
+        {
+          "path": "team-coordination",
+          "style": {
+            "navigationBarTitleText": "团队协调"
+          }
+        },
+        {
+          "path": "aboutus",
+          "style": {
+            "navigationBarTitleText": "关于我们"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/task",
+      "pages": [
+        {
+          "path": "task_detail/task_detail",
+          "style": {
+            "navigationBarTitleText": "任务详情"
+          }
+        },
+        {
+          "path": "task_edit/task_edit",
+          "style": {
+            "navigationBarTitleText": "编辑任务"
+          }
+        },
+        {
+          "path": "task_confirm/task_confirm",
+          "style": {
+            "navigationBarTitleText": "订单确认"
+          }
+        },
+        {
+          "path": "task_process/task_process",
+          "style": {
+            "navigationBarTitleText": "订单处理"
+          }
+        },
+        {
+          "path": "task_cancel/task_cancel",
+          "style": {
+            "navigationBarTitleText": "取消订单"
+          }
+        },
+        {
+          "path": "refund_status/refund_status",
+          "style": {
+            "navigationBarTitleText": "退款状态"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/other/privacy",
+      "pages": [
+        {
+          "path": "user-agreement",
+          "style": {
+            "navigationBarTitleText": "用户服务协议"
+          }
+        },
+        {
+          "path": "privacy-policy",
+          "style": {
+            "navigationBarTitleText": "隐私政策"
+          }
+        },
+        {
+          "path": "rider-agreement",
+          "style": {
+            "navigationBarTitleText": "接单员协议"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/community",
+      "pages": [
+        {
+          "path": "select-community",
+          "style": {
+            "navigationBarTitleText": "选择社区"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpages/other/public",
+      "pages": [
+        {
+          "path": "webview",
+          "style": {
+            "navigationBarTitleText": "详情"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "星火园帮",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tasks",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/resources/resources",
+        "text": "资源"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001751",
+    "date-fns": "^4.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "iOS >= 9",
+    "Android >= 5"
+  ]
+}

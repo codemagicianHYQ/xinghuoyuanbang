@@ -1,0 +1,52 @@
+{
+  "name": "星火园帮",
+  "appid": "__UNI__YOUR_APPID__",
+  "description": "校园互助小程序",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "wx2fc8b63c0eed31a4",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true,
+      "postcss": true,
+      "ignoreDevUnusedFiles": false,
+      "ignoreUploadUnusedFiles": false
+    },
+    "usingComponents": true,
+    "permission": {
+      "scope.userLocation": {
+        "desc": "您的位置信息将用于展示附近的校园服务"
+      },
+      "scope.camera": {
+        "desc": "用于拍摄照片发送给聊天对象"
+      },
+      "scope.writePhotosAlbum": {
+        "desc": "用于保存聊天中的图片到相册"
+      }
+    },
+    "requiredPrivateInfos": ["chooseLocation", "getLocation"],
+    "lazyCodeLoading": "requiredComponents"
+  },
+  "locale": "zh-Hans",
+  "fallbackLocale": "zh-Hans",
+  "h5": {
+    "router": {
+      "mode": "history"
+    },
+    "title": "星火园帮"
+  },
+  "quickapp": {},
+  "app-plus": {
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true
+    },
+    "modules": {
+      "OAuth": {}
+    }
+  }
+}

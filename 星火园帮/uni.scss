@@ -1,0 +1,200 @@
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+
+/* 颜色规范 */
+$uni-color-primary: #007aff; // 主要颜色，如按钮、链接等
+$uni-color-primary-light: lighten(
+  $uni-color-primary,
+  15%
+); // 主要颜色的浅色变体
+$uni-color-success: #4cd964; // 成功提示颜色、状态指示
+$uni-color-warning: #f0ad4e; // 警告提示颜色、金额颜色等
+$uni-color-error: #dd524d; // 错误提示颜色、金额颜色等
+
+/* 背景色相关 */
+$uni-bg-color: #ffffff; // 基础背景色，如卡片、弹窗等
+$uni-bg-color-grey: #f8f8f8; // 页面默认背景色或浅灰色块背景
+$uni-bg-color-page: #f8f8f8; // 页面整体背景色
+$uni-bg-color-hover: #f1f1f1; // 列表项等元素的点击态背景色
+$uni-bg-color-mask: rgba(0, 0, 0, 0.4); // 遮罩层颜色
+
+/* 文字基本颜色 */
+$uni-text-color: #333333; // 主要文字颜色，如正文、标题
+$uni-text-color-inverse: #ffffff; // 反色文字，通常用于深色背景上
+$uni-text-color-grey: #999999; // 辅助文字颜色，如次要信息、副标题
+$uni-text-color-light: #666666; // 较浅的文字颜色，用于时间、一些描述性文字
+$uni-text-color-placeholder: #808080; // 输入框占位文字颜色
+$uni-text-color-disable: #c0c0c0; // 禁用状态文字颜色
+$uni-text-color-link: $uni-color-primary; // 链接文字颜色
+
+/* 边框颜色 */
+$uni-border-color: #c8c7cc; // 默认边框颜色，如分割线
+$uni-border-color-light: #e5e5e5; // 浅色边框 (例如 #eeeeee 或 #f0f0f0 也可以)
+
+/* 图片尺寸 (可根据需要添加或修改) */
+$uni-img-size-sm: 40rpx;
+$uni-img-size-base: 52rpx;
+$uni-img-size-lg: 80rpx;
+
+/* 字体大小规范 */
+$uni-font-size-sm: 24rpx; // 辅助、次要信息、标签等
+$uni-font-size-base: 28rpx; // 正文默认字体大小
+$uni-font-size-lg: 32rpx; // 较大文字，如列表标题、按钮文字、金额等
+$uni-font-size-xl: 40rpx; // 更大号字体
+$uni-font-size-title: 40rpx; // 页面或区块大标题 (H1)
+$uni-font-size-subtitle: 36rpx; // 页面或区块副标题 (H2)
+
+/* 圆角规范 */
+$uni-border-radius-sm: 4rpx; // 小圆角，如标签
+$uni-border-radius-base: 8rpx; // 基础圆角，如输入框
+$uni-border-radius-lg: 16rpx; // 较大圆角，如弹窗、卡片
+$uni-border-radius-circle: 50%; // 圆形，如头像
+$uni-border-radius-pill: 1000px; // 胶囊形状按钮、状态标签
+
+/* 水平间距规范 (padding, margin) */
+$uni-spacing-row-sm: 10rpx;
+$uni-spacing-row-base: 20rpx;
+$uni-spacing-row-lg: 30rpx;
+
+/* 垂直间距规范 (padding, margin) */
+$uni-spacing-col-sm: 8rpx;
+$uni-spacing-col-base: 16rpx;
+$uni-spacing-col-lg: 24rpx;
+
+/* 透明度规范 */
+$uni-opacity-disabled: 0.3; // 组件禁用状态的透明度
+
+/* Box shadow 规范 */
+$uni-shadow-sm: 0px 1px 4px rgba(0, 0, 0, 0.06); // 轻微阴影
+$uni-shadow-base: 0px 2px 8px rgba(0, 0, 0, 0.08); // 基础阴影，用于卡片等
+$uni-shadow-lg: 0px 4px 16px rgba(0, 0, 0, 0.12); // 更明显的阴影
+
+/* ---- 通用辅助类 ---- */
+.card {
+  background-color: $uni-bg-color;
+  border-radius: $uni-border-radius-lg;
+  box-shadow: $uni-shadow-base;
+  margin-bottom: $uni-spacing-row-lg;
+}
+
+.rounded-sm {
+  border-radius: $uni-border-radius-sm !important;
+}
+.rounded-base {
+  border-radius: $uni-border-radius-base !important;
+}
+.rounded-lg {
+  border-radius: $uni-border-radius-lg !important;
+}
+.rounded-circle {
+  border-radius: $uni-border-radius-circle !important;
+}
+.rounded-pill {
+  border-radius: $uni-border-radius-pill !important;
+}
+
+.shadow-sm {
+  box-shadow: $uni-shadow-sm !important;
+}
+.shadow-base {
+  box-shadow: $uni-shadow-base !important;
+}
+.shadow-lg {
+  box-shadow: $uni-shadow-lg !important;
+}
+
+/* 页面容器基础样式 */
+.page-container {
+  min-height: 100vh;
+  background-color: $uni-bg-color-page;
+  box-sizing: border-box;
+  padding: $uni-spacing-col-base;
+}
+
+/* ---- 通用按钮样式 ---- */
+%button-base {
+  // 按钮基础占位符，可用于 @extend
+  font-size: $uni-font-size-lg;
+  padding: 18rpx 30rpx; // 调整按钮内边距以适应常见的按钮大小
+  border-radius: $uni-border-radius-pill;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex; // 方便图标和文字对齐
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.button-primary {
+  @extend %button-base;
+  background-color: $uni-color-primary;
+  color: $uni-text-color-inverse;
+
+  &:active {
+    background-color: darken($uni-color-primary, 10%);
+  }
+  &.disabled {
+    background-color: lighten($uni-color-primary, 20%) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+.button-error {
+  // settings.vue 中用到的退出登录按钮
+  @extend %button-base;
+  background-color: $uni-color-error;
+  color: $uni-text-color-inverse;
+
+  &:active {
+    background-color: darken($uni-color-error, 10%);
+  }
+  &.disabled {
+    background-color: lighten($uni-color-error, 20%) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+
+// 活泼风格字体组合
+$fun-font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC",
+  "Microsoft YaHei", Arial, sans-serif !important;
+
+// 任务栏/二手市集/求资料/公告栏等标题样式
+.fun-title {
+  font-family: $fun-font-family;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+
+// 公告栏样式
+.fun-announcement {
+  font-family: $fun-font-family;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+
+// 任务栏按钮文字
+.fun-tab-label {
+  font-family: $fun-font-family;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}

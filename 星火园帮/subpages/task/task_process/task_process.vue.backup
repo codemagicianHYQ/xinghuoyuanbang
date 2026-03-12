@@ -1,0 +1,2125 @@
+<template>
+  <view class="order-process-container">
+    <!-- 状态对应的提示信息 -->
+    <view class="status-section">
+      <view class="status-card" :class="statusCardClass">
+        <view class="status-icon">
+          <uni-icons
+            :type="statusIconType"
+            size="48"
+            :color="statusIconColor"
+          ></uni-icons>
+        </view>
+        <text class="status-title">{{ statusTitle }}</text>
+        <text class="status-desc">{{ statusDescription }}</text>
+      </view>
+    </view>
+
+    <!-- 任务详情区块化布局 -->
+    <view v-if="task" class="task-detail-container">
+      <!-- 任务基本信息 -->
+      <view class="task-basic-info">
+        <view class="task-title-section">
+          <text class="task-title">{{ task.title || "无标题" }}</text>
+          <text class="task-reward">¥{{ getTaskAmount }}</text>
+        </view>
+        <view class="task-meta">
+          <text class="task-type">{{ task.taskType }}</text>
+          <view class="status-badge" :class="statusClass">{{
+            statusText
+          }}</view>
+        </view>
+        <text
+          class="task-deadline"
+          v-if="task.deadline && task.deadline !== 'null'"
+          >{{ formatDeadline(task.deadline) }}截止</text
+        >
+      </view>
+
+      <!-- 任务描述区块 -->
+      <view class="task-description-block">
+        <view class="block-icon">📝</view>
+        <view class="block-content">
+          <text class="block-title">任务描述</text>
+          <text class="block-text">{{ taskDescription }}</text>
+        </view>
+      </view>
+
+      <!-- 任务详情区块 -->
+      <view v-if="task.specifics" class="task-details-block">
+        <view class="block-icon">📋</view>
+        <view class="block-content">
+          <text class="block-title">任务详情</text>
+          <text class="block-text">{{ formattedSpecifics }}</text>
+        </view>
+      </view>
+
+      <!-- 任务地点区块 -->
+      <view class="task-location-block">
+        <view class="block-icon">📍</view>
+        <view class="block-content">
+          <text class="block-title">任务地点</text>
+          <text class="block-text">{{ taskLocation }}</text>
+        </view>
+      </view>
+
+      <!-- 备注信息区块 -->
+      <view
+        v-if="task.remarks && task.remarks.trim()"
+        class="task-remarks-block"
+      >
+        <view class="block-icon">💬</view>
+        <view class="block-content">
+          <text class="block-title">备注信息</text>
+          <text class="block-text">{{ task.remarks }}</text>
+        </view>
+      </view>
+
+      <!-- 性别要求区块 -->
+      <view
+        v-if="task.requiredGender !== undefined && task.requiredGender !== 0"
+        class="task-gender-block"
+      >
+        <view class="block-icon">👥</view>
+        <view class="block-content">
+          <text class="block-title">性别要求</text>
+          <text class="block-text">{{
+            getGenderText(task.requiredGender)
+          }}</text>
+        </view>
+      </view>
+
+      <!-- 订单信息区块 -->
+      <view class="task-order-block">
+        <view class="block-icon">📊</view>
+        <view class="block-content">
+          <text class="block-title">订单信息</text>
+          <view class="order-info-list">
+            <view class="order-info-item">
+              <text class="order-label">单号</text>
+              <text class="order-value">{{ orderNumber }}</text>
+            </view>
+            <view class="order-info-item">
+              <text class="order-label">创建时间</text>
+              <text class="order-value">{{ createTime }}</text>
+            </view>
+            <view class="order-info-item">
+              <text class="order-label">接单时间</text>
+              <text class="order-value">{{ acceptTime }}</text>
+            </view>
+            <view v-if="task.publisherConfirmedTime" class="order-info-item">
+              <text class="order-label">完成时间</text>
+              <text class="order-value">{{
+                formatDateTime(task.publisherConfirmedTime)
+              }}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 发布者信息 -->
+    <view class="publisher-info">
+      <view class="info-header">
+        <text class="info-title">{{
+          isPublisher ? "接单员信息" : "发布者信息"
+        }}</text>
+      </view>
+
+      <view class="publisher-card">
+        <image
+          :src="isPublisher ? getAcceptorAvatar() : getPublisherAvatar()"
+          class="publisher-avatar"
+        />
+        <view class="publisher-detail">
+          <text class="publisher-name">{{
+            isPublisher ? getAcceptorName() : getPublisherName()
+          }}</text>
+          <text class="publisher-desc">{{
+            isPublisher ? "任务接单员" : "任务发布者"
+          }}</text>
+        </view>
+        <button class="contact-btn" @click="contactPublisher">
+          {{ isPublisher ? "联系接单员" : "联系发布者" }}
+        </button>
+      </view>
+    </view>
+
+    <!-- 操作指南 -->
+    <view v-if="task && !isCompletedStatus" class="guide-section">
+      <view class="info-header">
+        <text class="info-title">操作指南</text>
+      </view>
+
+      <view class="guide-list">
+        <view
+          v-if="!isPublisher && task.status === 'assigned'"
+          class="guide-item"
+        >
+          <view class="guide-icon">1</view>
+          <view class="guide-content">
+            <text class="guide-title">及时联系发布者</text>
+            <text class="guide-desc">确认任务具体要求，避免误解</text>
+          </view>
+        </view>
+
+        <view
+          v-if="!isPublisher && task.status === 'assigned'"
+          class="guide-item"
+        >
+          <view class="guide-icon">2</view>
+          <view class="guide-content">
+            <text class="guide-title">按时完成任务</text>
+            <text class="guide-desc">在截止时间前完成，保持良好信誉</text>
+          </view>
+        </view>
+
+        <view
+          v-if="!isPublisher && task.status === 'assigned'"
+          class="guide-item"
+        >
+          <view class="guide-icon">3</view>
+          <view class="guide-content">
+            <text class="guide-title">标记任务完成</text>
+            <text class="guide-desc">完成后及时标记，等待发布者确认</text>
+          </view>
+        </view>
+
+        <view
+          v-if="isPublisher && task.status === 'assigned'"
+          class="guide-item"
+        >
+          <view class="guide-icon">1</view>
+          <view class="guide-content">
+            <text class="guide-title">及时联系接单员</text>
+            <text class="guide-desc">确认任务进度，提供必要帮助</text>
+          </view>
+        </view>
+
+        <view
+          v-if="isPublisher && task.status === 'acceptor_done'"
+          class="guide-item"
+        >
+          <view class="guide-icon">1</view>
+          <view class="guide-content">
+            <text class="guide-title">确认任务完成</text>
+            <text class="guide-desc">接单员已标记完成，请及时确认</text>
+          </view>
+        </view>
+
+        <view
+          v-if="isPublisher && task.status === 'acceptor_done'"
+          class="guide-item"
+        >
+          <view class="guide-icon">2</view>
+          <view class="guide-content">
+            <text class="guide-title">评价服务</text>
+            <text class="guide-desc">对服务进行评价，帮助其他用户</text>
+          </view>
+        </view>
+
+        <view
+          v-if="!isPublisher && task.status === 'acceptor_done'"
+          class="guide-item"
+        >
+          <view class="guide-icon">1</view>
+          <view class="guide-content">
+            <text class="guide-title">等待发布者确认</text>
+            <text class="guide-desc">您已标记完成，等待发布者确认</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 订单确认图片上传区域 -->
+    <view
+      v-if="!isPublisher && task && task.status === 'assigned'"
+      class="confirm-images-card"
+    >
+      <text class="confirm-images-title">📷 上传完成凭证</text>
+      <text class="confirm-images-desc">请上传任务完成凭证图片（可选）</text>
+
+      <!-- 图片上传区域 -->
+      <view class="upload-area">
+        <view
+          v-for="(image, index) in confirmImages"
+          :key="index"
+          class="image-item"
+        >
+          <image
+            :src="image"
+            class="uploaded-image"
+            @click="previewImage(image)"
+          />
+          <view class="image-actions">
+            <button class="delete-btn" @click="removeImage(index)">删除</button>
+          </view>
+        </view>
+
+        <view
+          v-if="confirmImages.length < maxImages"
+          class="upload-btn"
+          @click="chooseImage"
+        >
+          <text class="upload-icon">+</text>
+          <text class="upload-text">添加图片</text>
+        </view>
+      </view>
+
+      <text class="upload-tip">最多可上传 {{ maxImages }} 张图片</text>
+    </view>
+
+    <!-- 接单员底部操作按钮 -->
+    <view
+      v-if="!isPublisher && task && task.status === 'assigned'"
+      class="fixed-bottom-actions"
+    >
+      <button
+        class="reject-btn"
+        @click="handleRejectClick"
+        :class="{ disabled: !canRejectTask }"
+      >
+        {{ rejectButtonText }}
+      </button>
+      <button
+        class="complete-btn"
+        @click="markAsComplete"
+        :loading="isLoading"
+        :disabled="isLoading"
+      >
+        标记完成
+      </button>
+    </view>
+
+    <!-- 发布者确认完成按钮 -->
+    <button
+      v-if="isPublisher && task && task.status === 'acceptor_done'"
+      class="confirm-btn fixed-bottom-btn"
+      @click="confirmTaskComplete"
+      :loading="isConfirming"
+      :disabled="isConfirming"
+    >
+      确认完成
+    </button>
+
+    <!-- 加载状态 -->
+    <view v-if="isLoading" class="loading-overlay">
+      <uni-load-more status="loading"></uni-load-more>
+    </view>
+  </view>
+</template>
+
+<script>
+import request from "@/common/request.js";
+
+export default {
+  data() {
+    return {
+      taskId: null,
+      task: null,
+      isLoading: true,
+      isCompleting: false,
+      isConfirming: false, // 新增：用于控制确认完成按钮的加载状态
+      confirmImages: [], // 确认图片数组
+      maxImages: 3, // 最大图片数量
+    };
+  },
+  computed: {
+    statusText() {
+      if (!this.task) return "";
+      const statusMap = {
+        open: "待接单",
+        assigned: "进行中",
+        acceptor_done: "待确认",
+        publisher_confirmed: "已完成",
+        completed: "已完成",
+        cancelled: "已取消",
+      };
+      return statusMap[this.task.status] || "进行中";
+    },
+    statusClass() {
+      if (!this.task) return "";
+      const classMap = {
+        open: "status-waiting",
+        assigned: "status-doing",
+        acceptor_done: "status-done",
+        publisher_confirmed: "status-confirmed",
+        completed: "status-done",
+        cancelled: "status-cancelled",
+      };
+      return classMap[this.task.status] || "status-doing";
+    },
+    // 状态卡片样式
+    statusCardClass() {
+      if (!this.task) return "status-card-default";
+      const classMap = {
+        open: "status-card-waiting",
+        assigned: "status-card-processing",
+        acceptor_done: "status-card-waiting-confirm",
+        publisher_confirmed: "status-card-completed",
+        completed: "status-card-completed",
+        cancelled: "status-card-cancelled",
+      };
+      return classMap[this.task.status] || "status-card-default";
+    },
+    // 状态图标类型
+    statusIconType() {
+      if (!this.task) return "info";
+      const iconMap = {
+        open: "info",
+        assigned: "gear",
+        acceptor_done: "clock",
+        publisher_confirmed: "checkmarkempty",
+        completed: "checkmarkempty",
+        cancelled: "closeempty",
+      };
+      return iconMap[this.task.status] || "info";
+    },
+    // 状态图标颜色
+    statusIconColor() {
+      if (!this.task) return "#666";
+      const colorMap = {
+        open: "#666",
+        assigned: "#007aff",
+        acceptor_done: "#ff9500",
+        publisher_confirmed: "#4ecb73",
+        completed: "#4ecb73",
+        cancelled: "#ff3b30",
+      };
+      return colorMap[this.task.status] || "#666";
+    },
+    // 状态标题
+    statusTitle() {
+      if (!this.task) return "加载中...";
+
+      // 根据用户身份和任务状态显示不同标题
+      if (this.isPublisher) {
+        // 发布者视角
+        const publisherTitleMap = {
+          open: "订单待接单",
+          assigned: "订单进行中",
+          acceptor_done: "等待确认完成",
+          publisher_confirmed: "订单已完成",
+          completed: "订单已完成",
+          cancelled: "订单已取消",
+        };
+        return publisherTitleMap[this.task.status] || "订单处理中";
+      } else {
+        // 接单员视角
+        const riderTitleMap = {
+          open: "订单已驳回",
+          assigned: "接单成功！",
+          acceptor_done: "等待发布者确认",
+          publisher_confirmed: "任务已完成",
+          completed: "任务已完成",
+          cancelled: "订单已取消",
+        };
+        return riderTitleMap[this.task.status] || "订单处理中";
+      }
+    },
+    // 状态描述
+    statusDescription() {
+      if (!this.task) return "正在加载订单信息...";
+
+      // 根据用户身份和任务状态显示不同描述
+      if (this.isPublisher) {
+        // 发布者视角
+        const publisherDescMap = {
+          open: "等待接单员接取您的任务",
+          assigned: "接单员正在处理您的任务，请保持联系",
+          acceptor_done: "接单员已标记完成，请及时确认",
+          publisher_confirmed: "任务已完成，款项已打给接单员",
+          completed: "任务已完成，款项已打给接单员",
+          cancelled: "订单已被取消",
+        };
+        return publisherDescMap[this.task.status] || "订单正在处理中";
+      } else {
+        // 接单员视角
+        const riderDescMap = {
+          open: "订单已返回订单大厅，等待其他接单员接取",
+          assigned: "您已成功接取该任务，请及时处理",
+          acceptor_done: "您已标记完成，等待发布者确认",
+          publisher_confirmed: "任务已完成，款项已到账",
+          completed: "任务已完成，款项已到账",
+          cancelled: "订单已被取消",
+        };
+        return riderDescMap[this.task.status] || "订单正在处理中";
+      }
+    },
+    isCompletedStatus() {
+      return (
+        this.task &&
+        (this.task.status === "completed" ||
+          this.task.status === "publisher_confirmed")
+      );
+    },
+    currentUserInfo() {
+      return this.$store.state.userInfo;
+    },
+    isRiderUser() {
+      return (
+        this.currentUserInfo &&
+        (this.currentUserInfo.role === "rider" ||
+          this.currentUserInfo.riderApplicationStatus === "approved")
+      );
+    },
+    isPublisher() {
+      return (
+        this.currentUserInfo &&
+        this.task &&
+        this.task.publisherId === this.currentUserInfo.id
+      );
+    },
+    // 任务描述计算属性
+    taskDescription() {
+      if (!this.task) return "请帮我取快递";
+
+
+      // 如果有正常的描述内容
+      if (
+        this.task.description &&
+        this.task.description !== null &&
+        this.task.description !== "null" &&
+        this.task.description.trim() &&
+        !this.task.description.match(/^\d{4}-\d{2}-\d{2}/)
+      ) {
+        return this.cleanHtmlContent(this.task.description);
+      }
+
+      // 根据任务类型返回默认描述
+      const taskType = this.task.taskType || "";
+      switch (taskType) {
+        case "取快递":
+          return "请帮我取快递";
+        case "取外卖":
+          return "请帮我取外卖";
+        case "搬运服务":
+          return "请帮我搬运物品";
+        case "找搭子":
+          return "寻找活动搭子";
+        case "帮我买":
+          return "请帮我购买物品";
+        case "借物品":
+          return "请借我物品";
+        case "代替服务":
+          return "代替服务需求";
+        case "课程代替":
+          return "课程代替需求";
+        case "求资料":
+          return "求资料帮助";
+        case "游戏陪玩":
+          return "游戏陪玩需求";
+        case "其他帮助":
+          return "其他帮助需求";
+        default:
+          return "请帮我取快递";
+      }
+    },
+    // 任务地点计算属性
+    taskLocation() {
+      if (!this.task) return "未知地点";
+
+        "[taskLocation] 计算属性调用，task.locationText:",
+        this.task.locationText
+      );
+        "[taskLocation] 计算属性调用，task.specifics:",
+        this.task.specifics
+      );
+
+      const taskType = this.task.taskType || "";
+
+      // 根据任务类型优化地点显示
+      switch (taskType) {
+        case "游戏开黑":
+          return "线上游戏";
+
+        case "搬运服务":
+          // 解析具体信息，提取起始地点
+          if (this.task.specifics) {
+            const startLocationMatch = this.task.specifics.match(
+              /起始地点[:：]\s*([^,，\n]+)/
+            );
+            if (startLocationMatch) {
+              return startLocationMatch[1].trim();
+            }
+          }
+          return this.task.locationText || "搬运地点";
+
+        case "找搭子":
+          // 解析具体信息，提取活动地点
+          if (this.task.specifics) {
+            const activityMatch = this.task.specifics.match(
+              /活动地点[:：]\s*([^,，\n]+)/
+            );
+            if (activityMatch) {
+              return activityMatch[1].trim();
+            }
+          }
+          return this.task.locationText || "活动地点";
+
+        case "分身服务":
+          return "线上服务";
+
+        case "分身服务":
+          // 解析具体信息，提取上课地点
+          if (this.task.specifics) {
+            const classLocationMatch = this.task.specifics.match(
+              /上课地点[:：]\s*([^,，\n]+)/
+            );
+            if (classLocationMatch) {
+              return classLocationMatch[1].trim();
+            }
+          }
+          // 如果是线上课程
+          if (this.task.specifics && this.task.specifics.includes("线上")) {
+            return "线上课程";
+          }
+          return this.task.locationText || "教学楼";
+
+        case "取快递":
+        case "取外卖":
+          // 解析具体信息，提取送达地址
+          if (this.task.specifics) {
+            const deliveryMatch = this.task.specifics.match(
+              /送达地址[:：]\s*([^,，\n]+)/
+            );
+            if (deliveryMatch) {
+              return "送：" + deliveryMatch[1].trim();
+            }
+          }
+          // 如果locationText为空或null，返回默认值
+          if (
+            this.task.locationText &&
+            this.task.locationText !== "null" &&
+            this.task.locationText.trim()
+          ) {
+            return "送：" + this.task.locationText;
+          }
+          return "杭州市滨江区"; // 默认地点
+
+        case "帮我买":
+          if (this.task.specifics) {
+            const shopMatch = this.task.specifics.match(
+              /购买地点[:：]\s*([^,，\n]+)/
+            );
+            if (shopMatch) {
+              return shopMatch[1].trim();
+            }
+          }
+          return this.task.locationText || "购买地点";
+
+        case "借物品":
+          // 解析具体信息，提取取货地点
+          if (this.task.specifics) {
+            const pickupMatch = this.task.specifics.match(
+              /取货地点[:：]\s*([^,，\n]+)/
+            );
+            if (pickupMatch) {
+              return pickupMatch[1].trim();
+            }
+          }
+          return this.task.locationText || "取货地点";
+
+        case "求资料":
+          return "线上服务";
+
+        case "其他帮助":
+          return this.task.locationText || "待定地点";
+
+        default:
+          // 如果地点为空、null或只有空格，显示默认地点
+          if (
+            !this.task.locationText ||
+            this.task.locationText === "null" ||
+            this.task.locationText.trim() === "" ||
+            this.task.locationText === "空"
+          ) {
+            return "杭州市滨江区";
+          }
+          return this.task.locationText;
+      }
+    },
+    // 订单号计算属性
+    orderNumber() {
+      if (!this.task) return "暂未生成";
+
+      // 对于借物品任务，检查是否为借出模式
+      if (this.task.taskType === "借物品") {
+        // 借出模式：如果任务还未被接单（状态为open），显示"借出后生成"
+        if (this.task.borrowMode === "lend") {
+          if (this.task.status === "open") {
+            return "借出后生成";
+          }
+          // 如果已经被接单且有订单号，显示实际订单号
+          if (this.task.out_trade_no) {
+            return this.formatOrderNumber(this.task.out_trade_no);
+          }
+          return "借出后生成";
+        }
+        // 借进模式显示实际订单号
+        if (this.task.borrowMode === "borrow" && this.task.out_trade_no) {
+          return this.formatOrderNumber(this.task.out_trade_no);
+        }
+        return "借出后生成";
+      }
+
+      if (!this.task.out_trade_no) return "暂未生成";
+      return this.formatOrderNumber(this.task.out_trade_no);
+    },
+    // 创建时间计算属性
+    createTime() {
+      if (!this.task || !this.task.createdAt) return "暂无";
+        "[createTime] 计算属性调用，task.createdAt:",
+        this.task.createdAt
+      );
+      return this.formatDateTime(this.task.createdAt);
+    },
+    // 接单时间计算属性
+    acceptTime() {
+      if (!this.task || !this.task.acceptedAt) return "暂无";
+        "[acceptTime] 计算属性调用，task.acceptedAt:",
+        this.task.acceptedAt
+      );
+      return this.formatDateTime(this.task.acceptedAt);
+    },
+    // 驳回按钮文本计算属性
+    rejectButtonText() {
+      if (!this.task) return "驳回订单";
+
+        "[rejectButtonText] 计算属性调用，task.taskType:",
+        this.task.taskType,
+        "task.borrowMode:",
+        this.task.borrowMode
+      );
+
+      if (this.task.taskType === "借物品") {
+        if (this.task.borrowMode === "lend") {
+          // 借出模式：借入者取消订单
+          return "取消订单";
+        } else if (this.task.borrowMode === "borrow") {
+          // 借进模式：借出者驳回订单
+          return "驳回订单";
+        }
+      }
+      // 其他任务类型
+      return "驳回订单";
+    },
+    formattedSpecifics() {
+      if (!this.task || !this.task.specifics) return "";
+      let specifics = this.task.specifics;
+
+      // 对包裹大小进行中文翻译（如果需要）
+      specifics = specifics
+        .replace(/包裹大小: small/g, "包裹大小: 小件")
+        .replace(/包裹大小: medium/g, "包裹大小: 中件")
+        .replace(/包裹大小: large/g, "包裹大小: 大件");
+
+      // 对于借物品任务，优先显示用户选择的借用时间
+      if (this.task.taskType === "借物品") {
+        // 检查是否有借用时间信息
+        const borrowTimeMatch = specifics.match(/借用时间: (.+)/);
+        if (borrowTimeMatch) {
+          // 如果有借用时间，替换可用时间为借用时间
+          specifics = specifics.replace(
+            /可用时间: [^\n]+/,
+            `借用时间: ${borrowTimeMatch[1]}`
+          );
+        }
+      }
+
+      return specifics;
+    },
+
+    // 检查是否可以驳回订单（接单后10分钟内）
+    canRejectTask() {
+      if (!this.task || !this.task.acceptedAt) {
+        return false;
+      }
+
+      const acceptTime = new Date(this.task.acceptedAt);
+      const currentTime = new Date();
+      const timeDiff = currentTime - acceptTime;
+      const tenMinutes = 10 * 60 * 1000; // 10分钟的毫秒数
+      const minutes = Math.floor(timeDiff / (1000 * 60));
+
+
+      return timeDiff <= tenMinutes;
+    },
+
+    // 获取任务金额
+    getTaskAmount() {
+      if (!this.task) return 0;
+
+      // 对于借物品任务，计算实际支付金额（押金+租金）
+      if (this.task.taskType === "借物品") {
+        const specifics = this.task.specifics || "";
+
+        // 解析押金
+        const depositMatch = specifics.match(/押金[：:]\s*(\d+(?:\.\d+)?)元/);
+        const deposit = depositMatch ? parseFloat(depositMatch[1]) : 0;
+
+        // 解析日租金
+        const rentMatch = specifics.match(/日租金[：:]\s*(\d+(?:\.\d+)?)元/);
+        const dailyRent = rentMatch ? parseFloat(rentMatch[1]) : 0;
+
+        // 解析借用天数
+        let days = 1;
+        const borrowTimeMatch = specifics.match(/借用时间: (.+)/);
+        if (borrowTimeMatch) {
+          const timeRange = borrowTimeMatch[1];
+          const dateMatch = timeRange.match(
+            /(\d{4}-\d{2}-\d{2})\s*至\s*(\d{4}-\d{2}-\d{2})/
+          );
+          if (dateMatch) {
+            const startDate = new Date(dateMatch[1]);
+            const endDate = new Date(dateMatch[2]);
+            const diffTime = Math.abs(endDate - startDate);
+            days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+          }
+        }
+
+        const totalRent = dailyRent * days;
+        const totalAmount = deposit + totalRent;
+
+
+        return totalAmount.toFixed(2);
+      }
+
+      // 其他任务类型直接返回rewardAmount
+      const amount = this.task.rewardAmount || 0;
+      return amount;
+    },
+  },
+  async onLoad(options) {
+    this.taskId = options.id;
+
+    // 如果用户信息为空，尝试从store获取
+    if (!this.userInfo) {
+      try {
+        await this.$store.dispatch("fetchCurrentUserInfo");
+      } catch (error) {
+        console.error("获取用户信息失败:", error);
+      }
+    }
+
+
+    if (this.taskId) {
+      this.fetchTaskDetail();
+    } else {
+      uni.showToast({ title: "无效的任务ID", icon: "none" });
+      this.goBack();
+    }
+  },
+  methods: {
+    async fetchTaskDetail() {
+      this.isLoading = true;
+      try {
+
+        const res = await request({
+          url: `/tasks/${this.taskId}`,
+          method: "GET",
+        });
+
+"[fetchTaskDetail] 获取到的任务详情:", res);
+"[fetchTaskDetail] 任务描述字段:", res.description);
+"[fetchTaskDetail] 任务详情字段:", res.specifics);
+"[fetchTaskDetail] 任务地点字段:", res.locationText);
+"[fetchTaskDetail] 任务截止时间字段:", res.deadline);
+"[fetchTaskDetail] 发布者信息:", res.publisher);
+"[fetchTaskDetail] 接单者信息:", res.acceptor);
+"[fetchTaskDetail] 任务类型字段:", res.taskType);
+"[fetchTaskDetail] 创建时间字段:", res.createdAt);
+"[fetchTaskDetail] 接单时间字段:", res.acceptedAt);
+"[fetchTaskDetail] 支付订单号字段:", res.out_trade_no);
+
+        // 检查发布者和接单者信息
+        if (res.publisher) {
+"[fetchTaskDetail] 发布者详细信息:", {
+            id: res.publisher.id,
+            nickname: res.publisher.nickname,
+            avatarUrl: res.publisher.avatarUrl,
+          });
+        } else {
+"[fetchTaskDetail] 发布者信息为空");
+        }
+
+        if (res.acceptor) {
+"[fetchTaskDetail] 接单者详细信息:", {
+            id: res.acceptor.id,
+            nickname: res.acceptor.nickname,
+            avatarUrl: res.acceptor.avatarUrl,
+          });
+        } else {
+"[fetchTaskDetail] 接单者信息为空");
+        }
+
+        this.task = res;
+
+        // 强制更新Vue响应式数据
+        this.$forceUpdate();
+
+        // 使用Vue.set确保响应式更新
+        this.$set(this, "task", res);
+
+        // 更新本地状态
+        if (this.task && this.task.status) {
+"[fetchTaskDetail] 任务状态已更新:", this.task.status);
+        }
+
+        // 调试数据绑定
+"[fetchTaskDetail] 设置后的task对象:", this.task);
+          "[fetchTaskDetail] task.description:",
+          this.task.description
+        );
+          "[fetchTaskDetail] task.locationText:",
+          this.task.locationText
+        );
+
+        // 添加发布者身份判断的调试信息
+"[fetchTaskDetail] 任务发布者ID:", this.task.publisherId);
+          "[fetchTaskDetail] 当前用户ID:",
+          this.currentUserInfo && this.currentUserInfo.id
+        );
+"[fetchTaskDetail] 是否为发布者:", this.isPublisher);
+"[fetchTaskDetail] 任务状态:", this.task.status);
+          "[fetchTaskDetail] 是否应该显示确认按钮:",
+          this.isPublisher && this.task.status === "acceptor_done"
+        );
+      } catch (e) {
+        console.error("[fetchTaskDetail] 获取任务详情失败:", e);
+        uni.showToast({ title: "加载失败", icon: "none" });
+        this.goBack();
+      } finally {
+        this.isLoading = false;
+      }
+    },
+    formatDeadline(deadline) {
+      try {
+        if (!deadline || deadline === null || deadline === "null")
+          return "无截止时间";
+        const d = new Date(deadline);
+        if (isNaN(d.getTime())) return "时间格式错误";
+        return `${d.getFullYear()}-${(d.getMonth() + 1)
+          .toString()
+          .padStart(2, "0")}-${d.getDate().toString().padStart(2, "0")} ${d
+          .getHours()
+          .toString()
+          .padStart(2, "0")}:${d.getMinutes().toString().padStart(2, "0")}`;
+      } catch (error) {
+        console.error("格式化截止时间错误:", error);
+        return "时间格式错误";
+      }
+    },
+    goBack() {
+      uni.navigateBack();
+    },
+    async contactPublisher() {
+      // 检查任务状态
+      if (!this.task || !this.task.publisher) {
+        uni.showToast({
+          title: "任务信息不完整",
+          icon: "none",
+        });
+        return;
+      }
+
+      // 如果用户信息为空，尝试重新获取
+      if (!this.userInfo) {
+"用户信息为空，尝试重新获取");
+        try {
+          await this.$store.dispatch("fetchCurrentUserInfo");
+        } catch (error) {
+          console.error("获取用户信息失败:", error);
+        }
+      }
+
+      // 获取当前用户信息
+      const currentUserInfo = this.userInfo || this.$store.state.userInfo;
+"当前用户信息:", currentUserInfo);
+
+      // 检查用户身份
+      const isPublisher =
+        currentUserInfo && this.task.publisherId === currentUserInfo.id;
+      const isAcceptor =
+        currentUserInfo && this.task.acceptorId === currentUserInfo.id;
+      const isRider =
+        currentUserInfo &&
+        (currentUserInfo.role === "rider" ||
+          currentUserInfo.riderApplicationStatus === "approved");
+
+"用户身份检查:", {
+        isPublisher,
+        isAcceptor,
+        isRider,
+        currentUserId: currentUserInfo && currentUserInfo.id,
+        publisherId: this.task.publisherId,
+        acceptorId: this.task.acceptorId,
+      });
+
+      // 确定要联系的用户
+      let otherUserId = null;
+      let otherUserName = "";
+      let chatTitle = "";
+
+      if (isPublisher && this.task.acceptor) {
+        // 发布者联系接单员
+        otherUserId = this.task.acceptor.id;
+        otherUserName = this.task.acceptor.nickname || "接单员";
+        chatTitle = `联系接单员 - ${this.task.title}`;
+      } else if (isAcceptor && this.task.publisher) {
+        // 接单员联系发布者
+        otherUserId = this.task.publisher.id;
+        otherUserName = this.task.publisher.nickname || "发布者";
+        chatTitle = `联系发布者 - ${this.task.title}`;
+      } else {
+        uni.showToast({
+          title: "无法确定联系对象",
+          icon: "none",
+        });
+        return;
+      }
+
+      // 跳转到聊天页面
+      uni.navigateTo({
+        url: `/pages/chat/chat?taskId=${
+          this.taskId
+        }&otherUserId=${otherUserId}&title=${encodeURIComponent(chatTitle)}`,
+      });
+    },
+    // 接单员确认完成任务
+    async markAsComplete() {
+      try {
+        // 请求订阅消息授权
+        await this.requestNotificationAuth();
+
+        this.isLoading = true;
+
+        // 构建请求数据
+        const requestData = {};
+        if (this.confirmImages.length > 0) {
+          requestData.confirmImages = this.confirmImages;
+        }
+
+`[markAsComplete] 发送请求数据:`, requestData);
+
+        const response = await request({
+          url: `/tasks/${this.taskId}/acceptor-confirm-done`,
+          method: "POST",
+          data: requestData,
+        });
+
+        if (response.message) {
+          uni.showToast({
+            title: response.message,
+            icon: "success",
+          });
+
+          // 刷新任务信息
+          await this.fetchTaskDetail();
+        }
+      } catch (error) {
+        console.error("确认完成任务失败:", error);
+        uni.showToast({
+          title: error.message || "确认失败",
+          icon: "none",
+        });
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    // 处理取消/驳回按钮点击
+    handleRejectClick() {
+"[handleRejectClick] 按钮被点击");
+"[handleRejectClick] canRejectTask:", this.canRejectTask);
+
+      if (!this.canRejectTask) {
+"[handleRejectClick] 超时，显示提示");
+        uni.showToast({
+          title: "接单超过10分钟，无法取消订单",
+          icon: "none",
+          duration: 2000,
+        });
+        return;
+      }
+
+"[handleRejectClick] 未超时，继续处理");
+      this.rejectTask();
+    },
+
+    // 驳回订单
+    async rejectTask() {
+"[rejectTask] 驳回订单按钮被点击");
+"[rejectTask] canRejectTask:", this.canRejectTask);
+"[rejectTask] task:", this.task);
+
+      // 显示确认对话框
+      const isBorrowItemLend =
+        this.task &&
+        this.task.taskType === "借物品" &&
+        this.task.borrowMode === "lend";
+      const title = isBorrowItemLend ? "取消订单" : "驳回订单";
+      const content = isBorrowItemLend
+        ? "确认要取消此借物品订单吗？取消后押金和租金将原路退回。"
+        : "确认要驳回此订单吗？驳回后订单将返回订单大厅，其他接单员可以重新接取。";
+      const confirmText = isBorrowItemLend ? "确认取消" : "确认驳回";
+
+      uni.showModal({
+        title: title,
+        content: content,
+        confirmText: confirmText,
+        cancelText: "取消",
+        success: async (res) => {
+          if (res.confirm) {
+            try {
+"[rejectTask] 用户确认驳回，开始调用API");
+              this.isLoading = true;
+              const response = await request({
+                url: `/tasks/${this.taskId}/reject`,
+                method: "POST",
+              });
+
+"[rejectTask] API响应:", response);
+
+              if (response.message) {
+                const successMessage = isBorrowItemLend
+                  ? "订单已取消，押金和租金将原路退回"
+                  : response.message;
+                uni.showToast({
+                  title: successMessage,
+                  icon: "success",
+                });
+
+                // 刷新任务信息
+                await this.fetchTaskDetail();
+
+                // 延迟返回上一页
+                setTimeout(() => {
+                  uni.navigateBack();
+                }, 1500);
+              }
+            } catch (error) {
+              console.error("[rejectTask] 驳回订单失败:", error);
+              uni.showToast({
+                title: error.message || "驳回失败",
+                icon: "none",
+              });
+            } finally {
+              this.isLoading = false;
+            }
+          } else {
+"[rejectTask] 用户取消驳回");
+          }
+        },
+      });
+    },
+
+    // 发布者确认完成任务
+    async confirmTaskComplete() {
+      try {
+        // 请求订阅消息授权
+        await this.requestNotificationAuth();
+
+"[confirmTaskComplete] 开始确认任务完成");
+"[confirmTaskComplete] 任务ID:", this.taskId);
+          "[confirmTaskComplete] 当前用户信息:",
+          this.currentUserInfo
+        );
+"[confirmTaskComplete] 是否为发布者:", this.isPublisher);
+"[confirmTaskComplete] 任务状态:", this.task.status);
+
+        this.isConfirming = true;
+        const response = await request({
+          url: `/tasks/${this.taskId}/publisher-confirm-done`,
+          method: "POST",
+        });
+
+"[confirmTaskComplete] API响应:", response);
+
+        if (response.message) {
+          uni.showToast({
+            title: response.message,
+            icon: "success",
+          });
+
+          // 刷新任务信息
+          await this.fetchTaskDetail();
+        }
+      } catch (error) {
+        console.error("[confirmTaskComplete] 确认完成任务失败:", error);
+        uni.showToast({
+          title: error.message || "确认失败",
+          icon: "none",
+        });
+      } finally {
+        this.isConfirming = false;
+      }
+    },
+
+    // 请求通知授权
+    requestNotificationAuth() {
+      return new Promise(async (resolve) => {
+        // 先检查是否已经授权过
+        const hasAuthorized = uni.getStorageSync("hasAuthorizedSubscription");
+        if (hasAuthorized === true) {
+"用户已经授权过订阅消息，跳过授权弹窗");
+          resolve(true);
+          return;
+        }
+
+        uni.showModal({
+          title: "开启消息通知",
+          content: "为了及时接收订单相关通知，请授权接收订阅消息",
+          confirmText: "去授权",
+          cancelText: "稍后再说",
+          success: (res) => {
+            if (res.confirm) {
+              wx.requestSubscribeMessage({
+                tmplIds: [
+                  "vtPkIE3rnciTE0kVXE3WVhmz6KUkATBh5Nl9LytMX0g", // 新任务通知
+                  "58VecsBQtioKWF8uBfXjhtSyX2MmzNcXqaZUQJk_oe4", // 接单通知
+                  "Buc3PRwms6j6QV5dPjzJwo0QmCGts5OU9x8TTxyhxc4", // 送达通知
+                  "e4Jkk2iypweLiPMBqQbWgbx189wjq3hZGG6An-_sS5A", // 完成通知
+                ],
+                success: (authRes) => {
+"订阅消息授权结果:", authRes);
+                    "授权结果详情:",
+                    JSON.stringify(authRes, null, 2)
+                  );
+
+                  const acceptedCount = Object.values(authRes).filter(
+                    (status) => status === "accept"
+                  ).length;
+
+`用户授权了 ${acceptedCount} 个模板`);
+
+                  if (acceptedCount > 0) {
+                    // 保存授权状态
+                    uni.setStorageSync("hasAuthorizedSubscription", true);
+                    uni.setStorageSync("orderNotificationSetting", true);
+                    uni.showToast({
+                      title: `已授权${acceptedCount}个通知`,
+                      icon: "success",
+                    });
+                  } else {
+                    uni.setStorageSync("hasAuthorizedSubscription", false);
+                    uni.showToast({
+                      title: "可稍后在设置中开启通知",
+                      icon: "none",
+                      duration: 3000,
+                    });
+                  }
+                  resolve(true);
+                },
+                fail: (err) => {
+"订阅消息授权失败:", err);
+                  resolve(false);
+                },
+              });
+            } else {
+              resolve(false);
+            }
+          },
+        });
+      });
+    },
+
+    getPublisherAvatar() {
+      return (
+        (this.task && this.task.publisher && this.task.publisher.avatarUrl) ||
+        "/static/images/default-avatar.png"
+      );
+    },
+    getPublisherName() {
+      return (
+        (this.task && this.task.publisher && this.task.publisher.nickname) ||
+        "匿名用户"
+      );
+    },
+    getAcceptorAvatar() {
+      return (
+        (this.task && this.task.acceptor && this.task.acceptor.avatarUrl) ||
+        "/static/images/default-avatar.png"
+      );
+    },
+    getAcceptorName() {
+      return (
+        (this.task && this.task.acceptor && this.task.acceptor.nickname) ||
+        "匿名用户"
+      );
+    },
+
+    cleanHtmlContent(html) {
+      if (!html) return "";
+      // 移除所有HTML标签
+      return html.replace(/<[^>]*>/g, "");
+    },
+
+    // 联系发布者
+    contactPublisher() {
+      if (!this.task || !this.task.publisher) {
+        uni.showToast({
+          title: "发布者信息不存在",
+          icon: "none",
+        });
+        return;
+      }
+
+      // 跳转到聊天页面
+      uni.navigateTo({
+        url: `/pages/chat/chat?taskId=${this.taskId}&userId=${
+          this.task.publisher.id
+        }&userName=${this.task.publisher.nickname || "发布者"}`,
+      });
+    },
+    getGenderText(gender) {
+      if (gender === 1) return "男生";
+      if (gender === 2) return "女生";
+      return "未知";
+    },
+    formatOrderNumber(outTradeNo) {
+"[formatOrderNumber] 调用时的outTradeNo:", outTradeNo);
+      if (!outTradeNo || outTradeNo === null || outTradeNo === "null")
+        return "";
+      // 去掉 ORDER 前缀，只保留数字部分
+      const cleanOrderNo = outTradeNo.replace(/^ORDER\s*/, "");
+      // 完整显示订单号
+      return cleanOrderNo;
+    },
+    formatDateTime(dateTime) {
+"[formatDateTime] 调用时的dateTime:", dateTime);
+      if (!dateTime || dateTime === null || dateTime === "null") return "";
+      try {
+        const date = new Date(dateTime);
+        if (isNaN(date.getTime())) return "";
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        const hour = String(date.getHours()).padStart(2, "0");
+        const minute = String(date.getMinutes()).padStart(2, "0");
+        return `${year}-${month}-${day} ${hour}:${minute}`;
+      } catch (error) {
+        return dateTime;
+      }
+    },
+    // 获取任务地点显示文本
+    getTaskLocation(task) {
+      if (!task) return "未知地点";
+
+        "[getTaskLocation] 调用时的task.locationText:",
+        task.locationText
+      );
+"[getTaskLocation] 调用时的task.specifics:", task.specifics);
+
+      const taskType = task.taskType || "";
+
+      // 根据任务类型优化地点显示
+      switch (taskType) {
+        case "游戏开黑":
+          return "线上游戏";
+
+        case "搬运服务":
+          // 解析具体信息，提取起始地点
+          if (task.specifics) {
+            const startLocationMatch = task.specifics.match(
+              /起始地点[:：]\s*([^,，\n]+)/
+            );
+            if (startLocationMatch) {
+              return startLocationMatch[1].trim();
+            }
+          }
+          return task.locationText || "搬运地点";
+
+        case "找搭子":
+          // 解析具体信息，提取活动地点
+          if (task.specifics) {
+            const activityMatch = task.specifics.match(
+              /活动地点[:：]\s*([^,，\n]+)/
+            );
+            if (activityMatch) {
+              return activityMatch[1].trim();
+            }
+          }
+          return task.locationText || "活动地点";
+
+        case "分身服务":
+          return "线上服务";
+
+        case "分身服务":
+          // 解析具体信息，提取上课地点
+          if (task.specifics) {
+            const classLocationMatch = task.specifics.match(
+              /上课地点[:：]\s*([^,，\n]+)/
+            );
+            if (classLocationMatch) {
+              return classLocationMatch[1].trim();
+            }
+          }
+          // 如果是线上课程
+          if (task.specifics && task.specifics.includes("线上")) {
+            return "线上课程";
+          }
+          return task.locationText || "教学楼";
+
+        case "取快递":
+        case "取外卖":
+          // 解析具体信息，提取送达地址
+          if (task.specifics) {
+            const deliveryMatch = task.specifics.match(
+              /送达地址[:：]\s*([^,，\n]+)/
+            );
+            if (deliveryMatch) {
+              return "送：" + deliveryMatch[1].trim();
+            }
+          }
+          // 如果locationText为空或null，返回默认值
+          if (
+            task.locationText &&
+            task.locationText !== "null" &&
+            task.locationText.trim()
+          ) {
+            return "送：" + task.locationText;
+          }
+          return "杭州市滨江区"; // 默认地点
+
+        case "帮我买":
+          if (task.specifics) {
+            const shopMatch = task.specifics.match(
+              /购买地点[:：]\s*([^,，\n]+)/
+            );
+            if (shopMatch) {
+              return shopMatch[1].trim();
+            }
+          }
+          return task.locationText || "购买地点";
+
+        case "借物品":
+          // 解析具体信息，提取取货地点
+          if (task.specifics) {
+            const pickupMatch = task.specifics.match(
+              /取货地点[:：]\s*([^,，\n]+)/
+            );
+            if (pickupMatch) {
+              return pickupMatch[1].trim();
+            }
+          }
+          return task.locationText || "取货地点";
+
+        case "求资料":
+          return "线上服务";
+
+        case "其他帮助":
+          return task.locationText || "待定地点";
+
+        default:
+          // 如果地点为空、null或只有空格，显示默认地点
+          if (
+            !task.locationText ||
+            task.locationText === "null" ||
+            task.locationText.trim() === "" ||
+            task.locationText === "空"
+          ) {
+            return "杭州市滨江区";
+          }
+          return task.locationText;
+      }
+    },
+
+    // 选择图片
+    chooseImage() {
+      if (this.confirmImages.length >= this.maxImages) {
+        uni.showToast({
+          title: `最多只能上传${this.maxImages}张图片`,
+          icon: "none",
+        });
+        return;
+      }
+
+      uni.chooseImage({
+        count: this.maxImages - this.confirmImages.length,
+        sizeType: ["compressed"],
+        sourceType: ["album", "camera"],
+        success: (res) => {
+          this.uploadImages(res.tempFilePaths);
+        },
+        fail: (error) => {
+          // 检查是否是用户取消了选择
+          if (error.errMsg === "chooseImage:fail cancel") {
+"用户取消了图片选择");
+            // 不显示错误提示，因为这是用户主动行为
+          } else {
+            console.error("选择图片失败:", error);
+            uni.showToast({
+              title: "选择图片失败",
+              icon: "error",
+            });
+          }
+        },
+      });
+    },
+
+    // 上传图片
+    async uploadImages(filePaths) {
+      try {
+        this.isLoading = true;
+
+        const uploadPromises = filePaths.map((filePath) =>
+          this.uploadSingleImage(filePath)
+        );
+        const results = await Promise.all(uploadPromises);
+
+        // 过滤掉上传失败的图片
+        const successResults = results.filter((result) => result.success);
+        this.confirmImages.push(...successResults.map((result) => result.url));
+
+        uni.showToast({
+          title: `成功上传${successResults.length}张图片`,
+          icon: "success",
+        });
+      } catch (error) {
+        console.error("上传图片失败:", error);
+        uni.showToast({
+          title: "上传图片失败",
+          icon: "error",
+        });
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    // 上传单张图片
+    uploadSingleImage(filePath) {
+      return new Promise((resolve, reject) => {
+        uni.uploadFile({
+          url: `${this.$baseUrl}/campushelper/api/v1/upload/orderConfirm`,
+          filePath: filePath,
+          name: "file",
+          header: {
+            Authorization: `Bearer ${uni.getStorageSync("token")}`,
+          },
+          success: (res) => {
+            try {
+              const data = JSON.parse(res.data);
+              if (data.success) {
+                resolve({ success: true, url: data.data.url });
+              } else {
+                resolve({ success: false, error: data.message });
+              }
+            } catch (error) {
+              resolve({ success: false, error: "解析响应失败" });
+            }
+          },
+          fail: (error) => {
+            resolve({ success: false, error: error.errMsg });
+          },
+        });
+      });
+    },
+
+    // 预览图片
+    previewImage(current) {
+      uni.previewImage({
+        urls: this.confirmImages,
+        current: current,
+      });
+    },
+
+    // 删除图片
+    removeImage(index) {
+      uni.showModal({
+        title: "确认删除",
+        content: "确定要删除这张图片吗？",
+        success: (res) => {
+          if (res.confirm) {
+            this.confirmImages.splice(index, 1);
+          }
+        },
+      });
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.order-process-container {
+  min-height: 100vh;
+  background: #f8faff;
+  padding-bottom: 120rpx;
+}
+
+.success-section {
+  padding: 32rpx;
+}
+
+.status-section {
+  padding: 32rpx;
+}
+
+.status-card {
+  border-radius: 24rpx;
+  padding: 48rpx 32rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.status-card-default {
+  background: linear-gradient(135deg, #666 0%, #555 100%);
+}
+
+.status-card-waiting {
+  background: linear-gradient(135deg, #666 0%, #555 100%);
+}
+
+.status-card-processing {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+.status-card-waiting-confirm {
+  background: linear-gradient(135deg, #ff9500 0%, #e6850e 100%);
+}
+
+.status-card-completed {
+  background: linear-gradient(135deg, #4ecb73 0%, #45b362 100%);
+}
+
+.status-card-cancelled {
+  background: linear-gradient(135deg, #ff3b30 0%, #d63031 100%);
+}
+
+.status-icon {
+  margin-bottom: 20rpx;
+}
+
+.status-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.status-desc {
+  display: block;
+  font-size: 28rpx;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* 新的区块化样式 */
+.task-detail-container {
+  padding: 0 32rpx;
+}
+
+.task-basic-info {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.task-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16rpx;
+}
+
+.task-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  margin-right: 24rpx;
+}
+
+.task-reward {
+  color: #ff4e4e;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.task-type {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.status-badge {
+  padding: 8rpx 16rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.status-badge.status-doing {
+  background: #e8f5e8;
+  color: #4ecb73;
+}
+
+.status-badge.status-waiting {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.status-badge.status-done {
+  background: #fff3e0;
+  color: #ff9500;
+}
+
+.status-badge.status-confirmed {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+.task-deadline {
+  font-size: 26rpx;
+  color: #ff9500;
+}
+
+/* 区块样式 */
+.task-description-block,
+.task-details-block,
+.task-location-block,
+.task-remarks-block,
+.task-gender-block,
+.task-order-block {
+  background: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 24rpx;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.block-icon {
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  margin-top: 4rpx;
+}
+
+.block-content {
+  flex: 1;
+}
+
+.block-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.block-text {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.order-info-list {
+  margin-top: 8rpx;
+}
+
+.order-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.order-info-item:last-child {
+  border-bottom: none;
+}
+
+.order-label {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.order-value {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.publisher-info,
+.guide-section {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 0 32rpx 32rpx 32rpx;
+  overflow: hidden;
+}
+
+.info-header {
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.publisher-card {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.publisher-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+}
+
+.publisher-detail {
+  flex: 1;
+}
+
+.publisher-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.publisher-desc {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.contact-btn {
+  background: #4ecb73;
+  color: #fff;
+  border: none;
+  border-radius: 20rpx;
+  padding: 12rpx 24rpx;
+  font-size: 26rpx;
+}
+
+.guide-list {
+  padding: 32rpx;
+}
+
+.guide-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32rpx;
+}
+
+.guide-item:last-child {
+  margin-bottom: 0;
+}
+
+.guide-icon {
+  width: 48rpx;
+  height: 48rpx;
+  background: #4ecb73;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+.guide-content {
+  flex: 1;
+}
+
+.guide-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.guide-desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.fixed-bottom-btn {
+  position: fixed !important;
+  bottom: 32rpx;
+  left: 32rpx;
+  right: 32rpx;
+  z-index: 100;
+}
+
+.fixed-bottom-actions {
+  position: fixed !important;
+  bottom: 32rpx;
+  left: 32rpx;
+  right: 32rpx;
+  z-index: 10;
+  display: flex;
+  gap: 20rpx;
+}
+
+.after-sales-btn {
+  flex: 1;
+  height: 88rpx;
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.complete-btn {
+  flex: 1;
+  height: 88rpx;
+  background: linear-gradient(135deg, #4ecb73 0%, #45b362 100%);
+  color: #fff;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 8rpx 24rpx rgba(78, 203, 115, 0.3);
+}
+
+.contact-btn {
+  flex: 1;
+  height: 88rpx;
+  background: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
+  color: #fff;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 8rpx 24rpx rgba(239, 83, 80, 0.3);
+}
+
+.reject-btn {
+  flex: 1;
+  height: 88rpx;
+  background: linear-gradient(135deg, #ff9500 0%, #e6850e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 8rpx 24rpx rgba(255, 149, 0, 0.3);
+}
+
+.reject-btn:disabled {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+}
+
+.reject-btn.disabled {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+}
+
+.confirm-btn {
+  flex: 1;
+  height: 88rpx;
+  background: linear-gradient(135deg, #4ecb73 0%, #44a08d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 8rpx 24rpx rgba(78, 203, 115, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+}
+
+/* 按钮交互效果 */
+.contact-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 16rpx rgba(239, 83, 80, 0.4);
+}
+
+.complete-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 16rpx rgba(78, 203, 115, 0.4);
+}
+
+.confirm-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 16rpx rgba(78, 203, 115, 0.5);
+
+  &::before {
+    left: 100%;
+  }
+}
+
+.complete-btn:disabled {
+  opacity: 0.6;
+  transform: none !important;
+  box-shadow: 0 8rpx 24rpx rgba(78, 203, 115, 0.15) !important;
+}
+
+.confirm-btn:disabled {
+  opacity: 0.6;
+  transform: none !important;
+  box-shadow: 0 8rpx 24rpx rgba(78, 203, 115, 0.15) !important;
+}
+
+.status-display {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.status-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 图片上传区域样式 */
+.confirm-images-card {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.confirm-images-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.confirm-images-desc {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.upload-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.image-item {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.uploaded-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.image-actions {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+
+.delete-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 6rpx;
+  padding: 8rpx 12rpx;
+  font-size: 20rpx;
+}
+
+.upload-btn {
+  width: 200rpx;
+  height: 200rpx;
+  border: 2rpx dashed #ccc;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.upload-icon {
+  font-size: 48rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.upload-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.upload-tip {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  display: block;
+}
+</style>
