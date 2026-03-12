@@ -1,0 +1,44 @@
+{
+  "name": "xinghuoyuanbang",
+  "version": "1.0.0",
+  "description": "星火园帮后台管理系统",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "logs:view": "tail -f logs/combined-$(date +%Y-%m-%d).log",
+    "logs:error": "tail -f logs/error-$(date +%Y-%m-%d).log",
+    "monitor:db": "node scripts/monitor-db-pool.js",
+    "test:auto-approval": "node scripts/test-auto-rider-approval.js",
+    "test:quick-approval": "node scripts/quick-test-auto-approval.js",
+    "diagnose:approval": "node scripts/diagnose-auto-approval.js",
+    "fix-system-message-enum": "node scripts/fix-system-message-enum.js",
+    "fix:payment-status": "node scripts/fix-payment-status.js",
+    "restart": "pm2 restart ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
+    "status": "pm2 status"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5",
+    "sequelize": "^6.35.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "uuid": "^13.0.0",
+    "vue": "^3.5.17",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "sequelize-cli": "^6.6.2"
+  }
+}

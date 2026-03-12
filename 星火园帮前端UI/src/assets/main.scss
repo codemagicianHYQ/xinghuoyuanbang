@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333; // Default text color
+  background-color: #f0f2f5; // Default page background for consistency with main content area
+}
+
+#app {
+  height: 100vh; // Ensure app takes full viewport height
+  display: flex; // Useful if App.vue is the direct child
+  flex-direction: column; // Useful if App.vue is the direct child
+}
+
+// General card styling (can be overridden in components)
+.box-card {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ebeef5; // Softer border
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05); // Softer shadow
+}
+
+// Utility class for centering content in placeholder views or similar
+.content-placeholder-util {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #909399;
+  background-color: #fff;
+  border-radius: 4px;
+  min-height: 300px;
+}

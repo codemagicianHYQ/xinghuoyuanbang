@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "D:\\Document\\test\\test\\星火园帮后台管理系统\\logs\\.755f7daed02e633d2d4bd03db2c42e97bf037b99-audit.json",
+    "files": [
+        {
+            "date": 1761123551929,
+            "name": "D:\\Document\\test\\test\\星火园帮后台管理系统\\logs\\access-2025-10-22.log",
+            "hash": "f3a3a5d90346f24ea939c8e09828e317fea80bca58f99c8eb0570d0722293b4a"
+        }
+    ],
+    "hashType": "sha256"
+}

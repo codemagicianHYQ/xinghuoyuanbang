@@ -1,0 +1,670 @@
+{
+  error: Error: Cannot find module 'multer'
+  Require stack:
+  - D:\Document\test\test\星火园帮后台管理系统\routes\upload.routes.js
+  - D:\Document\test\test\星火园帮后台管理系统\routes\index.js
+  - D:\Document\test\test\星火园帮后台管理系统\server.js
+  - D:\Document\test\test\星火园帮后台管理系统\test_task_image_upload.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+      at Function._load (node:internal/modules/cjs/loader:1211:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1487:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (D:\Document\test\test\星火园帮后台管理系统\routes\upload.routes.js:2:16)
+      at Module._compile (node:internal/modules/cjs/loader:1730:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\server.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\test_task_image_upload.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module 'multer'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\server.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\test_task_image_upload.js\n' +
+    "Error: Cannot find module 'multer'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\server.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\test_task_image_upload.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js:2:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  stack: "Error: Cannot find module 'multer'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\server.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\test_task_image_upload.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js:2:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  exception: true,
+  date: 'Fri Oct 03 2025 02:09:08 GMT+0800 (中国标准时间)',
+  process: {
+    pid: 91064,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Document\\test\\test\\星火园帮后台管理系统',
+    execPath: 'D:\\Develop\\node\\node.exe',
+    version: 'v22.15.1',
+    argv: [
+      'D:\\Develop\\node\\node.exe',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\test_task_image_upload.js'
+    ],
+    memoryUsage: {
+      rss: 87011328,
+      heapTotal: 59961344,
+      heapUsed: 35353704,
+      external: 3354580,
+      arrayBuffers: 68144
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1874232.718 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1401,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1057,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1062,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1211,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1487,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1730,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2025-10-03 02:09:08'
+}
+{
+  error: Error: Route.get() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as get] (D:\Document\test\test\星火园帮后台管理系统\node_modules\express\lib\router\route.js:216:15)
+      at proto.<computed> [as get] (D:\Document\test\test\星火园帮后台管理系统\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (D:\Document\test\test\星火园帮后台管理系统\routes\task.routes.js:61:8)
+      at Module._compile (node:internal/modules/cjs/loader:1730:14)
+      at Object..js (node:internal/modules/cjs/loader:1895:10)
+      at Module.load (node:internal/modules/cjs/loader:1465:32)
+      at Function._load (node:internal/modules/cjs/loader:1282:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1487:12),
+  level: 'error',
+  message: 'uncaughtException: Route.get() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.get() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as get] (D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at proto.<computed> [as get] (D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js:61:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1895:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1465:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1282:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)',
+  stack: 'Error: Route.get() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as get] (D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at proto.<computed> [as get] (D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js:61:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1895:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1465:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1282:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)',
+  exception: true,
+  date: 'Tue Oct 14 2025 04:22:28 GMT+0800 (中国标准时间)',
+  process: {
+    pid: 79088,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Document\\test\\test\\星火园帮后台管理系统',
+    execPath: 'D:\\Develop\\node\\node.exe',
+    version: 'v22.15.1',
+    argv: [
+      'D:\\Develop\\node\\node.exe',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\test_routing.js'
+    ],
+    memoryUsage: {
+      rss: 79339520,
+      heapTotal: 55767040,
+      heapUsed: 33317184,
+      external: 2250608,
+      arrayBuffers: 18895
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 2832631.218 },
+  trace: [
+    {
+      column: 15,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as get]',
+      line: 216,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\node_modules\\express\\lib\\router\\index.js',
+      function: 'proto.<computed> [as get]',
+      line: 521,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js',
+      function: null,
+      line: 61,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1730,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1895,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1465,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1282,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1487,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2025-10-14 04:22:28'
+}
+{
+  error: node:internal/modules/cjs/loader:1404
+    throw err;
+    ^
+  
+  Error: Cannot find module 'cos-nodejs-sdk-v5'
+  Require stack:
+  - D:\Document\test\test\星火园帮后台管理系统\routes\upload.routes.js
+  - D:\Document\test\test\星火园帮后台管理系统\[eval]
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+      at Function._load (node:internal/modules/cjs/loader:1211:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1487:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (D:\Document\test\test\星火园帮后台管理系统\routes\upload.routes.js:10:13)
+      at Module._compile (node:internal/modules/cjs/loader:1730:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module 'cos-nodejs-sdk-v5'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    'node:internal/modules/cjs/loader:1404\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module 'cos-nodejs-sdk-v5'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js:10:13)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  stack: 'node:internal/modules/cjs/loader:1404\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module 'cos-nodejs-sdk-v5'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js:10:13)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  exception: true,
+  date: 'Wed Oct 22 2025 16:59:11 GMT+0800 (中国标准时间)',
+  process: {
+    pid: 43664,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Document\\test\\test\\星火园帮后台管理系统',
+    execPath: 'D:\\Develop\\node\\node.exe',
+    version: 'v22.15.1',
+    argv: [ 'D:\\Develop\\node\\node.exe' ],
+    memoryUsage: {
+      rss: 77393920,
+      heapTotal: 56553472,
+      heapUsed: 33772512,
+      external: 2325763,
+      arrayBuffers: 18895
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 556006.843 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1401,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1057,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1062,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1211,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1487,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\upload.routes.js',
+      function: null,
+      line: 10,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1730,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2025-10-22 16:59:11'
+}
+{
+  error: node:internal/modules/cjs/loader:1404
+    throw err;
+    ^
+  
+  Error: Cannot find module 'ioredis'
+  Require stack:
+  - D:\Document\test\test\星火园帮后台管理系统\config\redis.js
+  - D:\Document\test\test\星火园帮后台管理系统\services\cacheService.js
+  - D:\Document\test\test\星火园帮后台管理系统\controllers\task.controller.js
+  - D:\Document\test\test\星火园帮后台管理系统\routes\task.routes.js
+  - D:\Document\test\test\星火园帮后台管理系统\routes\index.js
+  - D:\Document\test\test\星火园帮后台管理系统\[eval]
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+      at Function._load (node:internal/modules/cjs/loader:1211:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1487:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (D:\Document\test\test\星火园帮后台管理系统\config\redis.js:1:15)
+      at Module._compile (node:internal/modules/cjs/loader:1730:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\services\\cacheService.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\controllers\\task.controller.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js',
+      'D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module 'ioredis'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\services\\cacheService.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\controllers\\task.controller.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    'node:internal/modules/cjs/loader:1404\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module 'ioredis'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\services\\cacheService.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\controllers\\task.controller.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js:1:15)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  stack: 'node:internal/modules/cjs/loader:1404\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module 'ioredis'\n" +
+    'Require stack:\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\services\\cacheService.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\controllers\\task.controller.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\task.routes.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\routes\\index.js\n' +
+    '- D:\\Document\\test\\test\\星火园帮后台管理系统\\[eval]\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1211:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1487:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js:1:15)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1730:14)',
+  exception: true,
+  date: 'Wed Oct 22 2025 17:02:32 GMT+0800 (中国标准时间)',
+  process: {
+    pid: 34700,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Document\\test\\test\\星火园帮后台管理系统',
+    execPath: 'D:\\Develop\\node\\node.exe',
+    version: 'v22.15.1',
+    argv: [ 'D:\\Develop\\node\\node.exe' ],
+    memoryUsage: {
+      rss: 79433728,
+      heapTotal: 58290176,
+      heapUsed: 34493672,
+      external: 3398895,
+      arrayBuffers: 67953
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 556207.859 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1401,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1057,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1062,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1211,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1487,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 15,
+      file: 'D:\\Document\\test\\test\\星火园帮后台管理系统\\config\\redis.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1730,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2025-10-22 17:02:32'
+}

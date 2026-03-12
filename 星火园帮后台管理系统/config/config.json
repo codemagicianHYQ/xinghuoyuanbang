@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Hyq@1471753670",
+    "database": "users",
+    "host": "10.0.4.11",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Hyq@1471753670",
+    "database": "users",
+    "host": "10.0.4.11",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Hyq@1471753670",
+    "database": "users",
+    "host": "10.0.4.11",
+    "port": 3306,
+    "dialect": "mysql"
+  }
+}

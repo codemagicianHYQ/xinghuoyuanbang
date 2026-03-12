@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Document\\test\\test\\星火园帮后台管理系统\\logs\\.225492a9a83ef441e0736a12058ea3d7c2ca983f-audit.json",
+    "files": [
+        {
+            "date": 1760386948072,
+            "name": "D:\\Document\\test\\test\\星火园帮后台管理系统\\logs\\error-2025-10-14.log",
+            "hash": "2469b9b4554775b5c3b2538ba1720f34e09c577ef6d71765fb811dcb3649f528"
+        },
+        {
+            "date": 1761123551888,
+            "name": "D:\\Document\\test\\test\\星火园帮后台管理系统\\logs\\error-2025-10-22.log",
+            "hash": "720b2d0b45235fcc2c928c27308f76354fa8d37e395e445134af62d0d52236e7"
+        }
+    ],
+    "hashType": "sha256"
+}

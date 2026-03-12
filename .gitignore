@@ -1,0 +1,29 @@
+# IDE
+.vscode
+.idea
+*.suo
+*.user
+
+# 依赖
+node_modules/
+
+# 环境变量与密钥（勿提交到公开仓库）
+.env
+.env.local
+.env.*.local
+*.pem
+
+# 构建产物
+dist/
+build/
+unpackage/
+*.local
+
+# 日志与临时
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# 可选：若不想上传后台管理系统里的上传文件目录，可取消下面注释
+# /星火园帮后台管理系统/uploads/
