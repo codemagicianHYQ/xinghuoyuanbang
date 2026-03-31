@@ -1,0 +1,537 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-60cb334c, .profile-header.data-v-60cb334c, .menu-list.data-v-60cb334c, .apply-rider-card.data-v-60cb334c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-60cb334c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-60cb334c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-60cb334c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-60cb334c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-60cb334c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-60cb334c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-60cb334c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-60cb334c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-60cb334c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-60cb334c, .button-error.data-v-60cb334c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-60cb334c:active, .button-error.data-v-60cb334c:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-60cb334c, .disabled.button-error.data-v-60cb334c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-60cb334c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-60cb334c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-60cb334c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-60cb334c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-60cb334c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-60cb334c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-60cb334c, .profile-header.data-v-60cb334c, .menu-list.data-v-60cb334c, .apply-rider-card.data-v-60cb334c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-60cb334c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-60cb334c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-60cb334c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-60cb334c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-60cb334c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-60cb334c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-60cb334c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-60cb334c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-60cb334c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-60cb334c, .button-primary.data-v-60cb334c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-60cb334c:active, .button-primary.data-v-60cb334c:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-60cb334c, .disabled.button-primary.data-v-60cb334c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-60cb334c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-60cb334c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-60cb334c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-60cb334c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-60cb334c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-60cb334c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-60cb334c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.profile-container.data-v-60cb334c {
+  padding: 16rpx;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.profile-header.data-v-60cb334c,
+.menu-list.data-v-60cb334c,
+.apply-rider-card.data-v-60cb334c {
+  padding: 24rpx;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 30rpx;
+}
+.profile-header.data-v-60cb334c {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profile-header .avatar-container.data-v-60cb334c {
+  position: relative;
+  margin-right: 16rpx;
+}
+.profile-header .avatar-container .avatar.data-v-60cb334c {
+  width: 120rpx;
+  height: 120rpx;
+  border: 4rpx solid #4da2ff;
+  background-color: #f0f0f0;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+}
+.profile-header .avatar-container .edit-avatar-btn.data-v-60cb334c {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.profile-header .avatar-container .edit-avatar-btn.data-v-60cb334c:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.profile-header .avatar-container .edit-avatar-btn .edit-icon.data-v-60cb334c {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1;
+  display: block;
+}
+.profile-header .user-details.data-v-60cb334c {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+.profile-header .user-details image.png .nickname-container.data-v-60cb334c {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.profile-header .user-details image.png .nickname-container .greeting-nickname.data-v-60cb334c {
+  flex: 1;
+}
+.profile-header .user-details .user-id.data-v-60cb334c {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 8rpx;
+}
+.profile-header .user-details .login-prompt-text.data-v-60cb334c {
+  font-size: 32rpx;
+  color: #999999;
+}
+.profile-header .edit-profile-btn-small.data-v-60cb334c {
+  width: 48rpx;
+  height: 48rpx;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 16rpx;
+}
+.profile-header .edit-profile-btn-small.data-v-60cb334c:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.profile-header .edit-profile-btn-small .edit-icon-small.data-v-60cb334c {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1;
+}
+.menu-list.data-v-60cb334c:not(.apply-rider-card) {
+  padding: 0;
+}
+.menu-list:not(.apply-rider-card) .menu-item.data-v-60cb334c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 24rpx;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: transparent;
+  transition: background-color 0.1s ease;
+}
+.menu-list:not(.apply-rider-card) .menu-item.data-v-60cb334c:last-child {
+  border-bottom: none;
+}
+.menu-list:not(.apply-rider-card) .menu-item.data-v-60cb334c:active {
+  background-color: #f1f1f1;
+}
+.menu-list:not(.apply-rider-card) .menu-item .item-content.data-v-60cb334c {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+.menu-list:not(.apply-rider-card) .menu-item .item-content .item-icon.data-v-60cb334c {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 16rpx;
+}
+.menu-list:not(.apply-rider-card) .menu-item .uni-icon-arrowright.data-v-60cb334c {
+  color: #808080;
+  font-size: 32rpx;
+}
+.menu-list:not(.apply-rider-card) .menu-item .menu-right.data-v-60cb334c {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.menu-list:not(.apply-rider-card) .menu-item .menu-right .message-badge-dot.data-v-60cb334c {
+  background-color: #ff4757 !important;
+  border-radius: 50% !important;
+  width: 16rpx !important;
+  height: 16rpx !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.apply-rider-card.data-v-60cb334c {
+  padding: 0;
+}
+.apply-rider-card .menu-item.data-v-60cb334c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 24rpx;
+  background-color: transparent;
+  transition: background-color 0.1s ease;
+}
+.apply-rider-card .menu-item.no-border.data-v-60cb334c {
+  border-bottom: none;
+}
+.apply-rider-card .menu-item.data-v-60cb334c:active {
+  background-color: #f1f1f1;
+}
+.apply-rider-card .menu-item .item-content.data-v-60cb334c {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+.apply-rider-card .menu-item .item-content .item-icon.data-v-60cb334c {
+  width: 88rpx !important;
+  height: 88rpx !important;
+  margin-right: 16rpx;
+}
+.apply-rider-card .menu-item .uni-icon-arrowright.data-v-60cb334c {
+  color: #808080;
+  font-size: 32rpx;
+}
+.apply-rider-card .menu-item .application-status-text.data-v-60cb334c {
+  font-size: 28rpx;
+  color: #666666;
+  font-weight: 500;
+}
+.apply-rider-card-fun.data-v-60cb334c {
+  background: linear-gradient(90deg, #eaffd0 0%, #fffbe6 100%);
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 16rpx 0 #e6f7ff;
+  margin: 24rpx 0;
+  padding: 48rpx 32rpx;
+  min-height: 120rpx;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.apply-rider-card-fun.data-v-60cb334c:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx 0 rgba(103, 194, 58, 0.3);
+}
+.apply-rider-card-fun .apply-rider-content.data-v-60cb334c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.apply-rider-card-fun .apply-rider-content .apply-rider-icon.data-v-60cb334c {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+.apply-rider-card-fun .apply-rider-content .apply-rider-info.data-v-60cb334c {
+  flex: 1;
+  margin-right: 24rpx;
+}
+.apply-rider-card-fun .apply-rider-content .apply-rider-info .apply-title.data-v-60cb334c {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6rpx;
+  display: block;
+  white-space: nowrap;
+}
+.apply-rider-card-fun .apply-rider-content .apply-rider-info .apply-desc.data-v-60cb334c {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  white-space: nowrap;
+}
+.apply-rider-card-fun .apply-rider-content .apply-btn-fun.data-v-60cb334c {
+  background: #b6f36b;
+  color: #222;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 20rpx 48rpx;
+  margin-left: auto;
+  box-shadow: 0 4rpx 12rpx 0 rgba(182, 243, 107, 0.3);
+  border: none;
+  min-width: 160rpx;
+  height: 80rpx;
+  line-height: 40rpx;
+  transition: all 0.3s ease;
+}
+.apply-rider-card-fun .apply-rider-content .apply-btn-fun.centered.data-v-60cb334c {
+  margin: 0 auto;
+  display: block;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.apply-rider-card-fun .apply-rider-content .apply-btn-fun.data-v-60cb334c:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx 0 rgba(182, 243, 107, 0.4);
+}
+.apply-rider-card-fun .apply-rider-content .rider-info-msg.data-v-60cb334c {
+  text-align: center;
+  max-width: 280rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+.apply-rider-card-fun .apply-rider-content .rider-info-msg .rider-congrats.data-v-60cb334c {
+  font-size: 28rpx;
+  color: #ff8c00;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.apply-rider-card-fun .apply-rider-content .rider-info-msg .rider-action.data-v-60cb334c {
+  font-size: 32rpx;
+  color: #67c23a;
+  font-weight: bold;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+.apply-rider-card-fun .apply-rider-content .rider-info-msg .rider-action.data-v-60cb334c::after {
+  content: "→";
+  margin-left: 8rpx;
+  font-size: 28rpx;
+  color: #67c23a;
+}
+.rider-tag.data-v-60cb334c {
+  color: #409eff;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.rider-info-msg.data-v-60cb334c {
+  color: #67c23a;
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: center;
+}
+.rider-info-msg .rider-congrats.data-v-60cb334c {
+  color: #67c23a;
+  font-weight: bold;
+}
+.rider-info-msg .rider-action.data-v-60cb334c {
+  color: #909399;
+  font-weight: 500;
+  white-space: nowrap;
+}

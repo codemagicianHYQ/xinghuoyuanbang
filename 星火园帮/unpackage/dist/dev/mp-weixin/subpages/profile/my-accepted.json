@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我接受的",
+  "usingComponents": {
+    "task-card": "/components/TaskCard"
+  }
+}

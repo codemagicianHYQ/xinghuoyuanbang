@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm {
+  border-radius: 4rpx !important;
+}
+.rounded-base {
+  border-radius: 8rpx !important;
+}
+.rounded-lg {
+  border-radius: 16rpx !important;
+}
+.rounded-circle {
+  border-radius: 50% !important;
+}
+.rounded-pill {
+  border-radius: 1000px !important;
+}
+.shadow-sm {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error, .button-primary {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error:active, .button-primary:active {
+  opacity: 0.8;
+}
+.disabled.button-error, .disabled.button-primary {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.team-coordination-container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+.header-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  color: white;
+}
+.header-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.header-subtitle {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+.section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #333;
+}
+.loading-placeholder,
+.empty-placeholder {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999;
+}
+.empty-icon {
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.order-item {
+  border: 2rpx solid #eee;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  background: #fafafa;
+}
+.order-info {
+  margin-bottom: 20rpx;
+}
+.order-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.order-type {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+.order-amount {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.order-time {
+  color: #999;
+  font-size: 24rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+.order-actions {
+  display: flex;
+  gap: 20rpx;
+}
+.action-btn {
+  flex: 1;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  border: none;
+  color: white;
+}
+.transfer-btn {
+  background: #2196f3;
+}
+.transfer-btn:disabled {
+  background: #ccc;
+  color: #999;
+}
+.reject-btn {
+  background: #f44336;
+}
+.reject-btn:disabled {
+  background: #ccc;
+  color: #999;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  border-radius: 20rpx;
+  width: 90%;
+  max-width: 600rpx;
+  max-height: 80vh;
+  overflow: hidden;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.modal-close {
+  font-size: 28rpx;
+  color: #999;
+  cursor: pointer;
+}
+.modal-body {
+  padding: 30rpx;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.modal-subtitle {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+  display: block;
+}
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border: 2rpx solid #eee;
+  border-radius: 12rpx;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.member-item.selected {
+  border-color: #2196f3;
+  background: #e3f2fd;
+}
+.member-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.member-info {
+  flex: 1;
+}
+.member-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.member-status {
+  font-size: 24rpx;
+  color: #4caf50;
+}
+.no-members {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+}
+.order-detail {
+  background: #f5f5f5;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+}
+.warning-text {
+  color: #f44336;
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.time-limit-text {
+  color: #ff9800;
+  font-size: 22rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.modal-footer {
+  display: flex;
+  gap: 20rpx;
+  padding: 30rpx;
+  border-top: 2rpx solid #eee;
+}
+.modal-btn {
+  flex: 1;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  border: none;
+  color: white;
+}
+.cancel-btn {
+  background: #999;
+}
+.confirm-btn {
+  background: #2196f3;
+}
+.confirm-btn:disabled {
+  background: #ccc;
+  color: #999;
+}
+.reject-confirm-btn {
+  background: #f44336;
+}

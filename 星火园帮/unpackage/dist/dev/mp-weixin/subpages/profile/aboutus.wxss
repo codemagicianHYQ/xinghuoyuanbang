@@ -1,0 +1,254 @@
+
+.aboutus-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+/* 头部样式 */
+.header-section {
+  position: relative;
+  height: 350rpx;
+  overflow: hidden;
+  margin-bottom: -50rpx;
+  z-index: 10;
+}
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bg-image {
+  width: 100%;
+  height: 100%;
+}
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40rpx;
+}
+.app-logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.2);
+}
+.app-name {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+.app-slogan {
+  font-size: 28rpx;
+  color: #f0f0f0;
+  opacity: 0.9;
+  margin-bottom: 20rpx;
+}
+
+/* 通用section样式 */
+.intro-section,
+.features-section,
+.team-section,
+.contact-section {
+  margin: 40rpx 30rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-shadow: 0 8rpx 30rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+}
+.intro-section {
+  margin-top: 80rpx;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.title-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-right: 20rpx;
+}
+.title-line {
+  flex: 1;
+  height: 2rpx;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* 介绍卡片样式 */
+.intro-card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  background: #f8f9ff;
+  border-radius: 16rpx;
+  border-left: 6rpx solid #667eea;
+}
+.intro-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 5rpx;
+}
+.intro-content {
+  flex: 1;
+}
+.intro-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15rpx;
+  display: block;
+}
+.intro-desc {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.6;
+  display: block;
+}
+
+/* 特色服务样式 */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  background: #f8f9ff;
+  border-radius: 16rpx;
+  transition: all 0.3s ease;
+}
+.feature-item:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  background: #e8f0ff;
+}
+.feature-icon {
+  font-size: 48rpx;
+  margin-bottom: 15rpx;
+}
+.feature-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+.feature-desc {
+  font-size: 24rpx;
+  color: #666666;
+  text-align: center;
+  display: block;
+}
+
+/* 团队介绍样式 */
+.team-intro {
+  margin-bottom: 40rpx;
+}
+.team-desc {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.8;
+  text-align: center;
+  display: block;
+}
+
+/* 联系我们样式 */
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background: #f8f9ff;
+  border-radius: 16rpx;
+  border: 2rpx solid #e8f0ff;
+}
+.contact-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.contact-info {
+  flex: 1;
+}
+.contact-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+.contact-desc {
+  font-size: 26rpx;
+  color: #666666;
+  display: block;
+}
+
+/* 底部样式 */
+.footer-section {
+  margin: 40rpx 30rpx;
+  padding: 40rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-text {
+  font-size: 26rpx;
+  color: #ffffff;
+  margin-bottom: 10rpx;
+  opacity: 0.8;
+  display: block;
+}
+.footer-links {
+  display: flex;
+  gap: 30rpx;
+  margin-top: 20rpx;
+}
+.footer-link {
+  font-size: 24rpx;
+  color: #ffffff;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* 响应式适配 */
+@media (max-width: 750rpx) {
+.features-grid {
+    grid-template-columns: 1fr;
+}
+}
+

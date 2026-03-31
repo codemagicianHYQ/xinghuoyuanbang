@@ -1,0 +1,402 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-e631b2ea {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-e631b2ea {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-e631b2ea {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-e631b2ea {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-e631b2ea {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-e631b2ea {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-e631b2ea {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-e631b2ea {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-e631b2ea {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-e631b2ea {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-e631b2ea, .button-primary.data-v-e631b2ea {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-e631b2ea:active, .button-primary.data-v-e631b2ea:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-e631b2ea, .disabled.button-primary.data-v-e631b2ea {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-e631b2ea {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-e631b2ea:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-e631b2ea {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-e631b2ea {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-e631b2ea:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-e631b2ea {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-e631b2ea {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-e631b2ea {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-e631b2ea {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.select-community-container.data-v-e631b2ea {
+  height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.current-community.data-v-e631b2ea {
+  background: #fff;
+  padding: 24rpx 32rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.current-community .current-info.data-v-e631b2ea {
+  flex: 1;
+}
+.current-community .current-info .current-label.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #666;
+}
+.current-community .current-info .current-name.data-v-e631b2ea {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+  margin: 0 8rpx;
+}
+.current-community .current-info .current-address.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #666;
+}
+.current-community .switch-building.data-v-e631b2ea {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 20rpx;
+  background: #f0f0f0;
+  border-radius: 20rpx;
+}
+.current-community .switch-building .switch-text.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #666;
+  margin-right: 8rpx;
+}
+.current-community .switch-building .switch-icon.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #666;
+}
+/* 附近社区提示样式 */
+.nearby-tip.data-v-e631b2ea {
+  padding: 24rpx 32rpx;
+  background: #fff3cd;
+  border-left: 6rpx solid #ffc107;
+  margin: 16rpx 32rpx;
+  border-radius: 8rpx;
+}
+.nearby-tip .tip-text.data-v-e631b2ea {
+  font-size: 28rpx;
+  color: #856404;
+  line-height: 1.4;
+}
+.community-list.data-v-e631b2ea {
+  flex: 1;
+  padding: 0 20rpx;
+}
+.community-item.data-v-e631b2ea {
+  background: #fff;
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.community-item .community-info.data-v-e631b2ea {
+  flex: 1;
+}
+.community-item .community-info .community-name.data-v-e631b2ea {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.community-item .community-info .community-type.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #ff6b35;
+  background: #fff5f0;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+  margin-right: 12rpx;
+}
+.community-item .community-info .community-address.data-v-e631b2ea {
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+  margin-top: 8rpx;
+}
+.community-item .community-info .community-detail-address.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-top: 4rpx;
+}
+.community-item .community-actions .select-btn.data-v-e631b2ea {
+  background: #ff6b35;
+  color: #fff;
+  padding: 16rpx 32rpx;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+}
+.loading-more.data-v-e631b2ea {
+  text-align: center;
+  padding: 32rpx;
+}
+.loading-more .loading-text.data-v-e631b2ea {
+  color: #999;
+  font-size: 24rpx;
+}
+.location-overlay.data-v-e631b2ea {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.location-overlay .loading-content.data-v-e631b2ea {
+  background: #fff;
+  padding: 60rpx 80rpx;
+  border-radius: 24rpx;
+  text-align: center;
+}
+.location-overlay .loading-content .loading-spinner.data-v-e631b2ea {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #f0f0f0;
+  border-top: 4rpx solid #ff6b35;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-e631b2ea 1s linear infinite;
+          animation: spin-data-v-e631b2ea 1s linear infinite;
+  margin: 0 auto 32rpx;
+}
+.location-overlay .loading-content .loading-text.data-v-e631b2ea {
+  font-size: 28rpx;
+  color: #333;
+}
+@-webkit-keyframes spin-data-v-e631b2ea {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-e631b2ea {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.bottom-actions.data-v-e631b2ea {
+  display: flex;
+  padding: 32rpx;
+  gap: 24rpx;
+}
+.bottom-actions .location-btn.data-v-e631b2ea,
+.bottom-actions .search-btn.data-v-e631b2ea {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  border: none;
+}
+.bottom-actions .location-btn .location-icon.data-v-e631b2ea,
+.bottom-actions .location-btn .search-icon.data-v-e631b2ea,
+.bottom-actions .search-btn .location-icon.data-v-e631b2ea,
+.bottom-actions .search-btn .search-icon.data-v-e631b2ea {
+  margin-right: 12rpx;
+  font-size: 32rpx;
+}
+.bottom-actions .location-btn.data-v-e631b2ea {
+  background: #ff6b35;
+  color: #fff;
+}
+.bottom-actions .search-btn.data-v-e631b2ea {
+  background: #fff;
+  color: #ff6b35;
+  border: 2rpx solid #ff6b35;
+}
+.search-modal.data-v-e631b2ea {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-modal .search-modal-content.data-v-e631b2ea {
+  width: 90%;
+  max-height: 80%;
+  background: #fff;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+.search-modal .search-modal-content .search-modal-header.data-v-e631b2ea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.search-modal .search-modal-content .search-modal-header .modal-title.data-v-e631b2ea {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+.search-modal .search-modal-content .search-modal-header .modal-close.data-v-e631b2ea {
+  font-size: 32rpx;
+  color: #999;
+  padding: 8rpx;
+}
+.search-modal .search-modal-content .search-input-container.data-v-e631b2ea {
+  padding: 32rpx;
+}
+.search-modal .search-modal-content .search-input-container .search-input.data-v-e631b2ea {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid #eee;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  background: #f8f8f8;
+  box-sizing: border-box;
+}
+.search-modal .search-modal-content .search-results.data-v-e631b2ea {
+  max-height: 600rpx;
+  padding: 0 32rpx 32rpx;
+}
+.search-modal .search-modal-content .search-results .search-result-item.data-v-e631b2ea {
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.search-modal .search-modal-content .search-results .search-result-item.data-v-e631b2ea:last-child {
+  border-bottom: none;
+}
+.search-modal .search-modal-content .search-results .search-result-item .result-name.data-v-e631b2ea {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.search-modal .search-modal-content .search-results .search-result-item .result-type.data-v-e631b2ea {
+  font-size: 24rpx;
+  color: #ff6b35;
+  background: #fff5f0;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+  margin-right: 12rpx;
+}
+.search-modal .search-modal-content .search-results .search-result-item .result-address.data-v-e631b2ea {
+  font-size: 26rpx;
+  color: #666;
+}

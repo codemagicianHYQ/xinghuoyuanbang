@@ -1,0 +1,1 @@
+<view class="webview-container data-v-d2de6482"><block wx:if="{{webviewUrl}}"><web-view src="{{webviewUrl}}" class="data-v-d2de6482"></web-view></block><block wx:else><view class="loading-tip data-v-d2de6482"><text class="data-v-d2de6482">加载中...</text></view></block></view>

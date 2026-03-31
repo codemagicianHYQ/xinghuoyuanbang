@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <view class="publish-confirm-container page-container">
     <!-- 任务概览区块 -->
     <view class="task-overview-block">
@@ -189,8 +189,10 @@
 
 <script>
 import request from "@/common/request.js";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
+  mixins: [publishGate],
   data() {
     return {
       taskData: {},
@@ -213,35 +215,15 @@ export default {
     };
   },
   onLoad(options) {
-    // 检查是否选择了社区
+    if (!this.ensureLogin()) return;
     this.checkCommunitySelection();
 
-    // 从上一个页面传递过来的任务数据
     if (options.taskData) {
       this.taskData = JSON.parse(decodeURIComponent(options.taskData));
     }
     this.publishTime = new Date();
   },
   methods: {
-    // 检查社区选择
-    checkCommunitySelection() {
-      const selectedCommunity = uni.getStorageSync("selectedCommunity");
-      if (!selectedCommunity) {
-        uni.showModal({
-          title: "提示",
-          content: "请先选择社区再发布任务",
-          showCancel: false,
-          success: () => {
-            uni.navigateTo({
-              url: "/subpages/community/select-community",
-            });
-          },
-        });
-        return false;
-      }
-      return true;
-    },
-
     getTaskTypeIcon() {
       const iconMap = {
         帮我买: "买",
@@ -356,6 +338,9 @@ export default {
     },
 
     async confirmPublish() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       if (!this.selectedTimeRequirement) {
         uni.showToast({
           title: "请先选择时间要求再发布",

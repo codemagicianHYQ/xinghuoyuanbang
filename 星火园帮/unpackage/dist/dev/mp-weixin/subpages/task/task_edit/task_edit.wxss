@@ -1,0 +1,719 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-79fc16bc {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-79fc16bc {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-79fc16bc {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-79fc16bc {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-79fc16bc {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-79fc16bc {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-79fc16bc {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-79fc16bc {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-79fc16bc {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-79fc16bc {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-79fc16bc, .button-error.data-v-79fc16bc {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-79fc16bc:active, .button-error.data-v-79fc16bc:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-79fc16bc, .disabled.button-error.data-v-79fc16bc {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-79fc16bc {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-79fc16bc:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-79fc16bc {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-79fc16bc {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-79fc16bc:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-79fc16bc {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-79fc16bc {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-79fc16bc {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-79fc16bc {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-79fc16bc {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-79fc16bc {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-79fc16bc {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-79fc16bc {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-79fc16bc {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-79fc16bc {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-79fc16bc {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-79fc16bc, .button-primary.data-v-79fc16bc {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-79fc16bc:active, .button-primary.data-v-79fc16bc:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-79fc16bc, .disabled.button-primary.data-v-79fc16bc {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-79fc16bc {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-79fc16bc:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-79fc16bc {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-79fc16bc {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-79fc16bc:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-79fc16bc {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-79fc16bc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.task-edit-container.data-v-79fc16bc {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 20%, #fce4ec 40%, #ffebee 60%, #e3f2fd 80%, #e0f2f1 100%);
+  padding: 16rpx;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+  position: relative;
+}
+.page-header.data-v-79fc16bc {
+  position: relative;
+  height: 120rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-header .header-decoration.data-v-79fc16bc {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-radius: 20rpx;
+  -webkit-backdrop-filter: blur(15rpx);
+          backdrop-filter: blur(15rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+.page-header .header-decoration.data-v-79fc16bc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  -webkit-animation: shimmer-data-v-79fc16bc 3s infinite;
+          animation: shimmer-data-v-79fc16bc 3s infinite;
+}
+@-webkit-keyframes shimmer-data-v-79fc16bc {
+0% {
+    left: -100%;
+}
+100% {
+    left: 100%;
+}
+}
+@keyframes shimmer-data-v-79fc16bc {
+0% {
+    left: -100%;
+}
+100% {
+    left: 100%;
+}
+}
+.form-section.data-v-79fc16bc {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(15rpx);
+          backdrop-filter: blur(15rpx);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
+  border: 2rpx solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+.form-section.data-v-79fc16bc:hover {
+  -webkit-transform: translateY(-4rpx);
+          transform: translateY(-4rpx);
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.18);
+}
+.form-section.basic-info-section.data-v-79fc16bc {
+  background: rgba(227, 242, 253, 0.85);
+  border-left: 6rpx solid #90caf9;
+  box-shadow: 0 8rpx 32rpx rgba(144, 202, 249, 0.2);
+}
+.form-section.details-section.data-v-79fc16bc {
+  background: rgba(255, 243, 224, 0.85);
+  border-left: 6rpx solid #ffcc80;
+  box-shadow: 0 8rpx 32rpx rgba(255, 204, 128, 0.2);
+}
+.form-section.other-info-section.data-v-79fc16bc {
+  background: rgba(232, 245, 232, 0.85);
+  border-left: 6rpx solid #a5d6a7;
+  box-shadow: 0 8rpx 32rpx rgba(165, 214, 167, 0.2);
+}
+.form-section .section-title.data-v-79fc16bc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid rgba(255, 255, 255, 0.4);
+}
+.form-section .section-title .title-icon.data-v-79fc16bc {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+}
+.form-section .section-title .title-text.data-v-79fc16bc {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333;
+  flex: 1;
+}
+.form-section .section-title .required-star.data-v-79fc16bc {
+  color: #ff4757;
+  margin-left: 8rpx;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.form-section .form-item.data-v-79fc16bc {
+  margin-bottom: 30rpx;
+}
+.form-section .form-item.data-v-79fc16bc:last-child {
+  margin-bottom: 0;
+}
+.form-section .item-label.data-v-79fc16bc {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 12rpx;
+  display: block;
+  font-weight: 600;
+  position: relative;
+  padding-left: 16rpx;
+}
+.form-section .item-label.data-v-79fc16bc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 6rpx;
+  height: 24rpx;
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  border-radius: 3rpx;
+}
+.form-section .item-label .required-star.data-v-79fc16bc {
+  color: #ff4757;
+  margin-left: 8rpx;
+  font-weight: bold;
+}
+.form-section .input-field.data-v-79fc16bc {
+  width: 100%;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.form-section .input-field.data-v-79fc16bc:focus {
+  border-color: #90caf9;
+  background: #ffffff;
+  box-shadow: 0 0 0 4rpx rgba(144, 202, 249, 0.15);
+}
+.form-section .input-field.data-v-79fc16bc::-webkit-input-placeholder {
+  color: #999;
+}
+.form-section .input-field.data-v-79fc16bc::placeholder {
+  color: #999;
+}
+.form-section .textarea-field.data-v-79fc16bc {
+  width: 100%;
+  height: 240rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.form-section .textarea-field.data-v-79fc16bc:focus {
+  border-color: #90caf9;
+  background: #ffffff;
+  box-shadow: 0 0 0 4rpx rgba(144, 202, 249, 0.15);
+}
+.form-section .textarea-field.data-v-79fc16bc::-webkit-input-placeholder {
+  color: #999;
+}
+.form-section .textarea-field.data-v-79fc16bc::placeholder {
+  color: #999;
+}
+.form-section .picker.data-v-79fc16bc {
+  flex: 1;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 0 16rpx;
+}
+.form-section .picker-value.data-v-79fc16bc {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.form-section .picker-value.readonly.data-v-79fc16bc {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  border: 4rpx solid #dee2e6;
+}
+.form-section .picker-value.input-imitation.data-v-79fc16bc {
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 0 16rpx;
+  position: relative;
+  cursor: pointer;
+}
+.form-section .picker-value.input-imitation .picker-arrow.data-v-79fc16bc {
+  position: absolute;
+  right: 16rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #999999;
+}
+.form-section .radio-group.data-v-79fc16bc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+.form-section .radio-group .radio-item.data-v-79fc16bc {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+.form-section .radio-group .radio-item radio.data-v-79fc16bc {
+  margin-right: 8rpx;
+}
+.form-section .time-picker-group.data-v-79fc16bc {
+  display: flex;
+  gap: 16rpx;
+}
+.form-section .time-picker-group .time-picker-item.data-v-79fc16bc {
+  flex: 1;
+  height: 60rpx;
+  padding: 0 20rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  color: #333;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 28rpx;
+}
+.form-section .time-picker-group .time-picker-item.data-v-79fc16bc:active {
+  background: #ffffff;
+  border-color: #ffcc80;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  box-shadow: 0 0 0 4rpx rgba(255, 204, 128, 0.15);
+}
+.form-section .time-picker-group .time-picker-item .picker-arrow.data-v-79fc16bc {
+  position: absolute;
+  right: 15rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #999;
+  font-size: 20rpx;
+  z-index: 1;
+}
+.form-section .submit-btn.data-v-79fc16bc {
+  width: 100%;
+  height: 88rpx;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 50%, #388e3c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+  box-shadow: 0 8rpx 24rpx rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(15rpx);
+          backdrop-filter: blur(15rpx);
+  position: relative;
+  overflow: hidden;
+}
+.form-section .submit-btn.data-v-79fc16bc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+.form-section .submit-btn.data-v-79fc16bc:active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(76, 175, 80, 0.4);
+}
+.form-section .submit-btn.data-v-79fc16bc:active::before {
+  left: 100%;
+}
+.form-section .submit-btn.data-v-79fc16bc:hover {
+  background: linear-gradient(135deg, #5cbf60 0%, #4caf50 50%, #45a049 100%);
+  box-shadow: 0 12rpx 32rpx rgba(76, 175, 80, 0.4);
+}
+.form-section .submit-btn[disabled].data-v-79fc16bc {
+  background: rgba(108, 117, 125, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: not-allowed;
+  box-shadow: 0 4rpx 12rpx rgba(108, 117, 125, 0.2);
+}
+.form-section .reward-section .current-reward.data-v-79fc16bc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12rpx;
+  border: 4rpx solid #e0e0e0;
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+}
+.form-section .reward-section .current-reward .reward-label.data-v-79fc16bc {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+  font-weight: 600;
+}
+.form-section .reward-section .current-reward .reward-amount.data-v-79fc16bc {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ff6b35;
+}
+.form-section .reward-section .reward-increase.data-v-79fc16bc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.form-section .reward-section .reward-increase .reward-label.data-v-79fc16bc {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+  min-width: 120rpx;
+  font-weight: 600;
+}
+.form-section .reward-section .reward-increase .reward-input.data-v-79fc16bc {
+  flex: 1;
+  height: 88rpx;
+}
+.form-section .reward-section .new-reward.data-v-79fc16bc {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.8) 0%, rgba(103, 58, 183, 0.8) 100%);
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+  -webkit-backdrop-filter: blur(15rpx);
+          backdrop-filter: blur(15rpx);
+  border: 4rpx solid rgba(255, 255, 255, 0.6);
+}
+.form-section .reward-section .new-reward .reward-label.data-v-79fc16bc {
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-right: 20rpx;
+  font-weight: 600;
+}
+.form-section .reward-section .new-reward .new-amount.data-v-79fc16bc {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 20rpx;
+}
+.form-section .reward-section .new-reward .reward-tip.data-v-79fc16bc {
+  font-size: 24rpx;
+  color: #ffffff;
+  opacity: 0.9;
+}
+.form-section .specifics-editor.data-v-79fc16bc {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12rpx;
+  padding: 20rpx;
+  border: 4rpx solid #e0e0e0;
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+}
+.form-section .specifics-editor .specifics-line.data-v-79fc16bc {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+  padding: 10rpx 0;
+}
+.form-section .specifics-editor .specifics-line .specifics-label.data-v-79fc16bc {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+  min-width: 160rpx;
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  line-height: 1;
+}
+.form-section .specifics-editor .specifics-line .specifics-input.data-v-79fc16bc {
+  flex: 1;
+  height: 60rpx;
+  padding: 0 20rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4rpx solid #e9ecef;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.form-section .specifics-editor .specifics-line .specifics-input.data-v-79fc16bc:focus {
+  border-color: #ffcc80;
+  background: #ffffff;
+  box-shadow: 0 0 0 4rpx rgba(255, 204, 128, 0.15);
+}
+.form-section .specifics-editor .specifics-line .start-date-container.data-v-79fc16bc,
+.form-section .specifics-editor .specifics-line .return-date-container.data-v-79fc16bc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.form-section .specifics-editor .specifics-line .start-date-container picker.data-v-79fc16bc,
+.form-section .specifics-editor .specifics-line .return-date-container picker.data-v-79fc16bc {
+  flex: none;
+}
+.form-section .specifics-editor .specifics-line .return-date-container .duration-display.data-v-79fc16bc {
+  margin-top: 16rpx;
+  padding: 16rpx 24rpx;
+  background-color: #f0f9ff;
+  border-radius: 12rpx;
+  border-left: 4rpx solid #007aff;
+}
+.form-section .specifics-editor .specifics-line .return-date-container .duration-display .duration-text.data-v-79fc16bc {
+  font-size: 28rpx;
+  color: #007aff;
+  font-weight: 500;
+}
+.form-section .quick-select-box.data-v-79fc16bc {
+  flex: 1;
+  height: 60rpx;
+  padding: 0 20rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 28rpx;
+  color: #333;
+  padding-right: 40rpx;
+}
+.form-section .quick-select-box.data-v-79fc16bc:active {
+  background: #ffffff;
+  border-color: #90caf9;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  box-shadow: 0 0 0 4rpx rgba(144, 202, 249, 0.15);
+}
+.form-section .quick-select-box .picker-arrow.data-v-79fc16bc {
+  font-size: 20rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+.form-section .quick-select-box .picker-arrow.data-v-79fc16bc {
+  position: absolute;
+  right: 15rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}

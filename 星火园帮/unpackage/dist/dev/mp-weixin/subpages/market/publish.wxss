@@ -1,0 +1,603 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-453c1389 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-453c1389 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-453c1389 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-453c1389 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-453c1389 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-453c1389 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-453c1389 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-453c1389 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-453c1389 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-453c1389 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-453c1389, .button-error.data-v-453c1389 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-453c1389:active, .button-error.data-v-453c1389:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-453c1389, .disabled.button-error.data-v-453c1389 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-453c1389 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-453c1389:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-453c1389 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-453c1389 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-453c1389:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-453c1389 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-453c1389 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-453c1389 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-453c1389 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-453c1389 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-453c1389 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-453c1389 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-453c1389 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-453c1389 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-453c1389 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-453c1389 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-453c1389, .button-primary.data-v-453c1389 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-453c1389:active, .button-primary.data-v-453c1389:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-453c1389, .disabled.button-primary.data-v-453c1389 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-453c1389 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-453c1389:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-453c1389 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-453c1389 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-453c1389:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-453c1389 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-453c1389 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.publish-container.data-v-453c1389 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding-bottom: 120rpx;
+}
+.card.data-v-453c1389 {
+  background-color: #ffffff;
+  margin: 16rpx;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.section-header.data-v-453c1389 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.section-title.data-v-453c1389 {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+}
+.section-tip.data-v-453c1389 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.required.data-v-453c1389 {
+  color: #dd524d;
+}
+.image-grid.data-v-453c1389 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+.image-item.data-v-453c1389 {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.preview-image.data-v-453c1389 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-actions.data-v-453c1389 {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  display: flex;
+  gap: 8rpx;
+}
+.action-btn.data-v-453c1389 {
+  width: 48rpx;
+  height: 48rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.action-btn.delete.data-v-453c1389 {
+  background-color: rgba(255, 71, 87, 0.8);
+}
+.image-order.data-v-453c1389 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: #ffffff;
+  font-size: 20rpx;
+  text-align: center;
+  padding: 8rpx 4rpx 4rpx;
+}
+.add-image-btn.data-v-453c1389 {
+  aspect-ratio: 1;
+  border: 2rpx dashed #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  color: #999999;
+}
+.add-icon.data-v-453c1389 {
+  font-size: 48rpx;
+}
+.add-text.data-v-453c1389 {
+  font-size: 24rpx;
+}
+.upload-tip.data-v-453c1389 {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1.4;
+}
+.form-item.data-v-453c1389 {
+  margin-bottom: 24rpx;
+}
+.form-item.data-v-453c1389:last-child {
+  margin-bottom: 0;
+}
+.item-label.data-v-453c1389 {
+  display: block;
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+.item-label.required.data-v-453c1389 {
+  color: #ff4757;
+}
+.input-field.data-v-453c1389,
+.textarea-field.data-v-453c1389 {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.input-field.data-v-453c1389:focus,
+.textarea-field.data-v-453c1389:focus {
+  border-color: #007aff;
+}
+.input-field.data-v-453c1389 {
+  height: 88rpx;
+  padding: 0 24rpx;
+}
+.textarea-field.data-v-453c1389 {
+  min-height: 160rpx;
+  padding: 24rpx;
+  resize: none;
+}
+.textarea-field.small.data-v-453c1389 {
+  min-height: 120rpx;
+}
+.char-count.data-v-453c1389 {
+  display: block;
+  text-align: right;
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 8rpx;
+}
+.picker-field.data-v-453c1389 {
+  height: 88rpx;
+  padding: 0 24rpx;
+  background-color: #f8f8f8;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.picker-text.data-v-453c1389 {
+  font-size: 28rpx;
+  color: #333333;
+}
+.picker-text.placeholder.data-v-453c1389 {
+  color: #808080;
+}
+.picker-arrow.data-v-453c1389 {
+  color: #999999;
+  font-size: 28rpx;
+}
+.condition-options.data-v-453c1389 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+}
+.condition-item.data-v-453c1389 {
+  padding: 24rpx;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  transition: all 0.3s;
+}
+.condition-item.active.data-v-453c1389 {
+  border-color: #007aff;
+  background-color: rgba(65, 105, 225, 0.05);
+}
+.condition-icon.data-v-453c1389 {
+  font-size: 32rpx;
+}
+.condition-text.data-v-453c1389 {
+  font-size: 24rpx;
+  color: #333333;
+}
+.price-input-group.data-v-453c1389 {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  height: 88rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.currency.data-v-453c1389 {
+  font-size: 32rpx;
+  color: #333333;
+  margin-right: 8rpx;
+}
+.price-input.data-v-453c1389 {
+  flex: 1;
+  font-size: 32rpx;
+  color: #333333;
+  background: transparent;
+  border: none;
+}
+.checkbox-item.data-v-453c1389 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.checkbox.data-v-453c1389 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.checkbox.checked.data-v-453c1389 {
+  background-color: #007aff;
+  border-color: #007aff;
+}
+.check-icon.data-v-453c1389 {
+  color: #ffffff;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.checkbox-label.data-v-453c1389 {
+  font-size: 28rpx;
+  color: #333333;
+}
+.trade-methods.data-v-453c1389 {
+  display: flex;
+  gap: 24rpx;
+}
+.method-item.data-v-453c1389 {
+  flex: 1;
+  padding: 32rpx 16rpx;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  transition: all 0.3s;
+}
+.method-item.active.data-v-453c1389 {
+  border-color: #007aff;
+  background-color: rgba(65, 105, 225, 0.05);
+}
+.method-icon.data-v-453c1389 {
+  font-size: 32rpx;
+}
+.method-text.data-v-453c1389 {
+  font-size: 24rpx;
+  color: #333333;
+}
+.publish-actions.data-v-453c1389 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 24rpx 32rpx 32rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 24rpx;
+  z-index: 999;
+}
+.btn-draft.data-v-453c1389,
+.btn-publish.data-v-453c1389 {
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.btn-draft.data-v-453c1389 {
+  flex: 1;
+  background-color: #f8f8f8;
+  color: #333333;
+}
+.btn-publish.data-v-453c1389 {
+  flex: 2;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+.btn-publish.data-v-453c1389:disabled {
+  opacity: 0.5;
+}
+.category-modal.data-v-453c1389 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+}
+.category-content.data-v-453c1389 {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 24rpx;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.modal-header.data-v-453c1389 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.modal-title.data-v-453c1389 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.modal-close.data-v-453c1389 {
+  font-size: 32rpx;
+  color: #999999;
+  padding: 8rpx;
+}
+.category-list.data-v-453c1389 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24rpx;
+}
+.category-option.data-v-453c1389 {
+  padding: 32rpx 16rpx;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+  transition: all 0.3s;
+}
+.category-option.data-v-453c1389:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  border-color: #007aff;
+}
+.category-icon.data-v-453c1389 {
+  font-size: 40rpx;
+}
+.category-name.data-v-453c1389 {
+  font-size: 24rpx;
+  color: #333333;
+  text-align: center;
+}

@@ -93,9 +93,10 @@
 
 <script>
 import request from "@/common/request.js";
-import { mapState } from "vuex";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
+  mixins: [publishGate],
   data() {
     return {
       formData: {
@@ -111,34 +112,9 @@ export default {
       isSubmitting: false,
     };
   },
-  computed: {
-    ...mapState({
-      hasLogin: (state) => state.hasLogin,
-      // apiBaseUrl: state => state.apiBaseUrl,
-      // userToken: state => state.userToken
-    }),
-  },
   onLoad(options) {
-    if (!this.hasLogin) {
-      uni.showModal({
-        title: "提示",
-        content: "您尚未登录，登录后才能发布求助。",
-        showCancel: false,
-        confirmText: "去登录",
-        success: (res) => {
-          if (res.confirm) {
-            uni.navigateTo({
-              url: "/pages/login/login?redirect=/pages/publish/paperwork",
-            });
-          } else {
-            uni.navigateBack().catch(() => {
-              uni.switchTab({ url: "/pages/home/home" });
-            });
-          }
-        },
-      });
-    }
-    // 如果从其他页面跳转过来时有预设标题
+    if (!this.ensureLogin()) return;
+    this.checkCommunitySelection();
     if (options && options.title) {
       this.formData.title = decodeURIComponent(options.title);
     }
@@ -203,6 +179,9 @@ export default {
     },
 
     async submitPaperworkRequest() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       if (!this.validateForm()) return;
 
       this.isSubmitting = true;

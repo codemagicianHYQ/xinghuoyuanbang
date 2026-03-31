@@ -1,11 +1,12 @@
 const axios = require("axios");
 const crypto = require("crypto");
 
+const isDev = process.env.NODE_ENV !== "production";
+
 class ThirdPartyRedPacketService {
   constructor() {
-    this.uid = "10815823";
-    this.apiKey =
-      process.env.THIRD_PARTY_API_KEY || "JNqP5XjMEkyIFC3wK4a0qjZd-wgamHYQ";
+    this.uid = process.env.THIRD_PARTY_UID || "10815823";
+    this.apiKey = process.env.THIRD_PARTY_API_KEY || "";
     this.domain = "xinghuoyuanbang.top";
     this.baseUrl = "https://mp001.yaoyaola.net/exapi";
   }
@@ -38,6 +39,10 @@ class ThirdPartyRedPacketService {
    * @returns {boolean} 验证结果
    */
   verifyOpenid(openid, ivtick, encdata) {
+    if (!this.apiKey) {
+      console.error("[ThirdPartyRedPacket] THIRD_PARTY_API_KEY 未配置，跳过签名校验");
+      return false;
+    }
     try {
       // 尝试不同的签名算法顺序
       const signStr1 = `${this.apiKey}${openid}${ivtick}`;
@@ -48,30 +53,35 @@ class ThirdPartyRedPacketService {
       const expectedSign2 = this.generateSign(signStr2);
       const expectedSign3 = this.generateSign(signStr3);
 
-      console.log("验证openid签名:");
-      console.log("openid:", openid);
-      console.log("ivtick:", ivtick);
-      console.log("encdata:", encdata);
-      console.log("apiKey:", this.apiKey);
-      console.log("signStr1 (apikey+openid+ivtick):", signStr1);
-      console.log("expectedSign1:", expectedSign1);
-      console.log("signStr2 (openid+ivtick+apikey):", signStr2);
-      console.log("expectedSign2:", expectedSign2);
-      console.log("signStr3 (ivtick+openid+apikey):", signStr3);
-      console.log("expectedSign3:", expectedSign3);
+      if (isDev) {
+        console.log("[ThirdPartyRedPacket] 验证 openid 签名（脱敏）", {
+          openid: openid ? `${openid.slice(0, 6)}…` : "",
+          ivtick,
+        });
+      }
 
       // 检查哪种签名匹配
       if (expectedSign1 === encdata) {
-        console.log("签名验证成功 (apikey+openid+ivtick)");
+        if (isDev) {
+          console.log("签名验证成功 (apikey+openid+ivtick)");
+        }
         return true;
       } else if (expectedSign2 === encdata) {
-        console.log("签名验证成功 (openid+ivtick+apikey)");
+        if (isDev) {
+          console.log("签名验证成功 (openid+ivtick+apikey)");
+        }
         return true;
       } else if (expectedSign3 === encdata) {
-        console.log("签名验证成功 (ivtick+openid+apikey)");
+        if (isDev) {
+          console.log("签名验证成功 (ivtick+openid+apikey)");
+        }
         return true;
       } else {
-        console.log("所有签名算法都不匹配");
+        if (isDev) {
+          console.log("所有签名算法都不匹配");
+        } else {
+          console.warn("[ThirdPartyRedPacket] openid 签名校验失败");
+        }
         return false;
       }
     } catch (error) {
@@ -117,6 +127,10 @@ class ThirdPartyRedPacketService {
       orderId = this.generateOrderId(),
     } = params;
 
+    if (!this.apiKey) {
+      throw new Error("THIRD_PARTY_API_KEY 未配置，无法调用第三方转账");
+    }
+
     // 验证参数
     if (!openid || !amount) {
       throw new Error("缺少必要参数：openid, amount");
@@ -130,9 +144,11 @@ class ThirdPartyRedPacketService {
     const amountInCents = Math.round(amount * 100);
 
     try {
-      console.log(
-        `开始转账，openid: ${openid}, 金额: ${amount}元, 订单号: ${orderId}`
-      );
+      if (isDev) {
+        console.log(
+          `开始转账，openid: ${openid ? openid.slice(0, 6) + "…" : ""}, 金额: ${amount}元, 订单号: ${orderId}`
+        );
+      }
 
       // 当前时间戳（秒）
       const reqtick = Math.floor(Date.now() / 1000);
@@ -159,7 +175,9 @@ class ThirdPartyRedPacketService {
 
       const fullUrl = `${requestUrl}?${queryParams.toString()}`;
 
-      console.log("调用第三方转账接口:", fullUrl);
+      if (isDev) {
+        console.log("调用第三方转账接口（含签名，仅开发环境打印 URL 长度）:", fullUrl.length);
+      }
 
       // 发送请求
       const response = await axios.get(fullUrl, {

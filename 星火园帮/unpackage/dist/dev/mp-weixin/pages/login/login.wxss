@@ -1,0 +1,333 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-b237504c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-b237504c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-b237504c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-b237504c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-b237504c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-b237504c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-b237504c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-b237504c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-b237504c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-b237504c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-b237504c, .button-error.data-v-b237504c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-b237504c:active, .button-error.data-v-b237504c:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-b237504c, .disabled.button-error.data-v-b237504c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-b237504c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-b237504c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-b237504c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-b237504c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-b237504c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-b237504c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-b237504c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-b237504c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-b237504c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-b237504c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-b237504c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-b237504c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-b237504c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-b237504c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-b237504c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-b237504c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-b237504c, .button-primary.data-v-b237504c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-b237504c:active, .button-primary.data-v-b237504c:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-b237504c, .disabled.button-primary.data-v-b237504c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-b237504c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-b237504c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-b237504c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-b237504c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-b237504c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-b237504c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-b237504c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.login-container.data-v-b237504c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+.logo-area.data-v-b237504c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80rpx;
+}
+.logo-area .logo-image.data-v-b237504c {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 16rpx;
+  background-color: #eee;
+  margin-bottom: 20rpx;
+}
+.logo-area .app-title.data-v-b237504c {
+  font-size: 40rpx;
+  color: #333333;
+  font-weight: 500;
+}
+.login-prompt.data-v-b237504c {
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 60rpx;
+  text-align: center;
+  padding: 0 24rpx;
+}
+.button-area.data-v-b237504c {
+  width: 100%;
+  max-width: 600rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.agreement-area.data-v-b237504c {
+  margin-top: 80rpx;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16rpx;
+  line-height: 1.6;
+}
+.agreement-area .agreement-label.data-v-b237504c {
+  display: flex;
+  align-items: center;
+  margin-right: 8rpx;
+}
+.agreement-area checkbox.data-v-b237504c {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  margin-right: 4rpx;
+  vertical-align: middle;
+}
+.agreement-area .link-text.data-v-b237504c {
+  color: #007aff;
+}
+.agreement-area .plain-text-separator.data-v-b237504c {
+  margin: 0 8rpx;
+}
+.popup-content.data-v-b237504c {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx 24rpx 24rpx 24rpx;
+  min-width: 540rpx;
+  max-width: 90vw;
+  box-sizing: border-box;
+  text-align: left;
+}
+.popup-title.data-v-b237504c {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  color: #333;
+}
+.popup-text.data-v-b237504c {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+.popup-btn.data-v-b237504c {
+  margin-top: 24rpx;
+  width: 100%;
+  background: #2979ff;
+  color: #fff;
+  border-radius: 8rpx;
+}

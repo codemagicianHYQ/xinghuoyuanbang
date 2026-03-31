@@ -183,7 +183,7 @@
             >
               <image
                 class="featured-bg-img"
-                src="/static/images/featured-bg-market.jpg"
+                src="/static/images/featured-bg-partner.png"
                 mode="aspectFill"
               ></image>
               <view class="featured-content-frosted">

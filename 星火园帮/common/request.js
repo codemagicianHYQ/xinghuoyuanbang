@@ -26,6 +26,16 @@ const performanceMonitor = {
 const requestCache = new Map();
 const CACHE_DURATION = 5000; // 5秒缓存
 
+// 为 true 时打印每条请求耗时、Token 清理日志（开发构建通常为 true）
+const DEBUG_HTTP =
+  (typeof __DEV__ !== "undefined" && __DEV__) ||
+  (typeof process !== "undefined" &&
+    process.env &&
+    process.env.NODE_ENV === "development");
+
+// 登录过期弹窗去重（小程序无 window，不可用 window.xxx）
+let hasShownExpiredDialog = false;
+
 // 处理请求队列
 const processQueue = async () => {
   if (isProcessing || requestQueue.length === 0) return;
@@ -84,17 +94,19 @@ const makeRequest = (options, retryCount = 0) => {
       method: options.method || "GET",
     });
 
-    // 检查请求去重
-    if (options.method === "GET" && !options.skipCache) {
+    // GET 短缓存：仅未登录时使用，避免同一 URL 命中上一用户的缓存（串数据）
+    const token = uni.getStorageSync(USER_AUTH_TOKEN_KEY);
+    if (options.method === "GET" && !options.skipCache && !token) {
       const cacheKey = generateCacheKey(options);
       const cachedData = getCachedRequest(cacheKey);
       if (cachedData) {
-        console.log(`🚀 请求缓存命中: ${options.url}`);
+        if (DEBUG_HTTP) {
+          console.log(`🚀 请求缓存命中: ${options.url}`);
+        }
         resolve(cachedData);
         return;
       }
     }
-    const token = uni.getStorageSync(USER_AUTH_TOKEN_KEY);
     const userInfo = uni.getStorageSync(USER_INFO_KEY);
     // 确保token格式正确，避免重复添加Bearer前缀
     let cleanToken = token;
@@ -103,19 +115,23 @@ const makeRequest = (options, retryCount = 0) => {
       let tempToken = token;
       while (tempToken.startsWith("Bearer Bearer ")) {
         tempToken = tempToken.substring(7); // 移除一个"Bearer "
-        console.log(
-          "检测到重复Bearer前缀，清理后:",
-          tempToken.substring(0, 50) + "..."
-        );
+        if (DEBUG_HTTP) {
+          console.log(
+            "检测到重复Bearer前缀，清理后:",
+            tempToken.substring(0, 50) + "..."
+          );
+        }
       }
 
       // 处理其他可能的重复情况
       while (tempToken.startsWith("BearerBearer")) {
         tempToken = tempToken.substring(6); // 移除一个"Bearer"
-        console.log(
-          "检测到重复Bearer前缀(无空格)，清理后:",
-          tempToken.substring(0, 50) + "..."
-        );
+        if (DEBUG_HTTP) {
+          console.log(
+            "检测到重复Bearer前缀(无空格)，清理后:",
+            tempToken.substring(0, 50) + "..."
+          );
+        }
       }
 
       // 然后处理正常的Bearer前缀
@@ -131,7 +147,9 @@ const makeRequest = (options, retryCount = 0) => {
 
       // 如果清理后的token与原始token不同，更新存储
       if (cleanToken !== token) {
-        console.log("Token格式已修复，更新存储");
+        if (DEBUG_HTTP) {
+          console.log("Token格式已修复，更新存储");
+        }
         uni.setStorageSync(USER_AUTH_TOKEN_KEY, cleanToken);
       }
     }
@@ -190,10 +208,11 @@ const makeRequest = (options, retryCount = 0) => {
             );
           }
 
-          // 记录性能数据
-          console.log(
-            `📊 请求性能: ${requestInfo.method} ${requestInfo.url} - ${duration}ms`
-          );
+          if (DEBUG_HTTP) {
+            console.log(
+              `📊 请求性能: ${requestInfo.method} ${requestInfo.url} - ${duration}ms`
+            );
+          }
         }
 
         // 自动续期：检测响应头x-renewed-token（兼容小写和大写）
@@ -251,10 +270,24 @@ const makeRequest = (options, retryCount = 0) => {
           }
         }
 
+        const isPublicBrowseApi =
+          options.url &&
+          (options.url.includes("/campus-interactions") ||
+            options.url.includes("/market/products") ||
+            options.url.includes("/market/users"));
+
+        // 维护状态探测：网关/上游 5xx 时不弹「服务器异常」，避免启动时刷屏
+        const isMaintenanceStatusProbe =
+          options.url && options.url.includes("/maintenance/status");
+
         if ((res.statusCode === 200 || res.statusCode === 201) && res.data) {
           if (typeof res.data.code === "undefined" || res.data.code === 0) {
-            // 缓存GET请求的响应
-            if (options.method === "GET" && !options.skipCache) {
+            // 缓存 GET（仅未登录，与读缓存逻辑一致，避免串号）
+            if (
+              options.method === "GET" &&
+              !options.skipCache &&
+              !token
+            ) {
               const cacheKey = generateCacheKey(options);
               setCachedRequest(cacheKey, res.data);
             }
@@ -326,6 +359,17 @@ const makeRequest = (options, retryCount = 0) => {
             duration: 3000,
           });
           reject(res);
+        } else if (res.statusCode === 403) {
+          // 公开浏览接口（论坛/二手）在未登录时不弹全局错误，交给页面自行处理
+          if (options.silentAuthError || isPublicBrowseApi) {
+            reject(res);
+            return;
+          }
+          uni.showToast({
+            title: "请先登录后操作",
+            icon: "none",
+          });
+          reject(res);
         } else if (res.statusCode === 401 || res.statusCode === 404) {
           // 针对任务列表接口，404也当作空数据
           if (
@@ -371,6 +415,13 @@ const makeRequest = (options, retryCount = 0) => {
             uni.removeStorageSync(USER_INFO_KEY);
             uni.showToast({ title: "登录已过期，请重新登录", icon: "none" });
             // 可选：全局登出逻辑，如跳转登录页
+          } else if (
+            res.statusCode === 401 &&
+            (options.silentAuthError || isPublicBrowseApi)
+          ) {
+            // 公开浏览场景不弹“登录过期”全局弹窗
+            reject(res);
+            return;
           } else if (res.statusCode === 401) {
             // 非认证接口的401错误，显示弹窗提示重新登录
             showTokenExpiredDialog();
@@ -418,7 +469,9 @@ const makeRequest = (options, retryCount = 0) => {
 
           reject(res);
         } else {
-          uni.showToast({ title: "服务器异常", icon: "none" });
+          if (!isMaintenanceStatusProbe) {
+            uni.showToast({ title: "服务器异常", icon: "none" });
+          }
           reject(res);
         }
       },
@@ -426,7 +479,11 @@ const makeRequest = (options, retryCount = 0) => {
         if (options.showLoading) {
           uni.hideLoading();
         }
-        uni.showToast({ title: "网络请求失败", icon: "none" });
+        const isMaintenanceStatusProbe =
+          options.url && options.url.includes("/maintenance/status");
+        if (!isMaintenanceStatusProbe) {
+          uni.showToast({ title: "网络请求失败", icon: "none" });
+        }
         reject(err);
       },
       complete: () => {
@@ -440,11 +497,11 @@ const makeRequest = (options, retryCount = 0) => {
 
 // 显示token过期弹窗
 const showTokenExpiredDialog = () => {
-  // 防止重复弹窗
-  if (window.hasShownExpiredDialog) {
+  // 防止重复弹窗（小程序环境无 window）
+  if (hasShownExpiredDialog) {
     return;
   }
-  window.hasShownExpiredDialog = true;
+  hasShownExpiredDialog = true;
 
   uni.showModal({
     title: "登录已过期",
@@ -464,10 +521,9 @@ const showTokenExpiredDialog = () => {
       }
     },
     complete: () => {
-      // 重置弹窗标记，允许下次过期时再次弹窗
       setTimeout(() => {
-        window.hasShownExpiredDialog = false;
-      }, 5000); // 5秒后重置
+        hasShownExpiredDialog = false;
+      }, 5000);
     },
   });
 };

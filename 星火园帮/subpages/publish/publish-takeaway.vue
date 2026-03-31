@@ -175,12 +175,12 @@
 
 <script>
 import request from "@/common/request.js"; // 引入你的请求封装
-// 移除date-fns导入，使用原生JavaScript日期方法
-import { USER_AUTH_TOKEN_KEY } from "@/common/config.js";
 import PublishButton from "@/components/PublishButton.vue";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
   components: { PublishButton },
+  mixins: [publishGate],
   data() {
     const now = new Date();
     return {
@@ -206,10 +206,8 @@ export default {
     };
   },
   onLoad() {
-    console.log(
-      "取外卖页面onLoad token:",
-      uni.getStorageSync(USER_AUTH_TOKEN_KEY)
-    );
+    if (!this.ensureLogin()) return;
+    this.checkCommunitySelection();
   },
   onShow() {
     // 检查是否有选中的地址
@@ -437,6 +435,9 @@ export default {
       return true;
     },
     async submitTakeawayTask() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       // 检查维护模式
       const { beforeAction } = await import("../../common/maintenanceCheck.js");
       if (await beforeAction("发布任务")) {

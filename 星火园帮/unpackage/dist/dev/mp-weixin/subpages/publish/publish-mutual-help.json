@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布其他服务",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}

@@ -1,0 +1,500 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-47172ed4 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-47172ed4 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-47172ed4 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-47172ed4 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-47172ed4 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-47172ed4 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-47172ed4 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-47172ed4 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-47172ed4 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-47172ed4 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-47172ed4, .button-error.data-v-47172ed4 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-47172ed4:active, .button-error.data-v-47172ed4:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-47172ed4, .disabled.button-error.data-v-47172ed4 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-47172ed4 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-47172ed4:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-47172ed4 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-47172ed4 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-47172ed4:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-47172ed4 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-47172ed4 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-47172ed4 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-47172ed4 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-47172ed4 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-47172ed4 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-47172ed4 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-47172ed4 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-47172ed4 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-47172ed4 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-47172ed4 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-47172ed4, .button-primary.data-v-47172ed4 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-47172ed4:active, .button-primary.data-v-47172ed4:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-47172ed4, .disabled.button-primary.data-v-47172ed4 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-47172ed4 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-47172ed4:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-47172ed4 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-47172ed4 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-47172ed4:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-47172ed4 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-47172ed4 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.publish-exam-container.data-v-47172ed4 {
+  padding-bottom: 120rpx;
+  background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+/* 顶部装饰区域 */
+.header-decoration.data-v-47172ed4 {
+  background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
+  padding: 40rpx 32rpx 30rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 32rpx 32rpx;
+  box-shadow: 0 8rpx 32rpx rgba(129, 212, 250, 0.2);
+  display: flex;
+  align-items: center;
+  min-height: 120rpx;
+}
+.main-icon.data-v-47172ed4 {
+  font-size: 120rpx;
+  margin-right: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-content.data-v-47172ed4 {
+  flex: 1;
+}
+.page-title.data-v-47172ed4 {
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+}
+.page-subtitle.data-v-47172ed4 {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+/* 流程说明 */
+.process-section.data-v-47172ed4 {
+  margin: 32rpx;
+  padding: 32rpx;
+}
+.section-title.data-v-47172ed4 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 24rpx;
+}
+.process-steps.data-v-47172ed4 {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+.step-item.data-v-47172ed4 {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+}
+.step-number.data-v-47172ed4 {
+  width: 48rpx;
+  height: 48rpx;
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.step-content.data-v-47172ed4 {
+  flex: 1;
+}
+.step-title.data-v-47172ed4 {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+.step-desc.data-v-47172ed4 {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1.4;
+  display: block;
+}
+/* 联系客服 */
+.contact-section.data-v-47172ed4 {
+  margin: 0 32rpx 32rpx;
+  padding: 32rpx;
+}
+.contact-info.data-v-47172ed4 {
+  text-align: center;
+}
+.contact-desc.data-v-47172ed4 {
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 32rpx;
+  display: block;
+}
+.contact-btn.data-v-47172ed4 {
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  box-shadow: 0 8rpx 24rpx rgba(79, 195, 247, 0.3);
+}
+.btn-icon.data-v-47172ed4 {
+  font-size: 32rpx;
+}
+.btn-text.data-v-47172ed4 {
+  font-size: 28rpx;
+}
+/* 上传区域 */
+.upload-section.data-v-47172ed4 {
+  margin: 0 32rpx 32rpx;
+  padding: 32rpx;
+}
+.form-item.data-v-47172ed4 {
+  margin-bottom: 32rpx;
+}
+.item-label.data-v-47172ed4 {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+.required-star.data-v-47172ed4 {
+  color: #ff4757;
+  margin-left: 4rpx;
+}
+.upload-area.data-v-47172ed4 {
+  border: 2rpx dashed #d1d5db;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  text-align: center;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+.upload-area.data-v-47172ed4:active {
+  background-color: #f3f4f6;
+  border-color: #4fc3f7;
+}
+.upload-placeholder.data-v-47172ed4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+.upload-icon.data-v-47172ed4 {
+  font-size: 80rpx;
+  opacity: 0.6;
+}
+.upload-text.data-v-47172ed4 {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+.upload-hint.data-v-47172ed4 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.uploaded-image.data-v-47172ed4 {
+  position: relative;
+}
+.preview-image.data-v-47172ed4 {
+  width: 100%;
+  max-height: 400rpx;
+  border-radius: 12rpx;
+}
+.image-actions.data-v-47172ed4 {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+  justify-content: center;
+}
+.action-btn.data-v-47172ed4 {
+  padding: 12rpx 24rpx;
+  background-color: #f3f4f6;
+  color: #333333;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+.action-btn.delete.data-v-47172ed4 {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+.textarea-field.data-v-47172ed4 {
+  width: 100%;
+  min-height: 120rpx;
+  padding: 16rpx;
+  border: 2rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #333333;
+  background-color: #ffffff;
+  resize: none;
+}
+.textarea-field.data-v-47172ed4:focus {
+  border-color: #4fc3f7;
+  outline: none;
+}
+/* 奖励说明 */
+.reward-section.data-v-47172ed4 {
+  margin: 0 32rpx 32rpx;
+  padding: 32rpx;
+}
+.reward-info.data-v-47172ed4 {
+  text-align: center;
+}
+.reward-desc.data-v-47172ed4 {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+.reward-note.data-v-47172ed4 {
+  font-size: 24rpx;
+  color: #999999;
+  display: block;
+}
+/* 提交按钮 */
+.submit-section.data-v-47172ed4 {
+  padding: 0 32rpx;
+}
+.submit-btn.data-v-47172ed4 {
+  width: 100%;
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 32rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  box-shadow: 0 12rpx 32rpx rgba(79, 195, 247, 0.3);
+  transition: all 0.3s ease;
+}
+.submit-btn.data-v-47172ed4:active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 8rpx 24rpx rgba(79, 195, 247, 0.4);
+}
+.submit-btn.disabled.data-v-47172ed4 {
+  background: #d1d5db;
+  color: #9ca3af;
+  box-shadow: none;
+}
+.submit-btn.disabled.data-v-47172ed4:active {
+  -webkit-transform: none;
+          transform: none;
+}

@@ -3,6 +3,8 @@ const authConfig = require("../config/auth.config.js");
 const db = require("../models");
 const User = db.User;
 
+const isDev = process.env.NODE_ENV !== "production";
+
 const verifyToken = (req, res, next) => {
   // 优先读取 token 字段，兼容小程序
   let token =
@@ -10,21 +12,17 @@ const verifyToken = (req, res, next) => {
     req.headers["authorization"] ||
     req.headers["x-access-token"];
 
-  console.log(`[verifyToken] 请求头信息:`, {
-    url: req.url,
-    method: req.method,
-    token: token ? token.substring(0, 50) + "..." : null,
-    authorization: req.headers["authorization"]
-      ? req.headers["authorization"].substring(0, 50) + "..."
-      : null,
-    "x-access-token": req.headers["x-access-token"]
-      ? req.headers["x-access-token"].substring(0, 50) + "..."
-      : null,
-    allHeaders: Object.keys(req.headers),
-  });
+  if (isDev) {
+    console.log(`[verifyToken]`, req.method, req.url, {
+      hasToken: !!token,
+      headerKeys: Object.keys(req.headers),
+    });
+  }
 
   if (!token) {
-    console.log(`[verifyToken] 没有找到token，返回403`);
+    if (isDev) {
+      console.log(`[verifyToken] 没有找到token，返回403`);
+    }
     return res.status(403).send({ message: "No token provided!" });
   }
 
@@ -50,19 +48,19 @@ const verifyToken = (req, res, next) => {
 
   jwt.verify(token, authConfig.secret, (err, decoded) => {
     if (err) {
-      console.log(`[verifyToken] JWT验证失败:`, {
-        error: err.message,
-        token: token.substring(0, 50) + "...",
-        url: req.url,
-      });
+      if (isDev) {
+        console.log(`[verifyToken] JWT验证失败:`, err.message, req.url);
+      }
       return res.status(401).send({ message: "Unauthorized! Invalid Token." });
     }
 
-    console.log(`[verifyToken] JWT验证成功:`, {
-      userId: decoded.id,
-      role: decoded.role,
-      url: req.url,
-    });
+    if (isDev) {
+      console.log(`[verifyToken] JWT验证成功`, {
+        userId: decoded.id,
+        role: decoded.role,
+        url: req.url,
+      });
+    }
 
     req.userId = decoded.id; // Add user ID to request object
     req.userRole = decoded.role; // Add user role to request object

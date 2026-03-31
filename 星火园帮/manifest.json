@@ -19,15 +19,12 @@
     "permission": {
       "scope.userLocation": {
         "desc": "您的位置信息将用于展示附近的校园服务"
-      },
-      "scope.camera": {
-        "desc": "用于拍摄照片发送给聊天对象"
-      },
-      "scope.writePhotosAlbum": {
-        "desc": "用于保存聊天中的图片到相册"
       }
     },
-    "requiredPrivateInfos": ["chooseLocation", "getLocation"],
+    "requiredPrivateInfos": [
+      "chooseLocation",
+      "getLocation"
+    ],
     "lazyCodeLoading": "requiredComponents"
   },
   "locale": "zh-Hans",

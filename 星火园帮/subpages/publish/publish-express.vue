@@ -209,11 +209,12 @@
 
 <script>
 import request from "@/common/request.js";
-import { USER_AUTH_TOKEN_KEY } from "@/common/config.js";
 import PublishButton from "@/components/PublishButton.vue";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
   components: { PublishButton },
+  mixins: [publishGate],
   data() {
     const now = new Date();
     return {
@@ -253,12 +254,7 @@ export default {
     };
   },
   onLoad() {
-    console.log(
-      "取快递页面onLoad token:",
-      uni.getStorageSync(USER_AUTH_TOKEN_KEY)
-    );
-
-    // 检查是否选择了社区
+    if (!this.ensureLogin()) return;
     this.checkCommunitySelection();
   },
   onShow() {
@@ -276,25 +272,6 @@ export default {
     }
   },
   methods: {
-    // 检查社区选择
-    checkCommunitySelection() {
-      const selectedCommunity = uni.getStorageSync("selectedCommunity");
-      if (!selectedCommunity) {
-        uni.showModal({
-          title: "提示",
-          content: "请先选择社区再发布任务",
-          showCancel: false,
-          success: () => {
-            uni.navigateTo({
-              url: "/subpages/community/select-community",
-            });
-          },
-        });
-        return false;
-      }
-      return true;
-    },
-
     // 图片上传相关方法
     chooseImages() {
       const remainCount = 6 - this.formData.images.length;
@@ -471,6 +448,9 @@ export default {
       return true;
     },
     async submitExpressTask() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       // 检查维护模式
       const { beforeAction } = await import("../../common/maintenanceCheck.js");
       if (await beforeAction("发布任务")) {

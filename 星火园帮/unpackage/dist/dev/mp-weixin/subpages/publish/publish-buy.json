@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布帮我买",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}

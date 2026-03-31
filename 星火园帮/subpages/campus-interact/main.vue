@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <view class="campus-container">
     <!-- 整体布局容器 -->
     <view class="layout-container">
@@ -493,6 +493,8 @@ export default {
         const result = await request({
           url: "/campus-interactions",
           method: "GET",
+          // 未登录允许浏览校园论坛，避免全局弹“服务器异常/登录过期”
+          silentAuthError: true,
           data: {
             type: category,
             page: this.page,

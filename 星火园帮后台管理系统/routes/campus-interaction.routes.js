@@ -12,11 +12,11 @@ const { verifyToken } = require("../middleware/authJwt");
 
 // ==================== 查询路由 ====================
 
-// 获取校园论坛列表（需要登录查看）
-router.get("/", [verifyToken], campusInteractionController.getResources);
+// 获取校园论坛列表（公开可查看，未登录也可浏览）
+router.get("/", campusInteractionController.getResources);
 
-// 获取校园论坛详情（需要登录查看）
-router.get("/:id", [verifyToken], campusInteractionController.getResourceById);
+// 获取校园论坛详情（公开可查看，未登录也可浏览）
+router.get("/:id", campusInteractionController.getResourceById);
 
 // ==================== 创建路由 ====================
 

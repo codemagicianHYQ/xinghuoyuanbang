@@ -1,0 +1,730 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-22413a72 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-22413a72 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-22413a72 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-22413a72 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-22413a72 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-22413a72 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-22413a72 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-22413a72 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-22413a72 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-22413a72 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-22413a72, .button-error.data-v-22413a72 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-22413a72:active, .button-error.data-v-22413a72:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-22413a72, .disabled.button-error.data-v-22413a72 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-22413a72 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-22413a72:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-22413a72 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-22413a72 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-22413a72:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-22413a72 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-22413a72 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-22413a72 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-22413a72 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-22413a72 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-22413a72 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-22413a72 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-22413a72 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-22413a72 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-22413a72 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-22413a72 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-22413a72, .button-primary.data-v-22413a72 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-22413a72:active, .button-primary.data-v-22413a72:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-22413a72, .disabled.button-primary.data-v-22413a72 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-22413a72 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-22413a72:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-22413a72 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-22413a72 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-22413a72:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-22413a72 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-22413a72 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.market-detail-container.data-v-22413a72 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding-bottom: 120rpx;
+}
+.image-section.data-v-22413a72 {
+  position: relative;
+  height: 750rpx;
+}
+.goods-swiper.data-v-22413a72 {
+  width: 100%;
+  height: 100%;
+}
+.goods-image.data-v-22413a72 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-indicator.data-v-22413a72 {
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+}
+.action-buttons.data-v-22413a72 {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+.action-btn.data-v-22413a72 {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.action-btn.liked.data-v-22413a72 {
+  background-color: rgba(255, 71, 87, 0.1);
+}
+.action-btn .action-icon.data-v-22413a72 {
+  font-size: 32rpx;
+}
+.card.data-v-22413a72 {
+  background-color: #ffffff;
+  margin: 16rpx;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+.goods-info.data-v-22413a72 {
+  margin-top: 0;
+}
+.price-section.data-v-22413a72 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16rpx;
+}
+.price-row.data-v-22413a72 {
+  display: flex;
+  align-items: baseline;
+  gap: 16rpx;
+}
+.current-price.data-v-22413a72 {
+  font-size: 56rpx;
+  color: #ff4757;
+  font-weight: bold;
+}
+.original-price.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #999999;
+  text-decoration: line-through;
+}
+.price-tags.data-v-22413a72 {
+  display: flex;
+  gap: 8rpx;
+}
+.price-tag.data-v-22413a72 {
+  font-size: 20rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 6rpx;
+}
+.price-tag.negotiable.data-v-22413a72 {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+.price-tag.new.data-v-22413a72 {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border: 1px solid #27ae60;
+}
+.goods-title.data-v-22413a72 {
+  font-size: 40rpx;
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 24rpx;
+}
+.goods-meta.data-v-22413a72 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+.meta-item.data-v-22413a72 {
+  display: flex;
+  align-items: center;
+}
+.meta-label.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.meta-value.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #333333;
+}
+.section-header.data-v-22413a72 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.section-title.data-v-22413a72 {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+}
+.detail-content.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 16rpx;
+}
+.goods-params.data-v-22413a72 {
+  border-top: 1px solid #c8c7cc;
+  padding-top: 16rpx;
+}
+.params-title.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 16rpx;
+}
+.params-list.data-v-22413a72 {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+.param-item.data-v-22413a72 {
+  display: flex;
+}
+.param-name.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+  min-width: 120rpx;
+}
+.param-value.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #333333;
+  flex: 1;
+}
+.trade-item.data-v-22413a72 {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+.trade-label.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #999999;
+  min-width: 120rpx;
+}
+/* 联系方式样式 */
+.contact-section.data-v-22413a72 {
+  margin-bottom: 24rpx;
+}
+.contact-item.data-v-22413a72 {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+.contact-label.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #999999;
+  min-width: 120rpx;
+}
+.contact-value.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #333333;
+  flex: 1;
+}
+.trade-value.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #333333;
+}
+.seller-rating.data-v-22413a72 {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+.rating-text.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.rating-stars.data-v-22413a72 {
+  display: flex;
+  gap: 4rpx;
+}
+.star.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #ddd;
+}
+.star.active.data-v-22413a72 {
+  color: #ffc107;
+}
+.seller-profile.data-v-22413a72 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.seller-avatar.data-v-22413a72 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.seller-info.data-v-22413a72 {
+  flex: 1;
+}
+.seller-name.data-v-22413a72 {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+}
+.seller-desc.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1.4;
+  margin-bottom: 8rpx;
+}
+.seller-stats.data-v-22413a72 {
+  display: flex;
+  gap: 24rpx;
+}
+.seller-actions.data-v-22413a72 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.follow-btn.data-v-22413a72 {
+  padding: 12rpx 24rpx;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  min-width: 120rpx;
+}
+.unfollow-btn.data-v-22413a72 {
+  padding: 12rpx 24rpx;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  min-width: 120rpx;
+}
+.stat-item.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.arrow-icon.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #999999;
+}
+.recommend-section.data-v-22413a72 {
+  margin: 16rpx;
+  padding: 24rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+}
+.recommend-scroll.data-v-22413a72 {
+  margin-top: 16rpx;
+}
+.recommend-list.data-v-22413a72 {
+  display: flex;
+  gap: 16rpx;
+  padding-bottom: 16rpx;
+}
+.recommend-item.data-v-22413a72 {
+  flex-shrink: 0;
+  width: 240rpx;
+}
+.recommend-image.data-v-22413a72 {
+  width: 100%;
+  height: 240rpx;
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+}
+.recommend-title.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 1.4;
+  margin-bottom: 8rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.recommend-price.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #ff4757;
+  font-weight: 500;
+}
+.bottom-actions.data-v-22413a72 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 16rpx 16rpx 32rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 16rpx;
+  align-items: center;
+}
+.action-group.data-v-22413a72 {
+  display: flex;
+  gap: 32rpx;
+}
+.action-item.data-v-22413a72 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+}
+.action-icon.data-v-22413a72 {
+  font-size: 40rpx;
+}
+.action-text.data-v-22413a72 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.purchase-buttons.data-v-22413a72 {
+  flex: 1;
+  display: flex;
+  gap: 16rpx;
+}
+.btn-secondary.data-v-22413a72,
+.btn-primary.data-v-22413a72,
+.btn-warning.data-v-22413a72,
+.btn-disabled.data-v-22413a72 {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.btn-secondary.data-v-22413a72 {
+  background-color: #f8f8f8;
+  color: #333333;
+}
+.btn-primary.data-v-22413a72 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+.btn-warning.data-v-22413a72 {
+  background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+  color: #ffffff;
+}
+.btn-danger.data-v-22413a72 {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  background-color: #ff4757;
+  color: #ffffff;
+}
+.btn-disabled.data-v-22413a72 {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+.offer-modal.data-v-22413a72 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32rpx;
+}
+.offer-content.data-v-22413a72 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  width: 100%;
+  max-width: 600rpx;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.offer-header.data-v-22413a72 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.offer-title.data-v-22413a72 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.offer-close.data-v-22413a72 {
+  font-size: 32rpx;
+  color: #999999;
+  padding: 8rpx;
+}
+.offer-current.data-v-22413a72 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+.current-label.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #999999;
+}
+.current-price.data-v-22413a72 {
+  font-size: 32rpx;
+  color: #ff4757;
+  font-weight: 500;
+}
+.offer-input-section.data-v-22413a72,
+.offer-message-section.data-v-22413a72 {
+  margin-bottom: 24rpx;
+}
+.input-label.data-v-22413a72 {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 12rpx;
+  display: block;
+}
+.offer-input.data-v-22413a72 {
+  width: 100%;
+  height: 72rpx;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  padding: 0 16rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.offer-message.data-v-22413a72 {
+  width: 100%;
+  min-height: 120rpx;
+  border: 1px solid #c8c7cc;
+  border-radius: 8rpx;
+  padding: 16rpx;
+  font-size: 28rpx;
+  resize: none;
+  box-sizing: border-box;
+}
+.offer-actions.data-v-22413a72 {
+  display: flex;
+  gap: 24rpx;
+}
+.offer-cancel.data-v-22413a72,
+.offer-confirm.data-v-22413a72 {
+  flex: 1;
+  height: 72rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+.offer-cancel.data-v-22413a72 {
+  background-color: #f8f8f8;
+  color: #333333;
+}
+.offer-confirm.data-v-22413a72 {
+  background-color: #007aff;
+  color: #ffffff;
+}

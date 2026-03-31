@@ -131,11 +131,12 @@
 
 <script>
 import request from "@/common/request.js";
-import { USER_AUTH_TOKEN_KEY } from "@/common/config.js";
 import PublishButton from "@/components/PublishButton.vue";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
   components: { PublishButton },
+  mixins: [publishGate],
   data() {
     const now = new Date();
     return {
@@ -166,16 +167,8 @@ export default {
     };
   },
   onLoad() {
-    console.log(
-      "游戏陪玩页面onLoad token:",
-      uni.getStorageSync(USER_AUTH_TOKEN_KEY)
-    );
-  },
-  onShow() {
-    console.log(
-      "游戏陪玩页面onShow token:",
-      uni.getStorageSync(USER_AUTH_TOKEN_KEY)
-    );
+    if (!this.ensureLogin()) return;
+    this.checkCommunitySelection();
   },
   methods: {
     bindPlayerNumberChange(e) {
@@ -227,6 +220,9 @@ export default {
       return true;
     },
     async submitGameTask() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       // 检查维护模式
       const { beforeAction } = await import("../../common/maintenanceCheck.js");
       if (await beforeAction("发布任务")) {

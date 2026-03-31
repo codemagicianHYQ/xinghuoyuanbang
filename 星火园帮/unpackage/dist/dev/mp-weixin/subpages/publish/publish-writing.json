@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布作业辅助",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}

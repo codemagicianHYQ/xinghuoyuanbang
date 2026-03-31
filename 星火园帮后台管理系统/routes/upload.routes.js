@@ -17,11 +17,13 @@ const cosConfig = {
 
 const cos = new COS(cosConfig);
 
-// 调试信息
-console.log("🔧 COS配置初始化:");
-console.log("• SecretId:", cosConfig.SecretId.substring(0, 10) + "...");
-console.log("• SecretKey:", cosConfig.SecretKey.substring(0, 10) + "...");
-console.log("• 使用环境变量:", process.env.COS_SECRET_ID ? "✅" : "❌");
+// 仅提示是否已配置，避免在日志中输出密钥片段
+if (process.env.NODE_ENV !== "production") {
+  console.log("🔧 COS配置初始化:", {
+    hasSecretId: !!cosConfig.SecretId,
+    hasSecretKey: !!cosConfig.SecretKey,
+  });
+}
 
 // COS上传函数
 const uploadToCOS = async (file, path) => {

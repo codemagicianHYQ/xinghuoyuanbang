@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "聊天",
+  "disableScroll": true,
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 0,
+  "usingComponents": {}
+}

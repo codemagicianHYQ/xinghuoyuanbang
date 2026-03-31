@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <view class="publish-paperwork-container page-container">
     <!-- 顶部装饰区域 -->
     <view class="header-decoration">
@@ -108,14 +108,14 @@
 
 <script>
 import request from "@/common/request.js";
-import { mapState } from "vuex";
 import PublishButton from "@/components/PublishButton.vue";
-import { USER_AUTH_TOKEN_KEY } from "@/common/config.js";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
   components: {
     PublishButton,
   },
+  mixins: [publishGate],
   data() {
     return {
       formData: {
@@ -138,31 +138,9 @@ export default {
       isSubmitting: false,
     };
   },
-  computed: {
-    ...mapState({
-      hasLogin: (state) => state.hasLogin,
-    }),
-  },
   onLoad(options) {
-    if (!this.hasLogin) {
-      uni.showModal({
-        title: "提示",
-        content: "您尚未登录，登录后才能发布求助。",
-        showCancel: false,
-        confirmText: "去登录",
-        success: (res) => {
-          if (res.confirm) {
-            uni.navigateTo({
-              url: "/pages/login/login?redirect=/subpages/publish/publish-paperwork",
-            });
-          } else {
-            uni.navigateBack().catch(() => {
-              uni.switchTab({ url: "/pages/home/home" });
-            });
-          }
-        },
-      });
-    }
+    if (!this.ensureLogin()) return;
+    this.checkCommunitySelection();
     if (options && options.title) {
       this.formData.title = decodeURIComponent(options.title);
     }
@@ -272,6 +250,9 @@ export default {
     },
 
     async submitPaperworkRequest() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       // 检查维护模式
       const { beforeAction } = await import("../../common/maintenanceCheck.js");
       if (await beforeAction("发布求资料")) {

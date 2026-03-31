@@ -1,0 +1,393 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-29f06c90 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-29f06c90 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-29f06c90 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-29f06c90 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-29f06c90 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-29f06c90 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-29f06c90 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-29f06c90 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-29f06c90 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-29f06c90 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-29f06c90, .button-error.data-v-29f06c90 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-29f06c90:active, .button-error.data-v-29f06c90:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-29f06c90, .disabled.button-error.data-v-29f06c90 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-29f06c90 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-29f06c90:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-29f06c90 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-29f06c90 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-29f06c90:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-29f06c90 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-29f06c90 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-29f06c90 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-29f06c90 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-29f06c90 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-29f06c90 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-29f06c90 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-29f06c90 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-29f06c90 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-29f06c90 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-29f06c90 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-29f06c90, .button-primary.data-v-29f06c90 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-29f06c90:active, .button-primary.data-v-29f06c90:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-29f06c90, .disabled.button-primary.data-v-29f06c90 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-29f06c90 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-29f06c90:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-29f06c90 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-29f06c90 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-29f06c90:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-29f06c90 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-29f06c90 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.feedback-container.data-v-29f06c90 {
+  padding: 16rpx;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+.feedback-tips.data-v-29f06c90 {
+  padding: 16rpx 24rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: flex-start;
+  font-size: 24rpx;
+  color: #999999;
+  background-color: #e6f2ff;
+  border: 1px solid #b3d7ff;
+}
+.feedback-tips .tip-icon.data-v-29f06c90 {
+  font-size: 32rpx;
+  margin-right: 8rpx;
+  line-height: 1.5;
+}
+.form-section.data-v-29f06c90 {
+  padding: 24rpx;
+}
+.form-item.data-v-29f06c90 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36rpx;
+}
+.form-item.data-v-29f06c90:last-child {
+  margin-bottom: 0;
+}
+.form-item .item-label.data-v-29f06c90 {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+}
+.form-item .item-label .required-star.data-v-29f06c90 {
+  color: #dd524d;
+  margin-left: 4rpx;
+}
+.form-item .input-field.data-v-29f06c90,
+.form-item .textarea-field.data-v-29f06c90 {
+  background-color: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333333;
+  border-radius: 8rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-item .input-field.data-v-29f06c90:focus,
+.form-item .textarea-field.data-v-29f06c90:focus {
+  border-color: #007aff;
+  background-color: #ffffff;
+}
+.form-item .input-field.data-v-29f06c90 {
+  height: 80rpx;
+  padding: 0 16rpx;
+  line-height: 80rpx;
+}
+.form-item .textarea-field.data-v-29f06c90 {
+  min-height: 240rpx;
+  line-height: 1.6;
+}
+.form-item .char-counter.data-v-29f06c90 {
+  font-size: 24rpx;
+  color: #808080;
+  text-align: right;
+  margin-top: 10rpx;
+}
+.image-uploader .image-preview-list.data-v-29f06c90 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.image-uploader .image-preview-item.data-v-29f06c90,
+.image-uploader .add-image-btn.data-v-29f06c90 {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.image-uploader .image-preview-item image.data-v-29f06c90,
+.image-uploader .add-image-btn image.data-v-29f06c90 {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.image-uploader .add-image-btn.data-v-29f06c90 {
+  border: 1px dashed #c8c7cc;
+  cursor: pointer;
+}
+.image-uploader .add-image-btn .uni-icon-plusempty.data-v-29f06c90 {
+  font-size: 60rpx;
+  color: #808080;
+}
+.image-uploader .add-image-btn.data-v-29f06c90:active {
+  background-color: #ebebeb;
+}
+.image-uploader .remove-image-btn.data-v-29f06c90 {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.image-uploader .remove-image-btn .uni-icon-closeempty.data-v-29f06c90 {
+  font-size: 28rpx;
+}
+.submit-btn.data-v-29f06c90 {
+  background-color: #007aff;
+  color: #ffffff;
+  font-size: 32rpx;
+  padding: 22rpx 0;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: normal;
+  margin-top: 45rpx;
+  width: 100%;
+}
+.submit-btn.data-v-29f06c90:active {
+  background-color: #0062cc;
+}
+.submit-btn[disabled].data-v-29f06c90 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.card.data-v-29f06c90 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-lg.data-v-29f06c90 {
+  border-radius: 16rpx;
+}
+.rounded-base.data-v-29f06c90 {
+  border-radius: 8rpx;
+}
+.rounded-pill.data-v-29f06c90 {
+  border-radius: 1000px;
+}
+.shadow-base.data-v-29f06c90 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}

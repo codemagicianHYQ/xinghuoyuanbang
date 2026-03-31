@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-ed732dc8 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-ed732dc8 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-ed732dc8 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-ed732dc8 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-ed732dc8 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-ed732dc8 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-ed732dc8 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-ed732dc8 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-ed732dc8 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-ed732dc8 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-ed732dc8, .button-primary.data-v-ed732dc8 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-ed732dc8:active, .button-primary.data-v-ed732dc8:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-ed732dc8, .disabled.button-primary.data-v-ed732dc8 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-ed732dc8 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-ed732dc8:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-ed732dc8 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-ed732dc8 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-ed732dc8:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-ed732dc8 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-ed732dc8 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-ed732dc8 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-ed732dc8 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.custom-navbar.data-v-ed732dc8 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10rpx);
+          backdrop-filter: blur(10rpx);
+  border-bottom: 1rpx solid rgba(240, 240, 240, 0.5);
+}
+.custom-navbar .navbar-content.data-v-ed732dc8 {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  position: relative;
+}
+.custom-navbar .navbar-content .community-selector.data-v-ed732dc8 {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  max-width: 320rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 50rpx;
+  background: rgba(255, 107, 53, 0.25);
+  border: 2rpx solid rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 53, 0.15);
+  transition: all 0.3s ease;
+}
+.custom-navbar .navbar-content .community-selector.data-v-ed732dc8:active {
+  background: rgba(255, 107, 53, 0.35);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx rgba(255, 107, 53, 0.25);
+}
+.custom-navbar .navbar-content .community-selector .location-icon.data-v-ed732dc8 {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  color: #ff6b35;
+}
+.custom-navbar .navbar-content .community-selector .community-text.data-v-ed732dc8 {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+  margin-right: 8rpx;
+  max-width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.custom-navbar .navbar-content .community-selector .dropdown-icon.data-v-ed732dc8 {
+  font-size: 20rpx;
+  color: #ff6b35;
+  font-weight: bold;
+}

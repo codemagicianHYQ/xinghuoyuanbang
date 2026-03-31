@@ -1,0 +1,486 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-8c1c8fcc {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-8c1c8fcc {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-8c1c8fcc {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-8c1c8fcc {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-8c1c8fcc {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-8c1c8fcc {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-8c1c8fcc {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-8c1c8fcc {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-8c1c8fcc {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-8c1c8fcc, .button-error.data-v-8c1c8fcc {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-8c1c8fcc:active, .button-error.data-v-8c1c8fcc:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-8c1c8fcc, .disabled.button-error.data-v-8c1c8fcc {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-8c1c8fcc {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-8c1c8fcc:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-8c1c8fcc {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-8c1c8fcc {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-8c1c8fcc:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-8c1c8fcc {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-8c1c8fcc {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-8c1c8fcc {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-8c1c8fcc {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-8c1c8fcc {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-8c1c8fcc {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-8c1c8fcc {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-8c1c8fcc {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-8c1c8fcc {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-8c1c8fcc {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-8c1c8fcc, .button-primary.data-v-8c1c8fcc {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-8c1c8fcc:active, .button-primary.data-v-8c1c8fcc:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-8c1c8fcc, .disabled.button-primary.data-v-8c1c8fcc {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-8c1c8fcc {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-8c1c8fcc:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-8c1c8fcc {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-8c1c8fcc {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-8c1c8fcc:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-8c1c8fcc {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-8c1c8fcc {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.exam-detail-container.data-v-8c1c8fcc {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding-bottom: 180rpx;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+.exam-header.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  padding: 24rpx;
+  display: flex;
+  gap: 24rpx;
+}
+.exam-cover-section.data-v-8c1c8fcc {
+  position: relative;
+  flex-shrink: 0;
+}
+.exam-cover.data-v-8c1c8fcc {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+.exam-badges.data-v-8c1c8fcc {
+  position: absolute;
+  top: -8rpx;
+  right: -8rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+.exam-badge.data-v-8c1c8fcc {
+  background-color: #dd524d;
+  color: #ffffff;
+  font-size: 20rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 12rpx;
+}
+.exam-info-section.data-v-8c1c8fcc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+.exam-title.data-v-8c1c8fcc {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.4;
+  margin-bottom: 8rpx;
+}
+.exam-course.data-v-8c1c8fcc,
+.exam-teacher.data-v-8c1c8fcc,
+.exam-year.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #999999;
+}
+.exam-category.data-v-8c1c8fcc {
+  margin-top: 8rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+.category-text.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #007aff;
+  background-color: rgba(0, 122, 255, 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 16rpx;
+}
+.exam-stats.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 24rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.stat-item.data-v-8c1c8fcc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+.stat-number.data-v-8c1c8fcc {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #007aff;
+}
+.stat-label.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #999999;
+}
+.section-title.data-v-8c1c8fcc {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20rpx;
+  padding: 0 24rpx;
+}
+.exam-description.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 24rpx;
+}
+.description-text.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 1.6;
+}
+.exam-tags.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 24rpx;
+}
+.tags-list.data-v-8c1c8fcc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.tag-item.data-v-8c1c8fcc {
+  background-color: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+}
+.download-section.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 24rpx;
+}
+.download-info.data-v-8c1c8fcc {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.download-item.data-v-8c1c8fcc {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.download-label.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #999999;
+  min-width: 120rpx;
+}
+.download-url-wrapper.data-v-8c1c8fcc {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.download-url.data-v-8c1c8fcc,
+.download-code.data-v-8c1c8fcc {
+  flex: 1;
+  font-size: 24rpx;
+  color: #333333;
+  word-break: break-all;
+}
+.copy-icon.data-v-8c1c8fcc {
+  flex-shrink: 0;
+  padding: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8rpx;
+  transition: background-color 0.2s;
+}
+.copy-icon.data-v-8c1c8fcc:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.copy-icon-text.data-v-8c1c8fcc {
+  font-size: 36rpx;
+  line-height: 1;
+}
+.action-buttons.data-v-8c1c8fcc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 16rpx;
+  display: flex;
+  gap: 16rpx;
+  box-shadow: 0 -2rpx 8rpx rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+.action-btn.data-v-8c1c8fcc {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  padding: 20rpx 0;
+  border-radius: 8rpx;
+  border: none;
+  font-size: 28rpx;
+}
+.favorite-btn.data-v-8c1c8fcc {
+  background-color: rgba(240, 173, 78, 0.1);
+  color: #f0ad4e;
+}
+.favorite-btn.favorited.data-v-8c1c8fcc {
+  background-color: rgba(240, 173, 78, 0.2);
+}
+.download-btn.data-v-8c1c8fcc {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.share-btn.data-v-8c1c8fcc {
+  background-color: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+}
+.btn-icon.data-v-8c1c8fcc {
+  font-size: 32rpx;
+}
+.related-exams.data-v-8c1c8fcc {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  padding: 24rpx;
+}
+.related-list.data-v-8c1c8fcc {
+  white-space: nowrap;
+}
+.related-item.data-v-8c1c8fcc {
+  display: inline-block;
+  width: 120rpx;
+  margin-right: 16rpx;
+  text-align: center;
+}
+.related-cover.data-v-8c1c8fcc {
+  width: 120rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-bottom: 8rpx;
+  background-color: #f5f5f5;
+}
+.related-title.data-v-8c1c8fcc {
+  font-size: 24rpx;
+  color: #333333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.3;
+}

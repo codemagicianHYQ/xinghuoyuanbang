@@ -1,0 +1,370 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-20eca0da {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-20eca0da {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-20eca0da {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-20eca0da {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-20eca0da {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-20eca0da {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-20eca0da {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-20eca0da {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-20eca0da {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-20eca0da {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-20eca0da, .button-primary.data-v-20eca0da {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-20eca0da:active, .button-primary.data-v-20eca0da:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-20eca0da, .disabled.button-primary.data-v-20eca0da {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-20eca0da {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-20eca0da:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-20eca0da {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-20eca0da {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-20eca0da:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-20eca0da {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-20eca0da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-20eca0da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-20eca0da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.after-sales-container.data-v-20eca0da {
+  min-height: 100vh;
+  background: #f8faff;
+  padding-bottom: 120rpx;
+}
+.nav-header.data-v-20eca0da {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 32rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-back.data-v-20eca0da {
+  padding: 10rpx;
+  margin-right: 20rpx;
+}
+.nav-title.data-v-20eca0da {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.task-info.data-v-20eca0da,
+.issue-type.data-v-20eca0da,
+.issue-description.data-v-20eca0da,
+.image-upload.data-v-20eca0da,
+.contact-info.data-v-20eca0da {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 32rpx;
+  overflow: hidden;
+}
+.info-header.data-v-20eca0da {
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.info-title.data-v-20eca0da {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+.task-card.data-v-20eca0da {
+  padding: 32rpx;
+}
+.task-title.data-v-20eca0da {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+.task-meta.data-v-20eca0da {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.task-type.data-v-20eca0da {
+  background: #e8f5e8;
+  color: #4ecb73;
+  padding: 8rpx 16rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+}
+.task-reward.data-v-20eca0da {
+  color: #ff4e4e;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.task-status.data-v-20eca0da {
+  text-align: right;
+}
+.status-text.data-v-20eca0da {
+  background: #fff3e0;
+  color: #ff9800;
+  padding: 8rpx 16rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+}
+.type-list.data-v-20eca0da {
+  padding: 32rpx;
+}
+.type-item.data-v-20eca0da {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  border: 2rpx solid #f0f0f0;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  transition: all 0.3s;
+}
+.type-item.type-selected.data-v-20eca0da {
+  border-color: #4ecb73;
+  background: #f8fff8;
+}
+.type-icon.data-v-20eca0da {
+  margin-right: 20rpx;
+}
+.type-content.data-v-20eca0da {
+  flex: 1;
+}
+.type-title.data-v-20eca0da {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.type-desc.data-v-20eca0da {
+  font-size: 24rpx;
+  color: #666;
+}
+.type-check.data-v-20eca0da {
+  margin-left: 20rpx;
+}
+.description-input.data-v-20eca0da {
+  padding: 32rpx;
+}
+.description-textarea.data-v-20eca0da {
+  width: 100%;
+  min-height: 200rpx;
+  background: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+.char-count.data-v-20eca0da {
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+.upload-area.data-v-20eca0da {
+  padding: 32rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+.image-item.data-v-20eca0da {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+}
+.uploaded-image.data-v-20eca0da {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+.image-delete.data-v-20eca0da {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background: #ff4e4e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-btn.data-v-20eca0da {
+  width: 160rpx;
+  height: 160rpx;
+  border: 2rpx dashed #ddd;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+}
+.upload-text.data-v-20eca0da {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+.contact-input.data-v-20eca0da {
+  padding: 32rpx;
+}
+/* 状态徽章样式 */
+.status-badge.data-v-20eca0da {
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.status-pending.data-v-20eca0da {
+  background-color: #ffa500;
+}
+.status-processing.data-v-20eca0da {
+  background-color: #007bff;
+}
+.status-resolved.data-v-20eca0da {
+  background-color: #28a745;
+}
+.status-rejected.data-v-20eca0da {
+  background-color: #dc3545;
+}
+.status-cancelled.data-v-20eca0da {
+  background-color: #6c757d;
+}
+.status-unknown.data-v-20eca0da {
+  background-color: #6c757d;
+}
+/* 查看模式下的禁用样式 */
+.type-disabled.data-v-20eca0da {
+  opacity: 0.6;
+  pointer-events: none;
+}
+/* 查看模式下的表单样式 */
+.description-textarea.data-v-20eca0da:disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  opacity: 0.8;
+}
+.contact-text.data-v-20eca0da:disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  opacity: 0.8;
+}
+.contact-text.data-v-20eca0da {
+  width: 100%;
+  background: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+}
+.submit-section.data-v-20eca0da {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 24rpx 32rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+.submit-btn.data-v-20eca0da {
+  width: 100%;
+  height: 88rpx;
+  background: linear-gradient(135deg, #4ecb73 0%, #45b362 100%);
+  color: #fff;
+  border: none;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.submit-btn.data-v-20eca0da:disabled {
+  background: #ccc;
+}

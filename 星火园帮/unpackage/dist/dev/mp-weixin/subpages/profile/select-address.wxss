@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-66eb1716 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-66eb1716 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-66eb1716 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-66eb1716 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-66eb1716 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-66eb1716 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-66eb1716 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-66eb1716 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-66eb1716 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-66eb1716 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-66eb1716, .button-primary.data-v-66eb1716 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-66eb1716:active, .button-primary.data-v-66eb1716:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-66eb1716, .disabled.button-primary.data-v-66eb1716 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-66eb1716 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-66eb1716:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-66eb1716 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-66eb1716 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-66eb1716:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-66eb1716 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-66eb1716 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-66eb1716 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-66eb1716 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.select-address-container.data-v-66eb1716 {
+  padding: 32rpx;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f8ff 100%);
+  min-height: 100vh;
+}
+.page-title.data-v-66eb1716 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+  text-align: center;
+  position: relative;
+}
+.page-title.data-v-66eb1716::after {
+  content: "";
+  position: absolute;
+  bottom: -8rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
+  border-radius: 2rpx;
+}
+.empty-tip.data-v-66eb1716 {
+  text-align: center;
+  padding: 120rpx 0;
+  color: #666;
+  font-size: 28rpx;
+}
+.empty-tip text.data-v-66eb1716 {
+  display: block;
+  margin-bottom: 40rpx;
+  font-size: 30rpx;
+}
+.empty-tip .add-address-btn.data-v-66eb1716 {
+  margin-top: 40rpx;
+  width: 320rpx;
+  height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 44rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 122, 255, 0.2);
+}
+.address-card.data-v-66eb1716 {
+  margin-bottom: 24rpx;
+  padding: 32rpx;
+  background: white;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  border: 1rpx solid rgba(0, 122, 255, 0.1);
+}
+.address-card.data-v-66eb1716:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 122, 255, 0.2);
+}
+.address-info.data-v-66eb1716 {
+  flex: 1;
+  margin-right: 24rpx;
+}
+.address-header.data-v-66eb1716 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.address-detail.data-v-66eb1716 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+.address-tag.data-v-66eb1716 {
+  background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
+  color: white;
+  font-size: 20rpx;
+  padding: 6rpx 12rpx;
+  border-radius: 12rpx;
+  margin-left: 16rpx;
+  font-weight: 500;
+  box-shadow: 0 2rpx 8rpx rgba(0, 122, 255, 0.3);
+}
+.contact-info.data-v-66eb1716 {
+  font-size: 26rpx;
+  color: #666;
+}
+.select-icon.data-v-66eb1716 {
+  color: #007aff;
+  font-size: 32rpx;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.address-card:active .select-icon.data-v-66eb1716 {
+  opacity: 1;
+}
+.bottom-actions.data-v-66eb1716 {
+  margin-top: 48rpx;
+  text-align: center;
+  padding: 0 20rpx;
+}
+.add-address-btn.data-v-66eb1716 {
+  width: 100%;
+  height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 44rpx;
+  transition: all 0.3s ease;
+}
+.button-secondary.data-v-66eb1716 {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #495057;
+  border: 1rpx solid #dee2e6;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.button-secondary.data-v-66eb1716:active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,347 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-71bf1b56 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-71bf1b56 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-71bf1b56 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-71bf1b56 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-71bf1b56 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-71bf1b56 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-71bf1b56 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-71bf1b56 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-71bf1b56 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-71bf1b56 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-71bf1b56, .button-error.data-v-71bf1b56, .logout-btn.data-v-71bf1b56 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-71bf1b56:active, .button-error.data-v-71bf1b56:active, .logout-btn.data-v-71bf1b56:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-71bf1b56, .disabled.button-error.data-v-71bf1b56, .disabled.logout-btn.data-v-71bf1b56 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-71bf1b56 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-71bf1b56:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-71bf1b56 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-71bf1b56, .logout-btn.data-v-71bf1b56 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-71bf1b56:active, .logout-btn.data-v-71bf1b56:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-71bf1b56, .disabled.logout-btn.data-v-71bf1b56 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-71bf1b56 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-71bf1b56 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-71bf1b56 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-71bf1b56 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-71bf1b56 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-71bf1b56 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-71bf1b56 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-71bf1b56 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-71bf1b56 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-71bf1b56 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-71bf1b56, .logout-btn.data-v-71bf1b56, .button-primary.data-v-71bf1b56 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-71bf1b56:active, .logout-btn.data-v-71bf1b56:active, .button-primary.data-v-71bf1b56:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-71bf1b56, .disabled.logout-btn.data-v-71bf1b56, .disabled.button-primary.data-v-71bf1b56 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-71bf1b56 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-71bf1b56:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-71bf1b56 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-71bf1b56, .logout-btn.data-v-71bf1b56 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-71bf1b56:active, .logout-btn.data-v-71bf1b56:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-71bf1b56, .disabled.logout-btn.data-v-71bf1b56 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-71bf1b56 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.page-container.data-v-71bf1b56 {
+  padding: 16rpx;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+.card.data-v-71bf1b56 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+  padding: 0;
+}
+.setting-item.data-v-71bf1b56,
+.setting-item-button.data-v-71bf1b56 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 24rpx;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 32rpx;
+  color: #333333;
+  transition: background-color 0.1s ease;
+}
+.setting-item.data-v-71bf1b56:last-child,
+.setting-item-button.data-v-71bf1b56:last-child {
+  border-bottom: none;
+}
+.setting-item.data-v-71bf1b56:active,
+.setting-item-button.data-v-71bf1b56:active {
+  background-color: #f1f1f1;
+}
+.setting-item .item-label.data-v-71bf1b56,
+.setting-item-button .item-label.data-v-71bf1b56 {
+  flex-grow: 1;
+}
+.setting-item .item-action.data-v-71bf1b56,
+.setting-item-button .item-action.data-v-71bf1b56 {
+  display: flex;
+  align-items: center;
+  color: #666666;
+}
+.setting-item .item-action .current-avatar.data-v-71bf1b56,
+.setting-item-button .item-action .current-avatar.data-v-71bf1b56 {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 8rpx;
+  background-color: #eee;
+}
+.setting-item .item-action .arrow-icon.data-v-71bf1b56,
+.setting-item-button .item-action .arrow-icon.data-v-71bf1b56 {
+  font-size: 32rpx;
+  color: #808080;
+}
+.setting-item .item-action-text.data-v-71bf1b56,
+.setting-item-button .item-action-text.data-v-71bf1b56 {
+  font-size: 28rpx;
+  color: #999999;
+}
+.setting-item-button.data-v-71bf1b56 {
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  padding: 0;
+  line-height: normal;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 24rpx;
+}
+.setting-item-button.data-v-71bf1b56:after {
+  border: none;
+}
+.setting-item-button.button-hover.data-v-71bf1b56, .setting-item-button.data-v-71bf1b56:active {
+  background-color: #f1f1f1 !important;
+}
+.logout-container.data-v-71bf1b56 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+.logout-btn.data-v-71bf1b56 {
+  width: 100%;
+  margin: 0;
+  border-radius: 8rpx;
+}
+.rounded-lg.data-v-71bf1b56 {
+  border-radius: 16rpx;
+}
+.rounded-circle.data-v-71bf1b56 {
+  border-radius: 50%;
+}
+.shadow-base.data-v-71bf1b56 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+/* 通知设置样式 */
+.notification-setting .item-action.data-v-71bf1b56 {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+.setting-item.notification-setting.data-v-71bf1b56 {
+  background-color: rgba(0, 122, 255, 0.05);
+  border-left: 4rpx solid #007aff;
+}
+.setting-item.notification-setting .item-label.data-v-71bf1b56 {
+  color: #333;
+  font-weight: 500;
+}

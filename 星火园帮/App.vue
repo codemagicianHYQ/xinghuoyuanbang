@@ -6,8 +6,10 @@ export default {
   onLaunch: function (options) {
     console.log("App Launch，启动参数：", options);
 
-    // 检查维护模式（异步）
-    this.checkMaintenanceModeAsync();
+    // 维护状态延后拉取，避免与首屏 / 开屏页路由竞态
+    setTimeout(() => {
+      this.checkMaintenanceModeAsync();
+    }, 400);
 
     // 直接进入主页面，无需版本选择
     console.log("App.vue onLaunch: 直接启动应用");

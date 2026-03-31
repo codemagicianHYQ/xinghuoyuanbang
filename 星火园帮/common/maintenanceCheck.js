@@ -46,8 +46,11 @@ export const checkMaintenanceMode = async (showModal = true) => {
       return false;
     }
   } catch (error) {
-    console.error("检查维护模式失败:", error);
-    // 检查失败时，不阻止用户操作
+    // 502/网关错误等：仅调试日志，不当作致命错误（避免控制台一片红）
+    console.warn(
+      "[maintenance] 无法拉取维护状态，按非维护处理:",
+      error?.statusCode || error?.errMsg || error
+    );
     return false;
   }
 };

@@ -1,0 +1,450 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-e0ba1d5c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-e0ba1d5c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-e0ba1d5c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-e0ba1d5c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-e0ba1d5c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-e0ba1d5c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-e0ba1d5c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-e0ba1d5c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-e0ba1d5c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-e0ba1d5c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-e0ba1d5c, .button-error.data-v-e0ba1d5c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-e0ba1d5c:active, .button-error.data-v-e0ba1d5c:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-e0ba1d5c, .disabled.button-error.data-v-e0ba1d5c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-e0ba1d5c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-e0ba1d5c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-e0ba1d5c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-e0ba1d5c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-e0ba1d5c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-e0ba1d5c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-e0ba1d5c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-e0ba1d5c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-e0ba1d5c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-e0ba1d5c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-e0ba1d5c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-e0ba1d5c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-e0ba1d5c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-e0ba1d5c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-e0ba1d5c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-e0ba1d5c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-e0ba1d5c, .button-primary.data-v-e0ba1d5c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-e0ba1d5c:active, .button-primary.data-v-e0ba1d5c:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-e0ba1d5c, .disabled.button-primary.data-v-e0ba1d5c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-e0ba1d5c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-e0ba1d5c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-e0ba1d5c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-e0ba1d5c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-e0ba1d5c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-e0ba1d5c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-e0ba1d5c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.service-container.data-v-e0ba1d5c {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f8ff 100%);
+  padding: 32rpx;
+}
+.service-header.data-v-e0ba1d5c {
+  margin-bottom: 32rpx;
+  padding: 40rpx 32rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(135deg, #eaffd0 0%, #fffbe6 100%);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8rpx 32rpx rgba(77, 166, 255, 0.1);
+}
+.service-avatar-container.data-v-e0ba1d5c {
+  position: relative;
+  margin-right: 32rpx;
+}
+.service-avatar.data-v-e0ba1d5c {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+.online-status.data-v-e0ba1d5c {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #4caf50;
+  border-radius: 16rpx;
+  padding: 4rpx 12rpx;
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+  box-shadow: 0 2rpx 8rpx rgba(76, 175, 80, 0.3);
+}
+.status-dot.data-v-e0ba1d5c {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-animation: pulse-data-v-e0ba1d5c 2s infinite;
+          animation: pulse-data-v-e0ba1d5c 2s infinite;
+}
+@-webkit-keyframes pulse-data-v-e0ba1d5c {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.5;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes pulse-data-v-e0ba1d5c {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.5;
+}
+100% {
+    opacity: 1;
+}
+}
+.status-text.data-v-e0ba1d5c {
+  font-size: 20rpx;
+  color: #fff;
+  font-weight: 500;
+}
+.service-info.data-v-e0ba1d5c {
+  flex: 1;
+}
+.service-title.data-v-e0ba1d5c {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8rpx;
+}
+.service-desc.data-v-e0ba1d5c {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+}
+.service-time.data-v-e0ba1d5c {
+  font-size: 24rpx;
+  color: #4e9fff;
+  font-weight: 500;
+}
+.quick-service.data-v-e0ba1d5c {
+  margin-bottom: 32rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  box-shadow: 0 8rpx 32rpx rgba(77, 166, 255, 0.1);
+}
+.section-title.data-v-e0ba1d5c {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 24rpx;
+  display: block;
+}
+.service-grid.data-v-e0ba1d5c {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+.service-item.data-v-e0ba1d5c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32rpx 24rpx;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f8ff 100%);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(77, 166, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.service-item.data-v-e0ba1d5c:active {
+  -webkit-transform: translateY(-2rpx);
+          transform: translateY(-2rpx);
+  box-shadow: 0 8rpx 24rpx rgba(77, 166, 255, 0.2);
+}
+.service-icon-text.data-v-e0ba1d5c {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+}
+.service-name.data-v-e0ba1d5c {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+.contact-info.data-v-e0ba1d5c {
+  margin-bottom: 32rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  box-shadow: 0 8rpx 32rpx rgba(77, 166, 255, 0.1);
+}
+.contact-item.data-v-e0ba1d5c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.contact-item.data-v-e0ba1d5c:last-child {
+  border-bottom: none;
+}
+.contact-left.data-v-e0ba1d5c {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.contact-icon-text.data-v-e0ba1d5c {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+.contact-detail.data-v-e0ba1d5c {
+  display: flex;
+  flex-direction: column;
+}
+.contact-label.data-v-e0ba1d5c {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+.contact-value.data-v-e0ba1d5c {
+  font-size: 26rpx;
+  color: #666;
+}
+.copy-btn.data-v-e0ba1d5c {
+  background: linear-gradient(135deg, #4da6ff 0%, #3399ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  padding: 12rpx 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(77, 166, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.copy-btn.data-v-e0ba1d5c:active {
+  -webkit-transform: translateY(-1rpx);
+          transform: translateY(-1rpx);
+  box-shadow: 0 6rpx 16rpx rgba(77, 166, 255, 0.4);
+}
+.service-promise.data-v-e0ba1d5c {
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  box-shadow: 0 8rpx 32rpx rgba(77, 166, 255, 0.1);
+}
+.promise-list.data-v-e0ba1d5c {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.promise-item.data-v-e0ba1d5c {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.promise-icon.data-v-e0ba1d5c {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.promise-text.data-v-e0ba1d5c {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布借物品",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}

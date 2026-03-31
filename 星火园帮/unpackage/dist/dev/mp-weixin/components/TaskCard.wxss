@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-49f80010 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-49f80010 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-49f80010 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-49f80010 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-49f80010 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-49f80010 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-49f80010 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-49f80010 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-49f80010 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-49f80010 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-49f80010, .button-error.data-v-49f80010 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-49f80010:active, .button-error.data-v-49f80010:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-49f80010, .disabled.button-error.data-v-49f80010 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-49f80010 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-49f80010:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-49f80010 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-49f80010 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-49f80010:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-49f80010 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-49f80010 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-49f80010 {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-49f80010 {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-49f80010 {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-49f80010 {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-49f80010 {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-49f80010 {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-49f80010 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-49f80010 {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-49f80010 {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-49f80010, .button-primary.data-v-49f80010 {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-49f80010:active, .button-primary.data-v-49f80010:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-49f80010, .disabled.button-primary.data-v-49f80010 {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-49f80010 {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-49f80010:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-49f80010 {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-49f80010 {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-49f80010:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-49f80010 {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-49f80010 {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.task-card.data-v-49f80010 {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 16rpx;
+  margin: 20rpx 16rpx;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.task-card.data-v-49f80010:active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.card-header.data-v-49f80010 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.publisher-info.data-v-49f80010 {
+  display: flex;
+  align-items: center;
+}
+.publisher-avatar.data-v-49f80010 {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  background-color: #eee;
+}
+.publisher-name.data-v-49f80010 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.task-status.data-v-49f80010 {
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 1000px;
+  font-weight: 500;
+}
+.task-status.status-open.data-v-49f80010, .task-status.status-pending.data-v-49f80010 {
+  background-color: #e3f2fd;
+  color: #007aff;
+}
+.task-status.status-assigned.data-v-49f80010, .task-status.status-accepted.data-v-49f80010, .task-status.status-in_progress.data-v-49f80010 {
+  background-color: #fff3e0;
+  color: #ff9800;
+}
+.task-status.status-acceptor_done.data-v-49f80010 {
+  background-color: #ffebee;
+  color: #ff5722;
+}
+.task-status.status-publisher_confirmed.data-v-49f80010, .task-status.status-completed.data-v-49f80010 {
+  background-color: #e8f5e8;
+  color: #4caf50;
+}
+.task-status.status-cancelled.data-v-49f80010, .task-status.status-expired.data-v-49f80010 {
+  background-color: #f5f5f5;
+  color: #9e9e9e;
+}
+.task-status.status-unknown.data-v-49f80010 {
+  background-color: #e0e0e0;
+  color: #999999;
+}
+.card-body.data-v-49f80010 {
+  margin-bottom: 20rpx;
+}
+.task-title.data-v-49f80010 {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.task-meta.data-v-49f80010 {
+  margin-bottom: 10rpx;
+}
+.task-meta .task-deadline.data-v-49f80010 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #6a5acd;
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%);
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  border: 1px solid rgba(106, 90, 205, 0.3);
+  box-shadow: 0 2rpx 8rpx rgba(106, 90, 205, 0.1);
+}
+.task-meta .task-deadline .deadline-icon.data-v-49f80010 {
+  margin-right: 6rpx;
+  font-size: 24rpx;
+}
+.task-description.data-v-49f80010 {
+  display: block;
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 1.5;
+  margin-bottom: 10rpx;
+}
+.task-tags-section.data-v-49f80010 {
+  margin-top: 10rpx;
+}
+.task-tags-section .tag.data-v-49f80010 {
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  margin-right: 8rpx;
+  margin-bottom: 8rpx;
+  line-height: 1.4;
+}
+.task-tags-section .task-type-tag.data-v-49f80010 {
+  background-color: #e3f2fd;
+  color: #007aff;
+  font-weight: 500;
+}
+.task-tags-section .location-tag.data-v-49f80010 {
+  background-color: #f0f8ff;
+  color: #4da6ff;
+  border: 1px solid rgba(77, 166, 255, 0.2);
+}
+.task-tags-section .category-tag.data-v-49f80010 {
+  background-color: #cce4ff;
+  color: #007aff;
+}
+.task-tags-section .general-tag.data-v-49f80010 {
+  background-color: #f0f2f5;
+  color: #999999;
+}
+.card-footer.data-v-49f80010 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #c8c7cc;
+  padding-top: 20rpx;
+}
+.task-reward.data-v-49f80010 {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #f0ad4e;
+  font-weight: bold;
+}
+.task-reward .reward-icon.data-v-49f80010 {
+  margin-right: 8rpx;
+  font-size: 40rpx;
+}
+.task-time.data-v-49f80010 {
+  font-size: 24rpx;
+  color: #666666;
+}

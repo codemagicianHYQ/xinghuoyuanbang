@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <view class="splash-container">
     <view class="splash-content">
       <!-- 爱心动画 - 基于你提供的模板 -->
@@ -40,8 +40,8 @@ export default {
       }, 1500);
     },
     navigateToHome() {
-      // 跳转到首页
-      uni.reLaunch({
+      // tabBar 首页用 switchTab，避免 reLaunch 与启动栈冲突触发 appLaunch 报错
+      uni.switchTab({
         url: "/pages/home/home",
       });
     },

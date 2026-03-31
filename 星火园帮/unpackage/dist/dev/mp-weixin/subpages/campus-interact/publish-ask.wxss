@@ -1,0 +1,449 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-b3a6d2da {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-b3a6d2da {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-b3a6d2da {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-b3a6d2da {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-b3a6d2da {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-b3a6d2da {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-b3a6d2da {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-b3a6d2da {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-b3a6d2da {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-b3a6d2da {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-b3a6d2da, .button-error.data-v-b3a6d2da {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-b3a6d2da:active, .button-error.data-v-b3a6d2da:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-b3a6d2da, .disabled.button-error.data-v-b3a6d2da {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-b3a6d2da {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-b3a6d2da:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-b3a6d2da {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-b3a6d2da {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-b3a6d2da:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-b3a6d2da {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-b3a6d2da {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-b3a6d2da {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-b3a6d2da {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-b3a6d2da {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-b3a6d2da {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-b3a6d2da {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-b3a6d2da {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-b3a6d2da {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-b3a6d2da {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-b3a6d2da {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-b3a6d2da, .button-primary.data-v-b3a6d2da {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-b3a6d2da:active, .button-primary.data-v-b3a6d2da:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-b3a6d2da, .disabled.button-primary.data-v-b3a6d2da {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-b3a6d2da {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-b3a6d2da:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-b3a6d2da {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-b3a6d2da {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-b3a6d2da:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-b3a6d2da {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-b3a6d2da {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.ask-publish-container.data-v-b3a6d2da {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+  padding: 0;
+  padding-bottom: 200rpx;
+}
+.header-decoration.data-v-b3a6d2da {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30rpx 32rpx 20rpx;
+  border-radius: 0 0 50rpx 50rpx;
+  margin-bottom: 32rpx;
+  overflow: hidden;
+}
+.header-decoration .title-section.data-v-b3a6d2da {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.header-decoration .title-section .page-title.data-v-b3a6d2da {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 16rpx;
+}
+.header-decoration .title-section .page-subtitle.data-v-b3a6d2da {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+@-webkit-keyframes float-data-v-b3a6d2da {
+0%, 100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+}
+50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+}
+}
+@keyframes float-data-v-b3a6d2da {
+0%, 100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+}
+50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+}
+}
+.form-section.data-v-b3a6d2da {
+  background-color: #ffffff;
+  padding: 24rpx;
+  margin: 0 32rpx 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+}
+.form-item.data-v-b3a6d2da {
+  margin-bottom: 40rpx;
+}
+.form-item.data-v-b3a6d2da:last-child {
+  margin-bottom: 0;
+}
+.label-with-icon.data-v-b3a6d2da {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.label-with-icon .item-icon.data-v-b3a6d2da {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.label-with-icon .item-label.data-v-b3a6d2da {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.label-with-icon .item-label .required-star.data-v-b3a6d2da {
+  color: #ff6b6b;
+  margin-left: 4rpx;
+}
+.input-field.data-v-b3a6d2da,
+.textarea-field.data-v-b3a6d2da,
+.input-imitation.data-v-b3a6d2da {
+  width: 100%;
+  padding: 24rpx;
+  border: 2px solid #a5b4fc;
+  background: linear-gradient(135deg, #f0f2ff 0%, #e8ecff 100%);
+  font-size: 28rpx;
+  color: #333333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  min-height: 88rpx;
+}
+.input-field.data-v-b3a6d2da:focus,
+.textarea-field.data-v-b3a6d2da:focus,
+.input-imitation.data-v-b3a6d2da:focus {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  box-shadow: 0 0 0 4rpx rgba(102, 126, 234, 0.1);
+}
+.input-field.data-v-b3a6d2da::-webkit-input-placeholder, .textarea-field.data-v-b3a6d2da::-webkit-input-placeholder, .input-imitation.data-v-b3a6d2da::-webkit-input-placeholder {
+  color: #9ca3af;
+}
+.input-field.data-v-b3a6d2da::placeholder,
+.textarea-field.data-v-b3a6d2da::placeholder,
+.input-imitation.data-v-b3a6d2da::placeholder {
+  color: #9ca3af;
+}
+.input-imitation.data-v-b3a6d2da {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-imitation .picker-arrow.data-v-b3a6d2da {
+  color: #95a5a6;
+  font-size: 24rpx;
+}
+.textarea-field.data-v-b3a6d2da {
+  min-height: 240rpx;
+  resize: none;
+  line-height: 1.6;
+}
+.textarea-field.textarea-enhanced.data-v-b3a6d2da {
+  position: relative;
+}
+.char-count.data-v-b3a6d2da {
+  text-align: right;
+  font-size: 24rpx;
+  color: #9ca3af;
+  margin-top: 8rpx;
+}
+.picker.data-v-b3a6d2da {
+  padding: 24rpx;
+  border: 2px solid #e8eaed;
+  background-color: #fafbfc;
+  transition: all 0.3s ease;
+  min-height: 88rpx;
+  display: flex;
+  align-items: center;
+}
+.picker.picker-enhanced.data-v-b3a6d2da {
+  position: relative;
+}
+.picker.picker-enhanced.data-v-b3a6d2da::after {
+  content: "▼";
+  position: absolute;
+  right: 24rpx;
+  color: #9ca3af;
+  font-size: 24rpx;
+}
+.picker.data-v-b3a6d2da:focus {
+  border-color: #667eea;
+  background-color: #ffffff;
+}
+.picker-value.data-v-b3a6d2da {
+  font-size: 28rpx;
+  color: #333333;
+  flex: 1;
+}
+.contact-input.data-v-b3a6d2da {
+  background: linear-gradient(45deg, #fafbfc 0%, #f0f9ff 100%);
+}
+.submit-section.data-v-b3a6d2da {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32rpx;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.95) 20%, #ffffff 100%);
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.submit-btn.data-v-b3a6d2da {
+  width: 100%;
+  height: 96rpx;
+  border: none;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  transition: all 0.3s ease;
+}
+.submit-btn.ask-btn.data-v-b3a6d2da {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.4);
+}
+.submit-btn.ask-btn.data-v-b3a6d2da:not(:disabled):active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.4);
+}
+.submit-btn.data-v-b3a6d2da:disabled {
+  opacity: 0.6;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+.submit-btn .btn-icon.data-v-b3a6d2da {
+  font-size: 32rpx;
+}
+.submit-btn .btn-text.data-v-b3a6d2da {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.rounded-base.data-v-b3a6d2da {
+  border-radius: 16rpx;
+}
+.rounded-full.data-v-b3a6d2da {
+  border-radius: 48rpx;
+}

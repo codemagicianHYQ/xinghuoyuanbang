@@ -184,9 +184,11 @@
 <script>
 import request from "@/common/request.js";
 import PublishButton from "@/components/PublishButton.vue";
+import publishGate from "@/mixins/publishGate.js";
 
 export default {
   components: { PublishButton },
+  mixins: [publishGate],
   data() {
     const now = new Date();
     return {
@@ -217,6 +219,10 @@ export default {
         .toISOString()
         .split("T")[0],
     };
+  },
+  onLoad() {
+    if (!this.ensureLogin()) return;
+    this.checkCommunitySelection();
   },
   onShow() {
     // 检查是否有选中的地址
@@ -372,6 +378,9 @@ export default {
       return true;
     },
     async submitHelpTask() {
+      if (!this.ensureLogin()) return;
+      if (!this.checkCommunitySelection()) return;
+
       // 检查维护模式
       const { beforeAction } = await import("../../common/maintenanceCheck.js");
       if (await beforeAction("发布任务")) {

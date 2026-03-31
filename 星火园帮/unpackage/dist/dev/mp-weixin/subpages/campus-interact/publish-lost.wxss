@@ -1,0 +1,543 @@
+@charset "UTF-8";
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-584a8c0c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-584a8c0c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-584a8c0c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-584a8c0c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-584a8c0c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-584a8c0c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-584a8c0c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-584a8c0c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-584a8c0c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-584a8c0c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-primary.data-v-584a8c0c, .button-error.data-v-584a8c0c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-primary.data-v-584a8c0c:active, .button-error.data-v-584a8c0c:active {
+  opacity: 0.8;
+}
+.disabled.button-primary.data-v-584a8c0c, .disabled.button-error.data-v-584a8c0c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-584a8c0c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-584a8c0c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-584a8c0c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-584a8c0c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-584a8c0c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-584a8c0c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+/* uni.scss */
+/* 全局SCSS变量、通用辅助类和基础组件样式 */
+/* 请确保此文件自身不包含 @import "@/uni.scss"; */
+/* 颜色规范 */
+/* 背景色相关 */
+/* 文字基本颜色 */
+/* 边框颜色 */
+/* 图片尺寸 (可根据需要添加或修改) */
+/* 字体大小规范 */
+/* 圆角规范 */
+/* 水平间距规范 (padding, margin) */
+/* 垂直间距规范 (padding, margin) */
+/* 透明度规范 */
+/* Box shadow 规范 */
+/* ---- 通用辅助类 ---- */
+.card.data-v-584a8c0c {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30rpx;
+}
+.rounded-sm.data-v-584a8c0c {
+  border-radius: 4rpx !important;
+}
+.rounded-base.data-v-584a8c0c {
+  border-radius: 8rpx !important;
+}
+.rounded-lg.data-v-584a8c0c {
+  border-radius: 16rpx !important;
+}
+.rounded-circle.data-v-584a8c0c {
+  border-radius: 50% !important;
+}
+.rounded-pill.data-v-584a8c0c {
+  border-radius: 1000px !important;
+}
+.shadow-sm.data-v-584a8c0c {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-base.data-v-584a8c0c {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.shadow-lg.data-v-584a8c0c {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+/* 页面容器基础样式 */
+.page-container.data-v-584a8c0c {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 16rpx;
+}
+/* ---- 通用按钮样式 ---- */
+.button-error.data-v-584a8c0c, .button-primary.data-v-584a8c0c {
+  font-size: 32rpx;
+  padding: 18rpx 30rpx;
+  border-radius: 1000px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-error.data-v-584a8c0c:active, .button-primary.data-v-584a8c0c:active {
+  opacity: 0.8;
+}
+.disabled.button-error.data-v-584a8c0c, .disabled.button-primary.data-v-584a8c0c {
+  opacity: 0.6 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.button-primary.data-v-584a8c0c {
+  background-color: #007aff;
+  color: #ffffff;
+}
+.button-primary.data-v-584a8c0c:active {
+  background-color: #0062cc;
+}
+.button-primary.disabled.data-v-584a8c0c {
+  background-color: #66afff !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.button-error.data-v-584a8c0c {
+  background-color: #dd524d;
+  color: #ffffff;
+}
+.button-error.data-v-584a8c0c:active {
+  background-color: #cf2d28;
+}
+.button-error.disabled.data-v-584a8c0c {
+  background-color: #eda5a3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* ---- 你可以在下方继续添加项目中其他自定义的全局 SASS 变量或通用样式 ---- */
+.fun-title.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #222;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.fun-announcement.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5rpx;
+}
+.fun-tab-label.data-v-584a8c0c {
+  font-family: "ZCOOL KuaiLe", "Smiley Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+.lost-publish-container.data-v-584a8c0c {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe0b3 100%);
+  padding: 0;
+  padding-bottom: 200rpx;
+}
+.header-decoration.data-v-584a8c0c {
+  position: relative;
+  background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+  padding: 30rpx 32rpx 20rpx;
+  border-radius: 0 0 50rpx 50rpx;
+  margin-bottom: 32rpx;
+  overflow: hidden;
+}
+.header-decoration .title-section.data-v-584a8c0c {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.header-decoration .title-section .page-title.data-v-584a8c0c {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 16rpx;
+}
+.header-decoration .title-section .page-subtitle.data-v-584a8c0c {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+@-webkit-keyframes float-data-v-584a8c0c {
+0%, 100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+}
+50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+}
+}
+@keyframes float-data-v-584a8c0c {
+0%, 100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+}
+50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+}
+}
+.form-section.data-v-584a8c0c {
+  background-color: #ffffff;
+  padding: 24rpx;
+  margin: 0 32rpx 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+}
+.form-item.data-v-584a8c0c {
+  margin-bottom: 40rpx;
+}
+.form-item.data-v-584a8c0c:last-child {
+  margin-bottom: 0;
+}
+.label-with-icon.data-v-584a8c0c {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.label-with-icon .item-icon.data-v-584a8c0c {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.label-with-icon .item-label.data-v-584a8c0c {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.label-with-icon .item-label .required-star.data-v-584a8c0c {
+  color: #ff6b6b;
+  margin-left: 4rpx;
+}
+.input-field.data-v-584a8c0c,
+.textarea-field.data-v-584a8c0c,
+.input-imitation.data-v-584a8c0c {
+  width: 100%;
+  padding: 24rpx;
+  border: 2px solid #ffd4a3;
+  background-color: #fffbf5;
+  font-size: 28rpx;
+  color: #333333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  min-height: 88rpx;
+}
+.input-field.data-v-584a8c0c:focus,
+.textarea-field.data-v-584a8c0c:focus,
+.input-imitation.data-v-584a8c0c:focus {
+  border-color: #ff9500;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4rpx rgba(255, 149, 0, 0.1);
+}
+.input-field.data-v-584a8c0c::-webkit-input-placeholder, .textarea-field.data-v-584a8c0c::-webkit-input-placeholder, .input-imitation.data-v-584a8c0c::-webkit-input-placeholder {
+  color: #d4a574;
+}
+.input-field.data-v-584a8c0c::placeholder,
+.textarea-field.data-v-584a8c0c::placeholder,
+.input-imitation.data-v-584a8c0c::placeholder {
+  color: #d4a574;
+}
+.input-imitation.data-v-584a8c0c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-imitation .picker-arrow.data-v-584a8c0c {
+  color: #95a5a6;
+  font-size: 24rpx;
+}
+.address-actions.data-v-584a8c0c {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 16rpx;
+}
+.address-actions .action-link.data-v-584a8c0c {
+  color: #ff9500;
+  font-size: 28rpx;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8rpx 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.address-actions .action-link.data-v-584a8c0c:active {
+  color: #ff6b35;
+  border-bottom-color: #ff6b35;
+}
+.textarea-field.data-v-584a8c0c {
+  min-height: 240rpx;
+  resize: none;
+  line-height: 1.6;
+}
+.textarea-field.textarea-enhanced.data-v-584a8c0c {
+  position: relative;
+}
+.char-count.data-v-584a8c0c {
+  text-align: right;
+  font-size: 24rpx;
+  color: #d4a574;
+  margin-top: 8rpx;
+}
+.picker.data-v-584a8c0c {
+  padding: 24rpx;
+  border: 2px solid #ffd4a3;
+  background-color: #fffbf5;
+  transition: all 0.3s ease;
+  min-height: 88rpx;
+  display: flex;
+  align-items: center;
+}
+.picker.picker-enhanced.data-v-584a8c0c {
+  position: relative;
+}
+.picker.picker-enhanced.data-v-584a8c0c::after {
+  content: "▼";
+  position: absolute;
+  right: 24rpx;
+  color: #d4a574;
+  font-size: 24rpx;
+}
+.picker.data-v-584a8c0c:focus {
+  border-color: #ff9500;
+  background-color: #ffffff;
+}
+.picker-value.data-v-584a8c0c {
+  font-size: 28rpx;
+  color: #333333;
+  flex: 1;
+}
+.location-input.data-v-584a8c0c {
+  background: linear-gradient(45deg, #fffbf5 0%, #fff0d9 100%);
+}
+.contact-input.data-v-584a8c0c {
+  background: linear-gradient(45deg, #fffbf5 0%, #ffedd6 100%);
+}
+.image-uploader.data-v-584a8c0c {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+.image-uploader .image-item.data-v-584a8c0c,
+.image-uploader .upload-btn.data-v-584a8c0c {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  position: relative;
+}
+.image-uploader .preview-image.data-v-584a8c0c {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-uploader .delete-btn.data-v-584a8c0c {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+}
+.image-uploader .upload-btn.data-v-584a8c0c {
+  background-color: #fffbf5;
+  border: 2px dashed #ffd4a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.image-uploader .upload-btn.data-v-584a8c0c:hover {
+  border-color: #ff9500;
+  background-color: #fff0d9;
+}
+.image-uploader .upload-btn .upload-icon.data-v-584a8c0c {
+  font-size: 60rpx;
+  color: #d4a574;
+}
+.agreement-section.data-v-584a8c0c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32rpx;
+  padding: 24rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.agreement-section .agreement-label.data-v-584a8c0c {
+  display: flex;
+  align-items: center;
+  margin-right: 8rpx;
+}
+.agreement-section .link-text.data-v-584a8c0c {
+  color: #ff9500;
+  font-weight: 600;
+}
+.submit-section.data-v-584a8c0c {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32rpx;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.95) 20%, #ffffff 100%);
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.submit-btn.data-v-584a8c0c {
+  width: 100%;
+  height: 96rpx;
+  border: none;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  transition: all 0.3s ease;
+}
+.submit-btn.lost-btn.data-v-584a8c0c {
+  background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(255, 149, 0, 0.4);
+}
+.submit-btn.lost-btn.data-v-584a8c0c:not(:disabled):active {
+  -webkit-transform: translateY(2rpx);
+          transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(255, 149, 0, 0.4);
+}
+.submit-btn.data-v-584a8c0c:disabled {
+  opacity: 0.6;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+.submit-btn .btn-icon.data-v-584a8c0c {
+  font-size: 32rpx;
+}
+.submit-btn .btn-text.data-v-584a8c0c {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.rounded-base.data-v-584a8c0c {
+  border-radius: 16rpx;
+}
+.rounded-full.data-v-584a8c0c {
+  border-radius: 48rpx;
+}
+.rounded-lg.data-v-584a8c0c {
+  border-radius: 24rpx;
+}
+.shadow-base.data-v-584a8c0c {
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+}

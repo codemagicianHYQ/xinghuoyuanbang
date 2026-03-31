@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "求资料",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}

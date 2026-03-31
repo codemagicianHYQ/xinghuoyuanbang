@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布学习互助",
+  "usingComponents": {
+    "publish-button": "/components/PublishButton"
+  }
+}
