@@ -1,29 +1,22 @@
-# IDE
-.vscode
-.idea
-*.suo
-*.user
+项目问题解决/修复星火园帮文件夹在GitHub打不开.md
+interview/吉利前端开发岗位-JD.md
+interview/吉利前端面试-基于简历与星火园帮.md
+interview/吉利前端面试-题目版（基于简历与星火园帮）.md
+interview/前端面试-基础概念解析.md
+interview/星火园帮请求到后端完整流程.md
+interview/面试刷题/index.html
 
-# 依赖
-node_modules/
+# Local design files
+pencil-welcome.pen
+test.pen
 
-# 环境变量与密钥（勿提交到公开仓库）
+# Build outputs (avoid staging hundreds of generated files)
+星火园帮/unpackage/dist/
+
+# Secrets
 .env
-.env.local
-.env.*.local
-*.pem
+星火园帮后台管理系统/.env
 
-# 构建产物
-dist/
-build/
-unpackage/
-*.local
-
-# 日志与临时
-*.log
-npm-debug.log*
-.DS_Store
-Thumbs.db
-
-# 可选：若不想上传后台管理系统里的上传文件目录，可取消下面注释
-# /星火园帮后台管理系统/uploads/
+# Local IDE state
+.vscode/
+.cursor/
