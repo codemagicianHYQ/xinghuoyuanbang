@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>环保数字大屏</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-title">环保数字大屏</div>
+    <main class="screen">
+      <header class="header card">
+        <div class="title-wrap">
+          <span class="dot online" id="conn-dot"></span>
+          <h1>城市环保监测指挥中心</h1>
+        </div>
+        <div class="meta-wrap">
+          <span id="conn-text">实时同步中</span>
+          <span id="current-time">--</span>
+        </div>
+      </header>
+
+      <section class="body">
+        <aside class="col left">
+          <article class="card section-card">
+            <h2>核心指标总览</h2>
+            <div class="kpis">
+              <div class="kpi">
+                <div class="value" id="kpi-good-days">86</div>
+                <div class="label">空气优良天数</div>
+              </div>
+              <div class="kpi">
+                <div class="value" id="kpi-carbon">23%</div>
+                <div class="label">碳排下降率</div>
+              </div>
+              <div class="kpi">
+                <div class="value" id="kpi-water">97</div>
+                <div class="label">水质达标率</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card section-card">
+            <h2>污染排名（TOP5）</h2>
+            <div id="pollution-list" class="list"></div>
+          </article>
+
+          <article class="card section-card flex-grow">
+            <h2>告警与处置</h2>
+            <div class="alerts">
+              <div class="alert danger">
+                <div class="value" id="alert-high">12</div>
+                <div class="label">高危告警</div>
+              </div>
+              <div class="alert warning">
+                <div class="value" id="alert-medium">28</div>
+                <div class="label">中危告警</div>
+              </div>
+              <div class="alert success">
+                <div class="value" id="alert-resolved">41</div>
+                <div class="label">已完成处置</div>
+              </div>
+            </div>
+          </article>
+        </aside>
+
+        <section class="col center">
+          <article class="card section-card map-card">
+            <h2>全域环保态势图</h2>
+            <div class="map-panel">
+              <div class="map-title" id="map-title">生态热力分布（示意）</div>
+              <div class="map-sub">
+                实时联动 <span id="map-stations">128</span> 个监测站点
+              </div>
+            </div>
+          </article>
+
+          <article class="card section-card flex-grow">
+            <h2>近7日空气质量趋势</h2>
+            <div class="bar-chart" id="air-trend-chart"></div>
+          </article>
+        </section>
+
+        <aside class="col right">
+          <article class="card section-card">
+            <h2>能源结构占比</h2>
+            <div class="energy-wrap">
+              <div class="donut" id="energy-donut"></div>
+              <div class="legend" id="energy-legend"></div>
+            </div>
+          </article>
+
+          <article class="card section-card">
+            <h2>河流水质指数</h2>
+            <div class="water-bars" id="water-bars"></div>
+          </article>
+
+          <article class="card section-card flex-grow">
+            <h2>年度减排进度</h2>
+            <div class="progress-list" id="progress-list"></div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

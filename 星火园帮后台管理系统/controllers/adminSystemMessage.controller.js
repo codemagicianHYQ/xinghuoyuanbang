@@ -1,7 +1,7 @@
 // controllers/adminSystemMessage.controller.js
 const EnhancedSystemMessageService = require("../services/enhancedSystemMessageService");
 const { Op } = require("sequelize");
-
+ASQASQAS;
 // 获取所有系统消息（管理员）
 exports.getAllSystemMessages = async (req, res, next) => {
   try {
@@ -144,7 +144,7 @@ exports.updateSystemMessage = async (req, res, next) => {
     const result = await EnhancedSystemMessageService.updateMessage(
       messageId,
       updateData,
-      adminId
+      adminId,
     );
 
     res.status(200).json({
@@ -192,7 +192,7 @@ exports.sendSystemMessage = async (req, res, next) => {
 
     const result = await EnhancedSystemMessageService.sendMessageNow(
       messageId,
-      adminId
+      adminId,
     );
 
     res.status(200).json({
@@ -222,7 +222,7 @@ exports.getSystemMessageStats = async (req, res, next) => {
         [
           SystemMessage.sequelize.fn(
             "COUNT",
-            SystemMessage.sequelize.col("id")
+            SystemMessage.sequelize.col("id"),
           ),
           "count",
         ],
@@ -238,7 +238,7 @@ exports.getSystemMessageStats = async (req, res, next) => {
         [
           SystemBroadcast.sequelize.fn(
             "COUNT",
-            SystemBroadcast.sequelize.col("id")
+            SystemBroadcast.sequelize.col("id"),
           ),
           "count",
         ],
@@ -253,7 +253,7 @@ exports.getSystemMessageStats = async (req, res, next) => {
         [
           UserBroadcastRead.sequelize.fn(
             "COUNT",
-            UserBroadcastRead.sequelize.col("id")
+            UserBroadcastRead.sequelize.col("id"),
           ),
           "unreadCount",
         ],
